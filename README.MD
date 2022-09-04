@@ -1,16 +1,18 @@
 # RPG Card Generator
 
+![Examples](examples/examples.png)
+
 This is a tool to facilitate my card creation for my table top RPG.
 
-## How to use
+# How to use
 
-### 1. Clone this repo
+1. Clone this repo
 
 ```bash
 git clone https://github.com/diesphink/rpg-card-generator.git
 ```
 
-### Create virtualenv and install dependencies
+2. Create virtualenv and install dependencies
 
 This is a python script, perhaps you have all the dependencies, but maybe not. I recommend you install this on a virtualenv, with the following code:
 
@@ -27,8 +29,21 @@ If you don't care about virtual environments, just install everyting on requirem
 pip3 install -r requirements.txt
 ```
 
-### Edit/create `.toml` files in `input` folder.
+3. Create input files
 
+Edit or create `.toml` files in `input` folder, to determine the cards that'll be generated
+
+4. Execute `generate_latex.py`
+
+On execution, it will generate an output folder with the necessary contents (images that are used on the files, tex files created)
+
+5. Import in overleaf
+
+Execute the bash script open_in_overleaf to easily export the content of that folder to a new project in overleaf.
+
+If you wish, you may instead just create a new project in overleaf and manually import all the files in the output directory
+
+# Configurations
 The configuration files are in .toml, the syntax can be found here: [https://toml.io/](https://toml.io/en/)
 
 The available main options are:
@@ -271,13 +286,3 @@ Longsword
 GP = 336
 
 ```
-
-## Execute generate_latex.py
-
-On execution, it will generate an output folder with the necessary contents (images that are used on the files, tex files created)
-
-## Import in overleaf
-
-Execute the bash script open_in_overleaf to easily export the content of that folder to a new project in overleaf.
-
-If you wish, you may instead just create a new project in overleaf and manually import all the files in the output directory
