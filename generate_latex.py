@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 
-from genericpath import isfile
 import tomli
 import re
 import shutil
 import os
 import glob
-import zipfile
-import collections.abc
 
 
 def parse_text(text, break_lines=False):
