@@ -265,8 +265,7 @@ Longsword
 # If you want to break line for more information on the item, use \\
 # Additionally, you can pass GP for how many Gold pieces to start with on the sheet
 [inventory.consumables]
-'''Potion of climbing
-(1h, climb speed 9m, adv on climb)''' = 1
+'''Potion of climbing\\(1h, climb speed 9m, adv on climb)''' = 1
 'Potion of healing (2d4+2)' = 10
 "Ration" = 5
 GP = 336
