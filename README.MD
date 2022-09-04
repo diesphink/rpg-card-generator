@@ -33,7 +33,8 @@ The configuration files are in .toml, the syntax can be found here: [https://tom
 
 The available main options are:
 
-#### 
+#### Normal Card
+![Normal cards](examples/normal.png)
 
 ```toml
 # Default card, has an image on top, a box for description, and plenty of space for extra infos, tags, etc.
@@ -81,6 +82,10 @@ fontsize = "4.5" # Optional font size for text in the card, useful for cards wit
 count = 1 # Optional, indicates how many of this card to print
 ```
 
+#### Token card
+![Token cards](examples/tokens.png)
+![Token cards](examples/tokens2.png)
+
 ```toml
 # More simple card, useful to pass around for other players
 # Contains title, one image on the full background and a box of text
@@ -97,6 +102,9 @@ type = "Spell effect" # Type of the card, will be added in black on the middle r
 count = 1 # Optional, indicates how many of this card to print
 ```
 
+#### Image card
+![Image cards](examples/image.png)
+
 ```toml
 # Cards with just an image
 # Are defined if you have not defined a specific type (token, back, sheet, inventory) and there's no description present
@@ -107,6 +115,8 @@ image = "path to the 410x630 image" # For image cards, this is a 410x630 image f
 count = 1 # Optional, indicates how many of this card to print
 ```
 
+#### Back card
+![Back cards](examples/back.png)
 
 ```toml
 # Back of the card
@@ -128,6 +138,8 @@ color = "orange" # Color to add as filter to the image. The options are:
 
 count = 1 # Optional, indicates how many of this card to print
 ```
+#### Character sheet
+![Character sheet](examples/sheet.png)
 
 ```toml
 # Character sheet
@@ -222,6 +234,9 @@ title = "Anything else" # You can change the prof box to use it for character ab
 "Sword (1h)" = "+6, 1d8+4 slashing"
 "Sword (2h)" = "+6, 1d10+4 slashing"
 ```
+
+#### Inventory
+![Inventory](examples/inventory.png)
 
 ```toml
 [inventory]
