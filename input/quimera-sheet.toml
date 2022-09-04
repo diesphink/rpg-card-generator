@@ -1,0 +1,71 @@
+[quimera]
+sheet = true
+image = "images/big-quimera-calma.xcf2.png"
+title = '\faJedi **Quimera Calma**, Shaozun monk 4, lawful neutral'
+
+[quimera.attributes]
+STR = [8, -1, -1]
+DEX = [16, +3, +5]
+CON = [14, +2, +2]
+INT = [10, 0, 0]
+WIS = [12, +1, +1]
+CHA = [18, +4, +6]
+
+[quimera.skills]
+skills = [0, 5, 4, 4, 1, 1, 1, 1, 2, 2, 3, 2, 5, 2, 6, 6, 5, 8]
+profic = [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1]
+
+[quimera.boxes]
+INIT = "+4"
+AC = 14
+HP = 30
+PROF = "+2"
+"H DICE" = "4d8"
+SPEED = ["9m", "30ft"]
+"SP ATT" = "+6"
+"SP SAVE" = 14
+KI = "5/2"
+"SP KI" = 4
+
+[quimera.proficiencies]
+Languages = "Common, elvish, primordial, shaozun."
+"Armor and weapons" = "Light and medium armor, shields, simple and martial weapons."
+Tools = "Thieves' tools (traps or locks)"
+
+[quimera.attacks]
+"Sword (1h)" = "+6, 1d8+4 slashing"
+"Sword (2h)" = "+6, 1d10+4 slashing"
+"Energy sword (1h)" = "+6, 1d8+4 slash, +4 fire (other)"
+"Energy sword (2h)" = "+6, 1d10+4 slash, +4 fire (other)"
+"Energy bow" = "+6, 1d0 force"
+"Disturbing mantra" = "wis, 1d4 psychic, disadv. att"
+"Explosive mantra" = "con, AOE 5ft, 1d6 thunder"
+
+
+[inventory]
+inventory = true
+title = "Inventory of **Quimera Calma**"
+image = "images/big-quimera-calma.xcf2.png"
+
+"Backpack" = """
+Bedroll
+2 costumes (noble and scholar)
+5 candles
+Disguise kit
+Battle horn
+Dagger
+Waterskin
+"""
+
+"Wearing/At hand" = """
+Leather armor
+Longsword moontouched
+An old divination card bearing your likeness
+Earring of message
+"""
+
+[inventory.consumables]
+"Potion of climbing\\\\(1h, climb speed 9m, adv on climb)" = 1
+"Ration" = 5
+GP = 336
+

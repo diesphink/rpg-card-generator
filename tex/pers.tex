@@ -1,0 +1,99 @@
+% ============================
+% Personality of Quimera Calma
+% ============================
+%
+\begin{tikzpicture}[x=1mm, y=1mm]
+    \tikzmath{\fs = \textsize + 0.5;}
+    
+    % Parchment paper
+    \draw[fill=parchment] (0,0) rectangle (63,88);
+    
+    % Imagem
+    \node[anchor=north west, inner sep=0,outer sep=0] (image) at (0, 88) {\includegraphics[width=63mm, height=88mm]{images/big-quimera-calma.xcf2.png}};
+    
+    % Título
+    \node[title, anchor=north west, minimum width=59mm](title) at (2,86) {Personality of \textbf{Quimera Calma}};
+    
+    % PARTY
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(2,24) (27,2)}] (PARTY) {};
+    \node[tag, anchor=east] at ([xshift=-0.5mm] PARTY.north east) {PARTY};
+    \node[fit={(2,24) (12,2)}, fill=black, opacity=0.9, text opacity=1, draw opacity=1, inner sep=0mm, font=\sffamily\fontsize{4.5}{6}\selectfont, draw=black, rounded corners=0.4mm, align=left] (players) {};
+    \node[anchor=west, align=right, text width=8mm, font=\color{white}\sffamily\fontsize{5}{8}\selectfont] (partyp) at (PARTY.west) {%
+    Aline\\
+    Goodão\\
+    Marcelo\\
+    Nestor\\[1.1em]
+    Pará\\
+    Paulo\\[-0.5em]\phantom{.}
+    };
+    
+    \node[anchor=west, align=left, text width=30mm,font=\sffamily\fontsize{5}{8}\selectfont] (partyc) at ([xshift=-1mm] partyp.east) {%
+    \textbf{Ellytia}\\
+    \textbf{Muralha}\\
+    \textbf{Taris}\\
+    \textbf{Arzak}\\
+    \vspace{-0.9mm}{\fontsize{4}{8}\selectfont Dreamkiller Calaguta}\\
+    \textbf{\AE{}nok}\\
+    \textbf{Vigor}\\
+    \vspace{-0.9mm}{\fontsize{4}{8}\selectfont Flamestorm}
+    };
+    
+    % PERS TRAITS
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(29,24) (61,2)}] (PTRAITS) {};
+    \node[tag, anchor=east] at ([xshift=-0.5mm] PTRAITS.north east) {TEACHINGS};
+    \node[anchor=west, align=justify, text width=27mm, font=\sffamily\fontsize{4}{5}\selectfont] (traits) at (PTRAITS.west) {%
+    \faIcon[regular]{square}A disciplined mind brings happiness\\
+    \faIcon[regular]{square}If a man going down into a river is carried away by the current — how can he help others across?\\
+    \faIcon[regular]{square}You cannot travel the path until you have become the path itself.\\
+    \faIcon[regular]{square}There is no fear for one whose mind is not filled with desires\\
+    \faIcon[regular]{square}The root of suffering is attachment
+    };
+    
+    
+    % NATURE
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(2,80) (61,54)}] (NATURE) {};
+    \node[tag, anchor=east] at ([xshift=-0.5mm] NATURE.north east) {NATURE};
+    \node[anchor=north west, align=justify, text width=27mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (nature) at (NATURE.north west) {%
+    \textbf{\faIcon{angry}Fanatic (Shaozun)}
+    \\[1em]
+    The Fanatic has a purpose, and that purpose consumes his existence. The Fanatic pours himself into his cause; indeed, he may feel guilty for undertaking any objective that deviates from his higher goal. To the Fanatic, the end justifies the means — the cause is more important than those who serve it.
+    };
+    
+    \node[anchor=north west, align=justify, text width=28mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (nature) at ([xshift=28mm] NATURE.north west) {%
+    \textbf{\faIcon{university}Architect}
+    \\[1em]
+    The Architect has a sense of purpose even greater than herself. She's truly happy only when creating something of lasting value for others. People will always need things, and the Architect strives to provide at least one necessity. Inventors, pioneers, town founders, entrepreneurs, and the like are all Architect Archetypes.
+    };
+    
+    \node[fit={(2,54) (61,60)}, fill=black, opacity=0.9, text opacity=1, draw opacity=1, inner sep=0mm, font=\sffamily\fontsize{4.5}{6}\selectfont, draw=black, rounded corners=0.4mm, align=left] (obj1) {};
+
+    \node[inner sep=0mm, font=\color{white}\sffamily\fontsize{4.5}{6}\selectfont, align=left, anchor=west] (obj1-text) at ([xshift=1mm] obj1.west) {%
+    \faIcon{check-square}Accomplish something that directly relates to Shaozun.\\
+    \faIcon{check-square}Establish something of important or lasting value.};
+
+    % DEMEANOR
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(2,52) (61,26)}] (DEMEANOR) {};
+    \node[tag, anchor=east] at ([xshift=-0.5mm] DEMEANOR.north east) {DEMEANOR};
+    \node[anchor=north west, align=justify, text width=27mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (nature) at (DEMEANOR.north west) {%
+    \textbf{\faIcon{user-shield}Soldier}
+    \\[1em]
+    The Soldier is not a blindly loyal follower. While she exists for orders, she does not adhere to them unquestioningly. While she may seek command herself someday, her ambitions lie within the established hierarchy and structure.
+    };
+    
+    \node[anchor=north west, align=justify, text width=28mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (nature) at ([xshift=28mm] DEMEANOR.north west) {%
+    \textbf{\faIcon{graduation-cap}Director}
+    \\[1em]
+    To the Director, nothing is worse than chaos and disorder. The Director seeks to be in charge, adopting a "my way or the highway" attitude on matters of decision-making. The Director is more concerned with bringing order out of strife, however, and need not be truly "in control" of a group to guide it.
+    };
+
+    \node[fit={(2,26) (61,32)}, fill=black, opacity=0.9, text opacity=1, draw opacity=1, inner sep=0mm, font=\sffamily\fontsize{4.5}{6}\selectfont, draw=black, rounded corners=0.4mm, align=left] (obj2) {};
+
+    \node[inner sep=0mm, font=\color{white}\sffamily\fontsize{4.5}{6}\selectfont, align=left, anchor=west] (obj2-text) at ([xshift=1mm] obj2.west) {%
+    \faIcon{check-square}Every success counts, achieve your objectives.\\
+    \faIcon{check-square}Influence a group in the completion of difficult tasks.};
+
+    
+    % Borda
+    \draw[line width = 0.5mm, black] (0,0) rectangle (63,88);
+    
+    \end{tikzpicture}%%

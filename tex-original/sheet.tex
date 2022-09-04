@@ -1,0 +1,171 @@
+\documentclass{article}
+
+\include{libs.tex}
+\include{cards.tex}
+\begin{document}
+\begin{center}
+
+\tikzstyle{squarebox}=[
+    inner sep=1mm, 
+    fill=parchment, 
+    opacity=0.7, 
+    text opacity=1, 
+    draw opacity=1,
+    draw=black, 
+    %  width=6mm, 
+    inner sep=0mm,
+    minimum height=6mm, 
+    minimum width=8mm, 
+    rounded corners=0.5mm,
+    font=\sffamily
+]
+
+\tikzstyle{attribute}=[
+    squarebox,
+    text width=5mm,
+    inner sep=2mm,
+]
+
+\tikzstyle{subattribute}=[
+    tag, 
+    fill=parchment,
+    inner sep=0.5mm,
+    font=\sffamily\fontsize{5}{5}\selectfont%\color{white}
+]
+
+\newcommand{\leftbox}[5]{%
+    \node[attribute, anchor=west] (#2) at (#1) {\textbf{#3}};
+    \node[tag, anchor=west, xshift=0.5mm] at (#2.north west) {\textbf{#2}};
+    \node[subattribute, anchor=north east, xshift=0.5mm, yshift=-0.5mm] at (#2.north east) {\textbf{#4}};
+    \node[subattribute, anchor=south east, xshift=0.5mm, yshift=0.5mm] at (#2.south east) {\textbf{#5}};
+}
+
+\newcommand{\rightbox}[5]{%
+    \node[attribute, anchor=east, align=right] (#2) at (#1) {\textbf{#3}};
+    \node[tag, anchor=east, xshift=-0.5mm] at (#2.north east) {\textbf{#2}};
+    \node[subattribute, anchor=north west, xshift=-0.5mm, yshift=-0.5mm] at (#2.north west) {\textbf{#4}};
+    \node[subattribute, anchor=south west, xshift=-0.5mm, yshift=0.5mm] at (#2.south west) {\textbf{#5}};
+}
+
+\newcommand{\centerbox}[4][]{%
+    \node[squarebox, anchor=center, #1] (#3) at (#2) {\textbf{#4}};
+    \node[tag, anchor=center] at (#3.north) {\textbf{#3}};
+}
+
+\newcommand{\centerboxsubs}[5][]{%
+    \node[squarebox, anchor=center, #1] (#3) at (#2) {\textbf{#4}};
+    \node[tag, anchor=center] at (#3.north) {\textbf{#3}};
+    % \node[subattribute, anchor=south west] at ([xshift=-0.5mm, yshift=-0.5mm]#3.south west) {\textbf{#5}};
+    \node[subattribute, anchor=south east] at ([xshift=0.5mm, yshift=-0.7mm] #3.south east) {\textbf{#5}};
+}
+
+
+\begin{tikzpicture}[x=1mm, y=1mm]
+
+    \tikzmath{\fs = \textsize + 0.5;}
+    
+    % Parchment paper
+    \draw[fill=parchment] (0,0) rectangle (63,88);
+
+    % Imagem
+    \node[anchor=north west, inner sep=0,outer sep=0] (image) at (0, 88) {\includegraphics[width=63mm, height=88mm]{images/token-ally-basilisco-bravo.png}};
+    
+    % Título
+    \node[title, anchor=north west, minimum width=59mm](title) at (2,86) {\textbf{Quimera Calma}, Human Monk 3, lawful neutral};
+
+    % Atributos
+    \leftbox{2,76.5}{STR}{-1}{8}{-1}
+    \leftbox{2,68}{DEX}{+3}{16}{+5}
+    \leftbox{2,59.5}{CON}{+2}{14}{+2}
+
+    \rightbox{61,76.5}{INT}{+0}{10}{+0}
+    \rightbox{61,68}{WIS}{+1}{12}{+1}
+    \rightbox{61,59.5}{CHA}{+4}{18}{+6}
+    
+    % \node[xshift=0.1mm, yshift=-0.1mm] (div1) at (31.5, 55) {\color{white}\pgfornament[width=50mm]{86}};    
+    % \node[opacity=0.7, xshift=-0.1mm, yshift=0.1mm] (div1) at (31.5, 55) {\color{white}\pgfornament[width=50mm]{86}};  
+    \node[opacity=0.7] (div1) at (31.5, 55) {\pgfornament[width=50mm]{86}};
+    
+    \centerbox[anchor=north west]{2, 52}{INIT}{+4}
+    \centerbox[anchor=north west]{12, 52}{AC}{14}
+    \centerbox[anchor=north west]{22, 52}{HP}{24*}
+    \centerbox[anchor=north west]{33, 52}{PROF}{+2}
+    \centerbox[anchor=north west]{43, 52}{H DICE}{3d8}
+    \centerboxsubs[anchor=north west]{53, 52}{SPEED}{9m}{30ft}
+
+    \centerbox[anchor=north west]{2, 43}{PERC}{13}
+    \centerbox[anchor=north west]{12, 43}{SP ATT}{+6}
+    \centerbox[anchor=north west]{22, 43}{SP SAVE}{14}
+    \centerbox[anchor=north west]{33, 43}{KI}{4}
+    \centerbox[anchor=north west]{43, 43}{SP KI}{4}
+    % \centerbox[anchor=north west]{53, 43}{}{}
+    
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(2,34) (20,2)}] (SKILLS) {};
+    
+    \node[tag, anchor=east] at ([xshift=-0.5mm] SKILLS.north east) {SKILLS};
+
+    \node[anchor=west, align=left, text width=3mm, font=\sffamily\fontsize{4.3}{4.75}\selectfont] (skvalues) at (SKILLS.west) {%
+        +0\\ % Athletics\\
+        +5\\ % Acrobatics\\
+        +4\\ % Sleight of hand\\
+        +4\\ % Stealth\\
+        +1\\ % Arcana\\
+        +1\\ % History\\
+        +1\\ % Investigation\\
+        +1\\ % Nature\\
+        +2\\ % Religion\\
+        +2\\ % Animal Handling\\
+        +3\\ % Insight\\
+        +2\\ % Medicine\\
+        +3\\ % Perception\\
+        +2\\ % Survival\\
+        +6\\ % Deception\\
+        +6\\ % Intimidation\\
+        +5\\ % Performance\\
+        +6\\ % Persuasion
+        };
+
+    \node[anchor=west, align=left, text width=13mm,font=\sffamily\fontsize{4.3}{4.75}\selectfont] (sknames) at ([xshift=3mm] SKILLS.west) {%
+        Athletics\\
+        \textbf{Acrobatics}\\
+        Sleight of hand\\
+        Stealth\\
+        Arcana\\
+        History\\
+        Investigation\\
+        Nature\\
+        \textbf{Religion}\\
+        Animal Handling\\
+        \textbf{Insight}\\
+        Medicine\\
+        \textbf{Perception}\\
+        Survival\\
+        \textbf{Deception}\\
+        \textbf{Intimidation}\\
+        Performance\\
+        \textbf{Persuasion}
+        };
+
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(22,34) (61,20)}] (FEATURES) {};
+    \node[tag, anchor=east] at ([xshift=-0.5mm] FEATURES.north east) {FEATURES AND TRAITS};
+    
+    \node[anchor=west, align=left, text width=37mm, font=\sffamily\fontsize{4.3}{4.75}\selectfont] (sknames) at (FEATURES.west) {%
+        \textbf{Languages}: Common, elvish, primordial.\\
+        \textbf{Armor and weapons}: Light and medium armor, shields, simple and martial weapons.\\
+        \textbf{Tools}: Thieves' tools (traps or locks).
+        };
+
+
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(22,18) (61,2)}] (ATTACKS) {};
+
+
+    % % Texto
+    % \node[fill=parchment, inner sep=2mm, outer sep=0, font=\sffamily\fontsize{\textsize}{\fs}\selectfont, text width=37mm, anchor=north west, align=justify] (text) at (0, 55) {TEXTO1};
+
+    % Borda
+    \draw[line width = 0.5mm, black] (0,0) rectangle (63,88);
+
+\end{tikzpicture}
+    
+\end{center}
+\end{document}

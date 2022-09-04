@@ -1,0 +1,220 @@
+# Cartas Quimera Calma - 2022-09-02
+
+["Earring of Message"]
+type = "Wondrous item"
+time = "action"
+image = "images/earrings-of-message"
+components = "VSM"
+fontsize = 5
+description = """
+The blue crystal of this earring is wrapped with delicate copper wire. The earring has 5 charges.
+While wearing it, you can use an action to expend 1 charge and cast the Message spell.
+The earring regains 1d4 + 1 expended charges daily at dawn.
+
+**Message spell:** You point your finger toward a creature within range and whisper a message. The target (and only
+the target) hears the message and can reply in a whisper that only you can hear.
+
+You can cast this spell through solid objects if you are familiar with the target and know it is
+beyond the barrier. Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead,
+or 3 feet of wood blocks the spell. The spell doesn’t have to follow a straight line and can travel
+freely around corners or through openings.
+"""
+footer = """120 feet
+Common
+"""
+
+["Boots of Elvenkind"]
+type = "Wondrous item"
+time = "action"
+image = "images/boots-of-elvenkind"
+description = """
+While you wear these boots, your steps make no sound, regardless of the surface you are moving across.
+You also have advantage on Dexterity (Stealth) checks that rely on moving silently.
+"""
+footer = "Common"
+
+
+["Mantra of Toughness"]
+type = "Mantra"
+time = "action"
+image = "images/toughness"
+components = "VSM"
+description = """
+Your mantra bolsters your allies with toughness and resolve. Choose up to three creatures within range.
+Each target’s hit point maximum and current hit points increase by 5 for the duration.
+"""
+footer = """
+30 feet
+8 hours
+"""
+
+
+["Spirit Ancestor"]
+type = "Class ability"
+time = "action"
+cost = "spiritual ki"
+image = "images/spirit-ancestor"
+fontsize = 5.3
+description = """
+You reach out to spirits who tell their tales through you. While you are holding your Spiritual Focus,
+you can use a bonus action to expend one Spiritual Ki and roll on the Spirit Tales table using 1d6 to
+determine the tale the spirits direct you to tell. You retain the tale in mind until you bestow the
+tale’s effect or you finish a short or long rest.
+
+You can use an action to choose one creature you can see within 30 feet of you (this can be you) to
+be the target of the tale’s effect. Once you do so, you can’t bestow the tale’s effect again until
+you roll it again.
+
+You can retain only one of these tales in mind at a time, and rolling on the Spirit Tales table
+immediately ends the effect of the previous tale.
+"""
+footer = """
+30 feet
+"""
+
+
+["Tale of the Clever Animal"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-clever-animal"
+description = """
+For the next **10 minutes**, whenever the target makes an **Intelligence**, a **Wisdom**, or a **Charisma**
+check, the target can roll an **1d6** immediately after rolling the d20 and add the extra die's number
+to the check.
+"""
+
+["Tale of the Renowned Duelist"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-renowned-duelist"
+description = """
+You make a melee spell attack against the target. On a hit, the target takes force damage equal to **2d6+4**.
+"""
+
+["Tale of the Beloved Friends"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-beloved-friends"
+description = """
+The target and another creature of its choice it can see within 5 feet of it gains temporary
+hit points equal to **16d+4**
+"""
+
+["Tale of the Runaway"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-runaway"
+description = """
+The target can immediately use its reaction to teleport up to 30 feet to an unoccupied space
+it can see. When the target teleports, it can choose up to **4** creatures it can see within
+30 feet to immediately use the same reaction.
+"""
+
+["Tale of the Avenger"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-avenger"
+description = """
+For 1 minute, any creature that hits the target with a melee attack takes force damage equal
+to **1d6**.
+"""
+
+["Tale of the Traveler"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-traveler"
+description = """
+The target gains **1d6+3** temporary hit points.
+
+While it has these temporary hit points, the target’s walking **speed increases by 10 feet** and it gains
+a **+1 bonus to its AC**.
+"""
+
+
+["Spiritual Ki"]
+back = true
+color = "yellow"
+count = 7
+
+["Class Ability"]
+back = true
+color = "orange"
+count = 1
+
+[quimera]
+sheet = true
+image = "images/big-quimera-calma.xcf2.png"
+title = '**\faIcon{jedi}Quimera Calma**, Shaozun monk 4, lawful neutral'
+
+[quimera.attributes]
+STR = [8, -1, -1]
+DEX = [16, +3, +5]
+CON = [14, +2, +2]
+INT = [10, 0, 0]
+WIS = [12, +1, +1]
+CHA = [18, +4, +6]
+
+[quimera.skills]
+skills = [0, 5, 4, 4, 1, 1, 1, 1, 2, 2, 3, 2, 5, 2, 6, 6, 5, 8]
+profic = [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1]
+names = [
+    'Athletics',
+    'Acrobatics',
+    'Sleight of hand',
+    'Stealth (\faIcon{hotjar}adv)',
+    'Arcana',
+    'History',
+    'Investigation',
+    'Nature',
+    'Religion',
+    'Animal Handling',
+    'Insight',
+    'Medicine',
+    'Perception',
+    'Survival',
+    'Deception',
+    'Intimidation',
+    'Performance',
+    'Persuasion',
+]
+
+[quimera.boxes]
+INIT = "+4"
+AC = 14
+HP = 30
+PROF = "+2"
+"H DICE" = "4d8"
+SPEED = ["9m", "30ft"]
+"SP ATT" = "+6"
+"SP SAVE" = 14
+KI = "5/2"
+"SP KI" = 4
+
+[quimera.proficiencies]
+'\faIcon{comment}Languages' = "Common, elvish, primordial, shaozun."
+'\faIcon{gavel}Armor and weapons' = "Light and medium armor, shields, simple and martial weapons."
+'\faTools{}Tools' = "Thieves' tools (traps or locks)"
+
+[quimera.attacks]
+"Sword (1h)" = "+6, 1d8+4 slashing"
+"Sword (2h)" = "+6, 1d10+4 slashing"
+"Energy sword (1h)" = "+6, 1d8+4 slash, +4 fire (other)"
+"Energy sword (2h)" = "+6, 1d10+4 slash, +4 fire (other)"
+"Energy bow" = "+6, 1d0 force"
+"Disturbing mantra" = "wis, 1d4 psychic, disadv. att"
+"Explosive mantra" = "con, AOE 5ft, 1d6 thunder"
+
+
+["Mantra"]
+back = true
+color = "teal"
+count = 5
+break = true
+
+[personality]
+include = "tex/pers.tex"
+
+["Wondrous Item"]
+back = true
+color = "purple"
+count = 5

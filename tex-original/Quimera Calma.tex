@@ -1,0 +1,394 @@
+\documentclass{article}
+
+\include{libs.tex}
+\include{cards.tex}
+
+\begin{document}
+\begin{center}
+
+\card[type=class ability, time=bonus, cost=spiritual ki, components=V]{images/cards-guidance-}{Improved Guidance}
+    {You can guide others with your mantra. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you and don't have this bonus.
+    \\[1mm]
+    Once within the next 10 minutes, the creature can add \textbf{1d6} to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to roll the bonus die, but must decide before the DM says whether the roll succeeds or fails.}
+    {60 feet\\10 minutes}%
+\card[type=class ability, cost=at-will, components=V]{images/card-improved-healing}{Improved Healing}
+    {You can invoke this mantra to help revitalize your wounded allies during a short rest.
+    \\[1mm]
+    If you or any friendly creatures who can hear your mantra regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra \textbf{1d6} hit points.}
+    {}%
+\card[type=Class ability, time=bonus, cost=1/rest, font size=5]{images/card-curse-mantra}{Curse Mantra}
+    {As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. The curse ends early if the target dies, you die, or you are incapacitated. Until the curse ends, you gain the following benefits:
+    \setlist[itemize]{align=parleft,left=0pt..1em}
+
+    \begin{itemize}[topsep=0pt]
+        \setlength\itemsep{-0.5em}
+        \item You gain a bonus to damage rolls against the cursed target. The bonus equals your proficiency bonus.
+        \item Any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20.
+        \item If the cursed target dies, you regain hit points equal to your warlock level + your Charisma modifier (minimum of 1 hit point).
+    \end{itemize}
+
+    You can’t use this feature again until you finish a short or long rest.}
+    {30 feet\\ 1 minute}%
+\card[type=Mantra, cost=at-will,time=action,components=S]{images/card-explosive-mantra}{Explosive Mantra}
+    {You create a burst of thunderous sound, which can be heard 100 feet away. Each creature other than you within 5 feet of you must make a \textbf{Constitution} saving throw. On a failed save, the creature takes \textbf{1d6 thunder} damage.}
+    {Self (5 foot readius)\\Instantaneous}%
+\card[type=Mantra,cost=at-will, time=action, components=V]{images/card-disturbing-mantra}{Disturbing Mantra}
+    {You unleash a string of mantras in an old language with subtle enchantments at a creature you can see within range. If the target can hear you, it must succeed on a \textbf{Wisdom} saving throw or take \textbf{1d4 psychic} damage and have \textbf{disadvantage on the next attack roll} it makes before the end of its next turn.}
+    {60 feet\\Instantaneous}%
+\card[type=Mantra, cost=at-will, time=action, components=VS]{images/card-energy-bow}{Energy Bow}
+    {A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes \textbf{1d10 force} damage.}
+    {120 feet\\Instantaneous}%
+    
+\removespace    
+    
+\card[type=Mantra, cost=at-will, time=action, components=SM]{images/card-energy-sword}{Energy Sword}
+    {You brandish your weapon and make a melee attack with it against one creature within 5 feet of you.
+    \\[1mm]
+    On a hit, the target suffers the weapon attack’s normal effects, and you can cause blue fire to leap from the target to a different creature of your choice that you can see within 5 feet of it. The second creature takes \textbf{fire} damage equal to your \textbf{charisma} modifier.}
+    {Self (5 foot readius)\\Instantaneous}%
+\card[type=Mantra, cost=ki - 1, time=bonus, components=V]{images/card-mantra-of-healing}{Mantra of Healing}
+    {A creature of your choice that you can see within range regains hit points equal to \textbf{1d4 + your charisma} modifier. This mantra has no effect on undead or constructs.}
+    {60 feet\\Instantaneous}%
+\card[type=Mantra, cost=ki - 1, time=action, components=VS]{images/card-mantra-of-bravery}{Mantra of Bravery}
+    {A willing creature you touch is imbued with bravery. Until this effect ends, the creature is \textbf{immune to being frightened} and \textbf{gains temporary hit points} equal to your \textbf{charisma} modifier at the start of each of its turns.
+    \\[1mm]
+    When the spell ends, the target loses any remaining temporary hit points from this mantra.}
+    {Touch\\Concentration, up to 1 min}%
+\card[type=Mantra, cost=ki - 1, time=reaction, components=V, font size=5.5]{images/mantra-of-chaos}{Mantra of Chaos}
+    {\textbf{Trigger}: when a creature you can see within 60 feet of yourself succeeds on an attack roll, an ability check, or a saving throw.
+    \\[1mm]
+    You magically distract the triggering creature and turn its momentary uncertainty into encouragement for another creature. The triggering creature must \textbf{reroll} the d20 and use the \textbf{lower} roll.
+    \\[1mm]
+    You can then choose a different creature you can see within range (you can choose yourself). The chosen creature has \textbf{advantage} on the next attack roll, ability check, or saving throw it makes within 1 minute. A creature can be empowered by only one use of this ability at a time.}
+    {60 feet\\Instantaneous}%
+\card[type=Mantra, cost=ki - 1, time=action, components=V]{images/card-mangra-of-pain}{Mantra of Pain}
+    {You whisper a discordant mantra that only one creature of your choice within range can hear, wracking it with terrible pain. The target must make a \textbf{Wisdom} saving throw. On a failed save, it takes \textbf{3d6 psychic} damage and must immediately use its \textbf{reaction}, if available, to move as far as its speed allows away from you. The creature doesn’t move into obviously dangerous ground, such as a fire or a pit.
+    \\[1mm]
+     On a successful save, the target takes half as much damage and doesn’t have to move away. A deafened creature automatically succeeds on the save.}
+    {60 feet\\Instantaneous}%
+\card[type=Mantra, cost=ki - 1 / 10', time=action, components=VS]{images/card-mantra-of-the-third-eye}{Mantra of the Third Eye}
+    {For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.
+    \\[1mm]
+    The vision can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
+    \\[1mm]
+    \textbf{Alternatively}, you can spend 10 minutes on mantra instead of spending 1 ki.}
+    {Self\\Conc., up to 10 min}%
+    
+\removespace    
+    
+\card[type=Mantra, cost=ki - 1, time=reaction, components=VS]{images/card-mantra-of-protection}{Mantra of Protection}
+    {\textbf{Trigger:} when you are hit by an attack.
+    \\[1mm]
+    An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a \textbf{+5} bonus to AC, including against the triggering attack, and you take no damage from Magic Missile.}
+    {Self\\ 1 round}%
+\card[type=Mantra, cost=ki - 1, time=bonus, components=V]{images/card-mantra-of-wrath}{Mantra of Wrath}
+    {The next time you hit with a melee weapon attack during this mantra’s duration, your attack deals an extra \textbf{1d6} psychic damage. Additionally, if the target is a creature, it must make a \textbf{Wisdom} saving throw or be frightened of you until the mantra ends. As an \textbf{action}, the creature can make a \textbf{Wisdom} saving throw to steel its resolve and end this effect.
+    \\[1mm]
+    A frightened creature has disadvantage on Ability Checks and Attack rolls while the source of its fear is within Line of Sight}
+    {Self\\Concentration, up to 1 minute}%
+\foreach \n in {1,...,4}{%
+    \token{images/token-improved-guidance.png}{Improved Guidance}
+        {Once within the next 10 minutes, you can add \textbf{1d6} to one ability check, attack roll, or saving throw you make.
+        \\[1mm]
+        You can wait until after you roll the d20 before deciding to roll the bonus die, but must decide before the DM says whether the roll succeeds or fails.}%
+}%
+    
+\removespace    
+
+\card[type=Wondrous item]{images/card-moon-touched-rapier}{Moon-Touched Sword}
+    {In darkness, the unsheathed blade of this sword sheds moonlight, creating bright light in a 15-foot radius and dim light for an additional 15 feet.}
+    {Common}%
+\card[type=Wondrous item, time=bonus]{images/card-shiftweave}{Shiftweave}
+    {When a suit of shiftweave is created, up to five different outfits can be embedded into the cloth. While wearing the clothing, you can speak its command word as a bonus action to transform your outfit into your choice of one of the other designs contained within it.
+    \\[1mm]
+    Regardless of its appearance, the outfit can't be anything but clothing. Although it can duplicate the look of other magical clothing, it doesn't gain their magical properties.
+    \begin{flushright}\fontsize{4}{4}\selectfont{(Cloakes, common, warrior, cleric, entertainer)}\end{flushright}}
+    {Common}%
+\token{images/token-mantra-bravery.png}{Mantra of Bravery}
+    {For 1 minute or until dismissed, you are \textbf{immune to being frightened} and \textbf{gain 4 temporary hit points} at the start of each of your turns.
+    \\[1mm]
+    When the effect ends, you lose any remaining temporary hit points from this mantra.}%
+\foreach \n in {1,...,3}{%
+    \token{images/token-concentracao2.png}{Concentration}
+        {Your mind is free.}%
+}%
+    
+\removespace    
+
+\foreach \n in {1,...,2}{%
+    \imagecard{images/token-obiwan-tarot}%
+}%
+\imagecard{images/back}%
+\foreach \n in {1,...,3}{%
+    \token{images/token-concentracao.png}{Concentration}
+        {Whenever you take damage while you are concentrating, you must make a \textbf{Constitution saving throw} to maintain your concentration. The DC equals \textbf{10 or half the damage} you take, whichever number is higher.}%
+}%
+
+\removespace    
+
+\token[type=Ally]{images/token-ally-lara}{Lara, Silver Flame Cleric}
+    {Human Cleric of the Silver Flame, lawful good, from Flamekeep of Thrane.
+    \\[1mm]
+    Contacts on the church of the silver flame, and local guards.}%
+\token[type=Ally]{images/token-ally-galandril}{Galandril, Outlaw}
+    {Human bard, chaotic neutral, from Wroat of Breland.
+    \\[1mm]
+    Contacts with low level criminals and tavern goers.}%
+\token[type=Ally]{images/token-ally-hugh}{Hugh, Peasant}
+    {Human, lawful neutral, from Sharn of Breland.
+    \\[1mm]
+    Contacts with low level criminals and tavern goers.}%
+\token[type=Ally]{images/token-ally-echo}{Echo, Ashbound Druid}
+    {Kalashtar Druid, neutral, from the wilderness.
+    \\[1mm]
+    The Ashbound defend the natural world from anything that threatens it.
+    \\[1mm]
+    Contacts within the druids and other rogue people from outside the cities.}%
+\token[type=Ally]{images/token-ally-zenyr}{Zenyr, Wizard}
+    {Tiefling Wizard, chaotic neutral, from Sharn of Breland.
+    \\[1mm]
+    Contacts within the scholars and magic apprentices.}%
+\token[type=Ally]{images/token-ally-basilisco-bravo}{Basilisco Bravo, Master}
+    {Elf Monk, chaotic neutral, master of the order of Shaozun}%
+
+\backcard{orange}{Class Ability}%
+\backcard{orange}{Class Ability}%
+\backcard{orange}{Class Ability}%
+\backcard{yellow}{Spiritual Ki}%
+\backcard{yellow}{Spiritual Ki}%
+\backcard{green}{Mantra at will}%
+
+\removespace
+
+\backcard{green}{Mantra at will}%
+\backcard{green}{Mantra at will}%
+\backcard{green}{Mantra at will}%
+\backcard{green}{Mantra at will}%
+\backcard{teal}{Mantra}%
+\backcard{teal}{Mantra}%
+
+\removespace
+
+\backcard{teal}{Mantra}%
+\backcard{teal}{Mantra}%
+\backcard{teal}{Mantra}%
+\backcard{teal}{Mantra}%
+\backcard{teal}{Mantra}%
+\backcard{purple}{Wondrous Item}%
+
+\removespace
+
+\backcard{purple}{Wondrous Item}%
+\backcard{purple}{Wondrous Item}%
+\backcard{black}{Token}%
+\backcard{black}{Token}%
+\backcard{black}{Token}%
+\backcard{black}{Token}%
+
+\removespace
+
+\backcard{black}{Token}%
+\backcard{black}{Token}%
+\backcard{blue}{Ally}%
+\backcard{blue}{Ally}%
+\backcard{blue}{Ally}%
+\backcard{blue}{Ally}%
+
+\removespace
+
+\backcard{blue}{Ally}%
+\backcard{blue}{Ally}%
+\backcard{blue}{Ally}%
+% PARA O SIG
+\backcard{purple}{Wondrous Item}%
+\backcard{purple}{Wondrous Item}%
+\backcard{purple}{Wondrous Item}%
+
+
+
+\begin{tikzpicture}[x=1mm, y=1mm]
+
+    \tikzmath{\fs = \textsize + 0.5;}
+    
+    % Parchment paper
+    \draw[fill=parchment] (0,0) rectangle (63,88);
+
+    % Imagem
+    \node[anchor=north west, inner sep=0,outer sep=0] (image) at (0, 88) {\includegraphics[width=63mm, height=88mm]{images/big-quimera-calma.xcf2.png}};
+    
+    % Título
+    \node[title, anchor=north west, minimum width=59mm](title) at (2,86) {\textbf{Quimera Calma}, Shaozun Monk 3, Lawful Neutral};
+
+    % Atributos
+    \leftbox{2,76.5}{STR}{-1}{8}{-1}
+    \leftbox{2,68}{DEX}{+3}{16}{+5}
+    \leftbox{2,59.5}{CON}{+2}{14}{+2}
+
+    \rightbox{61,76.5}{INT}{+0}{10}{+0}
+    \rightbox{61,68}{WIS}{+1}{12}{+1}
+    \rightbox{61,59.5}{CHA}{+4}{18}{+6}
+    
+    % \node[xshift=0.1mm, yshift=-0.1mm] (div1) at (31.5, 55) {\color{white}\pgfornament[width=50mm]{86}};    
+    % \node[opacity=0.7, xshift=-0.1mm, yshift=0.1mm] (div1) at (31.5, 55) {\color{white}\pgfornament[width=50mm]{86}};  
+    % \node[opacity=0.7] (div1) at (31.5, 55) {\pgfornament[width=50mm]{86}};
+    
+    \centerbox[anchor=north west]{2, 52}{INIT}{+4}
+    \centerbox[anchor=north west]{12, 52}{AC}{14}
+    \centerbox[anchor=north west]{22, 52}{HP}{24*}
+    \centerbox[anchor=north west]{33, 52}{PROF}{+2}
+    \centerbox[anchor=north west]{43, 52}{H DICE}{3d8}
+    \centerboxsubs[anchor=north west]{53, 52}{SPEED}{9m}{30ft}
+
+    \centerbox[anchor=north west]{22, 43}{SP ATT}{+6}
+    \centerbox[anchor=north west]{32, 43}{SP SAVE}{14}
+    \centerbox[anchor=north west]{43, 43}{KI}{4}
+    \centerbox[anchor=north west]{53, 43}{SP KI}{4}
+    % \centerbox[anchor=north west]{53, 43}{}{}
+    
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(2,43) (20,2)}] (SKILLS) {};
+    
+    \node[tag, anchor=east] at ([xshift=-0.5mm] SKILLS.north east) {SKILLS};
+
+    \node[anchor=west, align=left, text width=3mm, font=\sffamily\fontsize{5}{6}\selectfont] (skvalues) at (SKILLS.west) {%
+        +0\\ % Athletics\\
+        +5\\ % Acrobatics\\
+        +4\\ % Sleight of hand\\
+        +4\\ % Stealth\\
+        +1\\ % Arcana\\
+        +1\\ % History\\
+        +1\\ % Investigation\\
+        +1\\ % Nature\\
+        +2\\ % Religion\\
+        +2\\ % Animal Handling\\
+        +3\\ % Insight\\
+        +2\\ % Medicine\\
+        +3\\ % Perception\\
+        +2\\ % Survival\\
+        +6\\ % Deception\\
+        +6\\ % Intimidation\\
+        +5\\ % Performance\\
+        +6\\ % Persuasion
+        };
+
+        \node[anchor=west, align=left, text width=13mm,font=\sffamily\fontsize{5}{6}\selectfont] (sknames) at ([xshift=3mm] SKILLS.west) {%
+        Athletics\\
+        \textbf{Acrobatics}\\
+        Sleight of hand\\
+        Stealth\\
+        Arcana\\
+        History\\
+        Investigation\\
+        Nature\\
+        \textbf{Religion}\\
+        Animal Handling\\
+        \textbf{Insight}\\
+        Medicine\\
+        \textbf{Perception}\\
+        Survival\\
+        \textbf{Deception}\\
+        \textbf{Intimidation}\\
+        Performance\\
+        \textbf{Persuasion}
+        };
+
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(22,34) (61,22)}] (PROF) {};
+    \node[tag, anchor=east] at ([xshift=-0.5mm] PROF.north east) {PROFICIENCIES};
+    
+    \node[anchor=west, align=left, text width=37mm, font=\sffamily\fontsize{4.5}{4.5}\selectfont] (feats) at (PROF.west) {%
+        \textbf{Languages}: Common, elvish, primordial, shaozun.
+        \\[0.7mm]
+        \textbf{Armor and weapons}: Light and medium armor, shields, simple and martial weapons.
+        \\[0.7mm]
+        \textbf{Tools}: Thieves' tools (traps or locks).
+        };
+
+
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(22,20) (61,2)}] (ATTACKS) {};
+    
+    \node[tag, anchor=east] at ([xshift=-0.5mm] ATTACKS.north east) {ATTACKS};
+
+    \node[anchor=west, align=right, xshift=1mm, inner sep=0, font=\sffamily\fontsize{4.5}{6}\selectfont] (atts) at (ATTACKS.west) {%
+        \textbf{Sword (1h)}:\\
+        \textbf{Sword (2h)}:\\
+        \textbf{Energy sword (1h)}:\\
+        \textbf{Energy sword (2h)}:\\
+        \textbf{Energy bow}:\\
+        \textbf{Disturbing mantra}:\\
+        \textbf{Explosive mantra}:
+        };
+
+    \node[anchor=west, align=left, text width=25mm, inner sep=0, xshift=0.5mm, font=\sffamily\fontsize{4.5}{6}\selectfont] (atts2) at (atts.east) {%
+        +6, 1d8+4 slashing\\
+        +6, 1d10+4 slashing\\
+        +6, 1d8+4 slash, +4 fire (other)\\
+        +6, 1d10+4 slash, +4 fire (other)\\
+        +6, 1d10 force\\
+        wis, 1d4 psychic, disadv. att\\
+        con, AOE 5ft, 1d6 thunder
+        };
+
+
+
+    % % Texto
+    % \node[fill=parchment, inner sep=2mm, outer sep=0, font=\sffamily\fontsize{\textsize}{\fs}\selectfont, text width=37mm, anchor=north west, align=justify] (text) at (0, 55) {TEXTO1};
+
+    % Borda
+    \draw[line width = 0.5mm, black] (0,0) rectangle (63,88);
+
+\end{tikzpicture}%
+
+%
+% \hspace{2cm}
+%
+
+%
+% \hspace{2cm}
+%
+\begin{tikzpicture}[x=1mm, y=1mm]
+
+    \tikzmath{\fs = \textsize + 0.5;}
+    
+    % Parchment paper
+    \draw[fill=parchment] (0,0) rectangle (63,88);
+
+    % Imagem
+    \node[anchor=north west, inner sep=0,outer sep=0] (image) at (0, 88) {\includegraphics[width=63mm, height=88mm]{images/big-equipment.png}};
+    
+    % Título
+    \node[title, anchor=north west, minimum width=59mm](title) at (2,86) {Equipments of \textbf{Quimera Calma}};
+
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(2,80) (51,2)}] (SKILLS) {};
+    
+    % \node[tag, anchor=east] at ([xshift=-0.5mm] SKILLS.north east) {SKILLS};
+    
+    \centerbox[anchor=north east]{61, 80}{COPP}{}
+    \centerbox[anchor=north east]{61, 72}{SILV}{}
+    \centerbox[anchor=north east, minimum height=3.8cm]{61, 64}{GOLD}{}
+    \centerbox[anchor=north east]{61, 24}{PLAT}{}
+    \centerbox[anchor=north east]{61, 16}{RATION}{}
+    \centerbox[anchor=north east]{61, 8}{HEAL PT}{}
+
+    \node[anchor=north west, align=left, text width=45mm, inner sep=2mm, font=\sffamily\fontsize{5}{6}\selectfont] (skvalues) at (SKILLS.north west) {
+    \-- Backpack\\
+    \-- Bedroll\\
+    \-- 2 costumes (Noble and scholar)\\
+    \-- 5 candles\\
+    \-- Waterskin\\
+    \-- Disguise kit\\
+    \-- Longsword\\
+    \-- Battle horn\\
+    \-- Leather armor\\
+    \-- Dagger\\
+    \-- An old divination card bearing your likeness\\
+    };
+
+        
+
+    % Borda
+    \draw[line width = 0.5mm, black] (0,0) rectangle (63,88);
+
+\end{tikzpicture}%
+
+
+\end{center}
+\end{document}

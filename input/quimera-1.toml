@@ -1,0 +1,505 @@
+# Cartas Quimera Calma
+
+["Improved Guidance"]
+type = "Class ability"
+time = "bonus"
+cost = "spiritual ki"
+components = "V"
+image = "images/cards-guidance-"
+description = """
+You can guide others with your mantra. To do so, you use a bonus action on your turn
+to choose one creature other than yourself within 60 feet of you who can hear you and
+don't have this bonus.
+
+Once within the next 10 minutes, the creature can add **1d6** to one ability check,
+attack roll, or saving throw it makes. The creature can wait until after it rolls
+the d20 before deciding to roll the bonus die, but must decide before the DM says
+whether the roll succeeds or fails.
+"""
+footer = """
+60 feet
+10 minutes
+"""
+
+
+["Improved Healing"]
+type = "class ability"
+cost = "at-will"
+components = "V"
+image = "images/card-improved-healing"
+description = """
+You can invoke this mantra to help revitalize your wounded allies during a short rest.
+
+If you or any friendly creatures who can hear your mantra regain hit points at the end
+of the short rest by spending one or more Hit Dice, each of those creatures regains an
+extra **1d6** hit points.
+"""
+
+
+["Curse Mantra"]
+type = "Class ability"
+time = "bonus"
+cost = "1/rest"
+fontsize = "5"
+image = "images/card-curse-mantra"
+
+description = """
+As a bonus action, choose one creature you can see within 30 feet of you. The target is
+cursed for 1 minute. The curse ends early if the target dies, you die, or you are
+incapacitated. Until the curse ends, you gain the following benefits:
+
+ - You gain a bonus to damage rolls against the cursed target. The bonus equals your
+ proficiency bonus.
+ - Any attack roll you make against the cursed target is a critical hit on a roll of 19
+ or 20 on the d20.
+ - If the cursed target dies, you regain hit points equal to your warlock level + your
+ Charisma modifier (minimum of 1 hit point).
+
+You can’t use this feature again until you finish a short or long rest.
+"""
+footer = """
+30 feet
+1 minute"""
+
+["Explosive Mantra"]
+type = "Mantra"
+cost = "at-will"
+time = "action"
+components = "S"
+image = "images/card-explosive-mantra"
+description = """
+You create a burst of thunderous sound, which can be heard 100 feet away. Each creature
+other than you within 5 feet of you must make a **Constitution** saving throw. On a
+failed save, the creature takes **1d6 thunder** damage.
+"""
+footer = """
+Self (5 foot readius)
+Instantaneous"""
+
+["Disturbing Mantra"]
+type = "Mantra,cost=at-will"
+time = "action"
+components = "V"
+image = "images/card-disturbing-mantra"
+description = """
+You unleash a string of mantras in an old language with subtle enchantments
+at a creature you can see within range. If the target can hear you, it must succeed 
+on a **Wisdom** saving throw or take **1d4 psychic** damage and have **disadvantage 
+on the next attack roll** it makes before the end of its next turn.
+"""
+footer = """
+60 feet
+Instantaneous"""
+
+["Energy Bow"]
+type = "Mantra"
+cost = "at-will"
+time = "action"
+components = "VS"
+image = "images/card-energy-bow"
+description = """
+A beam of crackling energy streaks toward a creature within range. Make a ranged
+spell attack against the target. On a hit, the target takes **1d10 force** damage.
+"""
+footer = """
+120 feet
+Instantaneous"""
+
+["Energy Sword"]
+type = "Mantra"
+cost = "at-will"
+time = "action"
+components = "SM"
+image = "images/card-energy-sword"
+description = """
+You brandish your weapon and make a melee attack with it against one creature within
+5 feet of you.
+
+On a hit, the target suffers the weapon attack’s normal effects, and you can cause blue 
+fire to leap from the target to a different creature of your choice that you can see
+within 5 feet of it. The second creature takes **fire** damage equal to your 
+**charisma** modifier.
+"""
+footer = """
+Self (5 foot readius)
+Instantaneous"""
+
+["Mantra of Healing"]
+type = "Mantra"
+cost = "ki - 1"
+time = "bonus"
+components = "V"
+image = "images/card-mantra-of-healing"
+description = """
+A creature of your choice that you can see within range regains hit
+points equal to **1d4 + your charisma** modifier. This mantra has no effect on undead 
+or constructs.
+"""
+footer = """
+60 feet
+Instantaneous"""
+
+["Mantra of Bravery"]
+type = "Mantra"
+cost = "ki - 1"
+time = "action"
+components = "VS"
+image = "images/card-mantra-of-bravery"
+description = """
+A willing creature you touch is imbued with bravery. Until this effect ends, the 
+creature is **immune to being frightened** and **gains temporary hit points** 
+equal to your **charisma** modifier at the start of each of its turns.
+
+When the spell ends, the target loses any remaining temporary hit points from this 
+mantra.
+"""
+footer = """
+Touch
+Concentration, up to 1 min"""
+
+["Mantra of Chaos"]
+type = "Mantra"
+cost = "ki - 1"
+time = "reaction"
+components = "V"
+fontsize = "5.5"
+image = "images/mantra-of-chaos"
+description = """
+**Trigger:** when a creature you can see within 60 feet of yourself succeeds on an
+attack roll, an ability check, or a saving throw.
+
+You magically distract the triggering creature and turn its momentary uncertainty
+into encouragement for another creature. The triggering creature must **reroll**
+the d20 and use the **lower** roll.
+
+You can then choose a different creature you can see within range (you can choose 
+yourself). The chosen creature has **advantage** on the next attack roll, ability
+check, or saving throw it makes within 1 minute. A creature can be empowered by only
+one use of this ability at a time.
+"""
+footer = """
+60 feet
+Instantaneous"""
+
+["Mantra of Pain"]
+type = "Mantra"
+cost = "ki - 1"
+time = "action"
+components = "V"
+image = "images/card-mangra-of-pain"
+description = """
+You whisper a discordant mantra that only one creature of your choice within range
+can hear, wracking it with terrible pain. The target must make a **Wisdom** saving
+throw. On a failed save, it takes **3d6 psychic** damage and must immediately use its
+**reaction**, if available, to move as far as its speed allows away from you. The
+creature doesn’t move into obviously dangerous ground, such as a fire or a pit.
+
+On a successful save, the target takes half as much damage and doesn’t have to move
+away. A deafened creature automatically succeeds on the save.
+"""
+footer = """
+60 feet
+Instantaneous"""
+
+["Mantra of the Third Eye"]
+type = "Mantra"
+cost = "ki - 1 / 10'"
+time = "action"
+components = "VS"
+image = "images/card-mantra-of-the-third-eye"
+description = """
+For the duration, you sense the presence of magic within 30 feet of you. If you 
+sense magic in this way, you can use your action to see a faint aura around any 
+visible creature or object in the area that bears magic, and you learn its school 
+of magic, if any.
+
+The vision can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch 
+of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
+
+**Alternatively**, you can spend 10 minutes on mantra instead of spending 1 ki.
+"""
+footer = """
+Self
+Conc., up to 10 min"""
+
+["Mantra of Protection"]
+type = "Mantra"
+cost = "ki - 1"
+time = "reaction"
+components = "VS"
+image = "images/card-mantra-of-protection"
+description = """
+**Trigger:** when you are hit by an attack.
+
+An invisible barrier of magical force appears and protects you. Until the start of 
+your next turn, you have a **+5** bonus to AC, including against the triggering 
+attack, and you take no damage from Magic Missile.
+"""
+footer = """
+Self
+1 round"""
+
+["Mantra of Wrath"]
+type = "Mantra"
+cost = "ki - 1"
+time = "bonus"
+components = "V"
+image = "images/card-mantra-of-wrath"
+description = """
+The next time you hit with a melee weapon attack during this mantra’s duration, 
+your attack deals an extra **1d6** psychic damage. Additionally, if the target 
+is a creature, it must make a **Wisdom** saving throw or be frightened of you 
+until the mantra ends. As an **action**, the creature can make a **Wisdom** 
+saving throw to steel its resolve and end this effect.
+
+A frightened creature has disadvantage on Ability Checks and Attack rolls while 
+the source of its fear is within Line of Sight
+"""
+footer = """
+Self
+Concentration, up to 1 minute"""
+
+[token-improved-guidance]
+title = "Improved Guidance"
+count = 4
+token = true
+image = "images/token-improved-guidance"
+description = """
+Once within the next 10 minutes, you can add **1d6** to one ability check, attack roll,
+or saving throw you make.
+
+You can wait until after you roll the d20 before deciding to roll the bonus die,
+but must decide before the DM says whether the roll succeeds or fails.
+"""
+
+
+["Moon-Touched Sword"]
+type = "Wondrous item"
+image = "images/card-moon-touched-rapier"
+description = """
+In darkness, the unsheathed blade of this sword sheds moonlight, creating bright
+light in a 15-foot radius and dim light for an additional 15 feet.
+"""
+footer = "Common"
+
+["Shiftweave"]
+type = "Wondrous item"
+time = "bonus"
+image = "images/card-shiftweave"
+description = """
+When a suit of shiftweave is created, up to five different outfits can be embedded
+into the cloth. While wearing the clothing, you can speak its command word as a bonus
+action to transform your outfit into your choice of one of the other designs
+contained within it.
+
+Regardless of its appearance, the outfit can't be anything but clothing. Although
+it can duplicate the look of other magical clothing, it doesn't gain their magical
+properties.
+
+(Cloakes, common, warrior, cleric, entertainer)
+"""
+footer = "Common"
+
+[token-mantra-of-bravery]
+title = "Mantra of Bravery"
+token = true
+image = "images/token-mantra-bravery"
+description = """
+For 1 minute or until dismissed, you are **immune** to being **frightened** and gain
+**4 temporary hit points** at the start of each of your turns.
+
+When the effect ends, you lose any remaining temporary hit points from this mantra.
+"""
+
+[contracao1]
+title = "Concentration"
+count = 3
+token = true
+image = "images/token-concentracao2"
+description = "Your mind is free"
+
+[tarot]
+image = "images/token-obiwan-tarot"
+count = 2
+
+[back]
+image = "images/back"
+
+[contracao2]
+title = "Concentration"
+count = 3
+token = true
+image = "images/token-concentracao"
+description = """
+Whenever you take damage while you are concentrating, you must make a **Constitution saving throw**
+to maintain your concentration.
+
+The DC equals **10 or half the damage**
+you take, whichever number is higher.
+"""
+
+["Lara, Silver Flame Cleric"]
+type = "Ally"
+token = true
+image = "images/token-ally-lara"
+description = """
+Human Cleric of the Silver Flame, lawful good, from Flamekeep of Thrane.
+
+Contacts on the church of the silver flame, and local guards.
+"""
+
+["Galandril, Outlaw"]
+type = "Ally"
+token = true
+image = "images/token-ally-galandril"
+description = """
+Human bard, chaotic neutral, from Wroat of Breland.
+
+Contacts with low level criminals and tavern goers.
+"""
+
+["Hugh, Peasant"]
+type = "Ally"
+token = true
+image = "images/token-ally-hugh"
+description = """
+Human, lawful neutral, from Sharn of Breland.
+
+Contacts with low level criminals and tavern goers.
+"""
+
+["Echo, Ashbound Druid"]
+type = "Ally"
+token = true
+image = "images/token-ally-echo"
+description = """
+Kalashtar Druid, neutral, from the wilderness.
+
+The Ashbound defend the natural world from anything that threatens it.
+
+Contacts within the druids and other rogue people from outside the cities.
+"""
+
+["Zenyr, Wizard"]
+type = "Ally"
+token = true
+image = "images/token-ally-zenyr"
+description = """
+Tiefling Wizard, chaotic neutral, from Sharn of Breland.
+
+Contacts within the scholars and magic apprentices.
+"""
+
+["Basilisco Bravo, Master"]
+type = "Ally"
+token = true
+image = "images/token-ally-basilisco-bravo"
+description = """
+Elf Monk, chaotic neutral, master of the order of Shaozun
+"""
+
+["Class Ability"]
+back = true
+color = "orange"
+count = 3
+
+["Spiritual Ki"]
+back = true
+color = "yellow"
+count = 2
+
+["Mantra at will"]
+back = true
+color = "green"
+count = 5
+
+["Mantra"]
+back = true
+color = "teal"
+count = 7
+
+["Wondrous Item"]
+back = true
+color = "purple"
+count = 6
+
+["Token"]
+back = true
+color = "black"
+count = 6
+
+["Ally"]
+back = true
+color = "blue"
+count = 7
+
+
+[quimera]
+sheet = true
+image = "images/big-quimera-calma.xcf2.png"
+title = "**Quimera Calma**, Shaozun monk 3, lawful neutral"
+
+[quimera.attributes]
+STR = [8, -1, -1]
+DEX = [16, +3, +5]
+CON = [14, +2, +2]
+INT = [10, 0, 0]
+WIS = [12, +1, +1]
+CHA = [18, +4, +6]
+
+[quimera.skills]
+skills = [0, 5, 4, 4, 1, 1, 1, 1, 2, 2, 3, 2, 3, 2, 6, 6, 5, 6]
+profic = [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1]
+
+[quimera.boxes]
+INIT = "+4"
+AC = 14
+HP = 24
+PROF = "+2"
+"H DICE" = "3d8"
+SPEED = ["9m", "30ft"]
+"SP ATT" = "+6"
+"SP SAVE" = 14
+KI = "4"
+"SP KI" = 4
+
+[quimera.proficiencies]
+Languages = "Common, elvish, primordial, shaozun."
+"Armor and weapons" = "Light and medium armor, shields, simple and martial weapons."
+Tools = "Thieves' tools (traps or locks)"
+
+[quimera.attacks]
+"Sword (1h)" = "+6, 1d8+4 slashing"
+"Sword (2h)" = "+6, 1d10+4 slashing"
+"Energy sword (1h)" = "+6, 1d8+4 slash, +4 fire (other)"
+"Energy sword (2h)" = "+6, 1d10+4 slash, +4 fire (other)"
+"Energy bow" = "+6, 1d0 force"
+"Disturbing mantra" = "wis, 1d4 psychic, disadv. att"
+"Explosive mantra" = "con, AOE 5ft, 1d6 thunder"
+
+
+[inventory]
+inventory = true
+title = "Inventory of **Quimera Calma**"
+image = "images/big-quimera-calma.xcf2.png"
+
+"Backpack" = """
+Bedroll
+2 costumes (noble and scholar)
+5 candles
+Disguise kit
+Battle horn
+Dagger
+Waterskin
+"""
+
+"Wearing/At hand" = """
+Leather armor
+Longsword moontouched
+An old divination card bearing your likeness
+"""
+
+[inventory.consumables]
+"Ration" = 5
+GP = 5
+

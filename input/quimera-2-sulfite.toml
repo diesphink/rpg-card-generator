@@ -1,0 +1,28 @@
+# Cartas Quimera Calma - 2022-09-02 - Sulfite
+
+[inventory]
+inventory = true
+title = "Inventory of **Quimera Calma**"
+image = "images/big-quimera-calma.xcf2.png"
+
+"Backpack" = """
+Bedroll
+2 costumes (noble and scholar)
+5 candles
+Disguise kit
+Battle horn
+Dagger
+Waterskin
+"""
+
+"Wearing/At hand" = """
+Leather armor
+Longsword moontouched
+An old divination card bearing your likeness
+Earring of message
+"""
+
+[inventory.consumables]
+"Potion of climbing\\\\(1h, climb speed 9m, adv on climb)" = 1
+"Ration" = 5
+GP = 336

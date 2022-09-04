@@ -1,0 +1,384 @@
+\pagenumbering{gobble}
+
+\newcommand{\cardwidth}{41}
+\newcommand{\cardheight}{63}
+
+\pgfqkeys{/cardkeys}{
+  fontsize/.store in=\textsize,
+  type/.store in=\type,
+  time/.store in=\time,
+  cost/.store in=\cost,
+  components/.store in=\components,
+  cost/.store in=\cost,
+  type/.store in=\type,
+  time/.store in=\time,
+  components/.store in=\components,
+  ac/.store in=\ac,
+  hp/.store in=\hp,
+  speed/.store in=\speed,
+  speedm/.store in=\speedm,
+  prof/.store in=\prof,
+  perc/.store in=\perc,
+  str/.store in=\str,
+  strb/.store in=\strb,
+  dex/.store in=\dex,
+  dexb/.store in=\dexb,
+  con/.store in=\con,
+  conb/.store in=\conb,
+  int/.store in=\int,
+  intb/.store in=\intb,
+  wis/.store in=\wis,
+  wisb/.store in=\wisb,
+  cha/.store in=\cha,
+  chab/.store in=\chab,
+  fontsize=6,
+  cost=,
+  type=,
+  time=,
+  components=,
+  ac=,
+  hp=,
+  speed=,
+  speedm=,
+  prof=,
+  perc=,
+  str=,
+  strb=,
+  dex=,
+  dexb=,
+  con=,
+  conb=,
+  int=,
+  intb=,
+  wis=,
+  wisb=,
+  cha=,
+  chab=
+}
+
+\tikzstyle{tag}=[
+        fill=black, 
+        draw=black, 
+        inner sep=0.75mm, 
+        anchor=east,
+        font=\sffamily\fontsize{4}{4}\selectfont\color{white},
+        rounded corners=0.4mm
+]
+
+\tikzstyle{greentag}=[tag, fill=green, draw=green!70!black]
+\tikzstyle{redtag}=[tag, fill=red, draw=red!70!black]
+\tikzstyle{bluetag}=[tag, fill=blue, draw=blue!70!black]
+\tikzstyle{yellowtag}=[tag, fill=yellow, draw=yellow!70!black]
+\tikzstyle{orangetag}=[tag, fill=orange, draw=orange!70!black]
+\tikzstyle{tealtag}=[tag, fill=teal, draw=teal!70!black]
+\tikzstyle{purpletag}=[tag, fill=purple, draw=purple!70!black]
+
+\tikzstyle{title}=[
+    fill=white, 
+    draw=black, 
+    minimum width=37mm, 
+    inner sep=1mm, 
+    fill opacity=.5,
+    text opacity=1, 
+    font=\sffamily\fontsize{7}{7}\selectfont,
+    rounded corners=0.4mm
+]
+        
+\tikzstyle{floatingbox}=[
+    fill=parchment, 
+    draw=black, 
+    minimum width=37mm, 
+    inner sep=2mm, 
+    fill opacity=.6,
+    text opacity=1, 
+    draw opacity=1,
+    rounded corners=0.4mm
+]
+
+\tikzstyle{footnotes}=[
+    inner sep=2mm, 
+    text width=20mm, 
+    font=\sffamily\fontsize{4}{4.5}\selectfont
+]
+
+% ===========================
+% Remove espaçamento vertical
+% ===========================
+\newcommand{\removespace}{\vspace{-0.35mm}}
+
+% ===========================
+% CARDS
+% ===========================
+\newcommand{\card}[5][]{%
+    \begingroup\pgfqkeys{/cardkeys}{#1}%
+    \begin{tikzpicture}[x=1mm, y=1mm]
+    
+        \tikzmath{\fs = \textsize + 0.5;}
+        
+        % Parchment paper
+        \draw[fill=parchment] (0,0) rectangle (\cardwidth,\cardheight);
+    
+        % Imagem
+        \node[anchor=north west, inner sep=0,outer sep=0] (image) at (0, 63) {\includegraphics[width=41mm]{#2}};
+    
+        % Título
+        \node[title, anchor=north west](title) at (2,61) {\textbf{#3}};
+    
+        % Texto
+        \node[fill=parchment, inner sep=2mm, outer sep=0, font=\sffamily\fontsize{\textsize}{\fs}\selectfont, text width=37mm, anchor=north west, align=justify] (text) at (0, 42) {#4};
+    
+        % Separador
+        \draw [line width = 0.5mm] ([yshift=0.25mm] text.north west) -- ([yshift=0.25mm] text.north east);
+    
+        \coordinate (tagpos) at (39,3);
+    
+        % Type
+        \ifdefstring{\type}{}{}{\node[tag](type) at (39, 42) {\MakeUppercase{\textbf{\type}}};}
+    
+        % Time
+        \ifdefstring{\time}{bonus}{\node[greentag](time) at (tagpos) {\MakeUppercase{\textbf{\time}}};\coordinate (tagpos) at ([xshift=-1mm] time.west);}{
+            \ifdefstring{\time}{action}{\node[bluetag](time) at (tagpos) {\MakeUppercase{\textbf{\time}}};\coordinate (tagpos) at ([xshift=-1mm] time.west);}{
+                \ifdefstring{\time}{reaction}{\node[redtag](time) at (tagpos) {\MakeUppercase{\textbf{\time}}};\coordinate (tagpos) at ([xshift=-1mm] time.west);}{
+                    \ifdefstring{\time}{}{}{
+                        \node[redtag](time) at (tagpos) {\MakeUppercase{\textbf{\time}}};
+                        \coordinate (tagpos) at ([xshift=-1mm] time.west);
+        }}}}
+    
+        % Cost
+        \ifdefstring{\cost}{}{}{
+            \ifdefstring{\cost}{at-will}{
+                \node[tag, opacity=0.1, text opacity=0.7](cost) at (tagpos) {\color{black}\MakeUppercase{\textbf{\cost}}};
+            }{
+                \node[tag](cost) at (tagpos) {\MakeUppercase{\textbf{\cost}}};
+            }
+            \coordinate (tagpos) at ([xshift=-1mm] cost.west);
+        }
+        
+        % Components
+        \ifdefstring{\components}{}{}{
+            \node[tag, opacity=0.1, text opacity=0.7](componentes) at (tagpos) {%
+                \color{black}%
+                \IfSubStr{\components}{V}{\faIcon[solid]{comment}}{}%
+                \IfSubStr{\components}{S}{\faIcon[solid]{hand-paper}}{}%
+                \IfSubStr{\components}{M}{\faIcon[solid]{magic}}{}%
+            };
+            \coordinate (tagpos) at ([xshift=-1mm] componentes.west);
+        }
+        
+    
+        % Footnotes
+        \node[footnotes, anchor=south west] (text) at (0, 0) {#5};
+    
+        % Borda
+        \draw[line width = 0.5mm, black] (0,0) rectangle (\cardwidth,\cardheight);
+    
+    \end{tikzpicture}\endgroup\allowbreak }
+
+
+% ===========================
+% TOKEN
+% ===========================
+\newcommand{\token}[4][]{%
+    \begingroup\pgfqkeys{/cardkeys}{#1}%
+    \begin{tikzpicture}[x=1mm, y=1mm]
+    
+        \tikzmath{\fs = \textsize + 0.5;}
+    
+        % Imagem (trim: left, bottom, right, top
+        \node[anchor=north west, inner sep=0, outer sep=0] (image) at (0, 63) {\includegraphics[width=41mm]{#2}};
+    
+        % Título
+        \node[title, anchor=north west](title) at (2,61) {\textbf{#3}};
+    
+        % Texto
+        \node[floatingbox, font=\sffamily\fontsize{\textsize}{\fs}\selectfont, text width=33mm, anchor=south, align=justify] (text) at (20.5, 2) {#4};
+    
+        % Type
+        \ifdefstring{\type}{}{}{\node[tag](type) at ([xshift=-2mm] text.north east) {\MakeUppercase{\textbf{\type}}};}
+
+        % Borda
+        \draw[line width = 0.5mm, black] (0,0) rectangle (\cardwidth,\cardheight);
+    
+    \end{tikzpicture}\endgroup\allowbreak}
+
+% ===========================
+% EMPTY
+% ===========================
+\newcommand{\emptycard}{%
+    \begin{tikzpicture}[x=1mm, y=1mm]
+        % Borda
+        \draw[line width = 0.5mm, black] (0,0) rectangle (\cardwidth,\cardheight);
+    \end{tikzpicture}}
+
+% ===========================
+% IMAGE ONLY
+% ===========================
+\newcommand{\imagecard}[1]{%
+    \begin{tikzpicture}[x=1mm, y=1mm]
+    
+        % Imagem (trim: left, bottom, right, top
+        \node[anchor=north west, inner sep=0,outer sep=0] (back) at (0, 63) {\includegraphics[width=41mm]{#1}};
+
+        % Borda
+        \draw[line width = 0.5mm, black] (0,0) rectangle (\cardwidth,\cardheight);
+    
+    \end{tikzpicture}\allowbreak}
+% ===========================
+% BACK CARDS
+% ===========================
+\newcommand{\backcard}[3][]{%
+    \begingroup\pgfqkeys{/cardkeys}{#1}%
+    \begin{tikzpicture}[x=1mm, y=1mm]
+    
+        % Imagem (trim: left, bottom, right, top
+        \begin{scope}[blend group=color];
+            \node[anchor=north west, inner sep=0,outer sep=0] (back) at (0, 63) {\includegraphics[width=41mm]{images/back}};
+            \fill[#2!50!black] (back.south west) rectangle (back.north east);
+        \end{scope};
+    
+        
+        \node[font=\sffamily\fontsize{8}{8}\selectfont, line width=0.3mm, rounded corners=0.8mm, draw=black, fill=black, text opacity=1, fill opacity=0.8, anchor=center, outer sep=0, inner sep=2mm] (center1) at (20.8, 7)  {\color{white}\MakeUppercase{\textbf{#3}}};
+    
+        % Borda
+        \draw[line width = 0.5mm, black] (0,0) rectangle (\cardwidth,\cardheight);
+    
+    \end{tikzpicture}\endgroup\allowbreak}
+
+% ===========================
+% PET
+% ===========================
+\newcommand{\pet}[5][]{%
+    \begingroup\pgfqkeys{/cardkeys}{#1}%
+    \begin{tikzpicture}[x=1mm, y=1mm]
+    
+        \tikzmath{\fs = \textsize + 0.5;}
+        
+        % Parchment paper
+        \draw[fill=parchment] (0,0) rectangle (\cardwidth,\cardheight);
+    
+        % Imagem
+        \node[anchor=north west, inner sep=0,outer sep=0] (back) at (0, 63) {\includegraphics[width=41mm]{#2}};    
+
+        % Título
+        \node[title, anchor=north west](title) at (2,61) {\textbf{#3}};
+    
+        % % Texto
+        % \node[fill=parchment, inner sep=2mm, outer sep=0, font=\sffamily\fontsize{\textsize}{\fs}\selectfont, text width=37mm, anchor=north west, align=justify] (text) at (0, 42) {#4};
+        
+        % Stats
+        \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{1.5, 55}{AC}{\ac}
+        \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{9.5, 55}{HP}{\hp}
+        \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{17.5, 55}{SPEED}{\speed}
+        \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{25.5, 55}{PROF}{\prof}
+        \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{33.5, 55}{PERC}{\perc} 
+        
+        % Atributos
+        \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(1.5,28) (15.5,12)}] (ATTRS) {};
+    
+        \node[tag, anchor=east] at ([xshift=-0.5mm] ATTRS.north east) {ATTRS};
+        
+        \node[anchor=west, align=left, text width=3mm, font=\sffamily\fontsize{5}{6}\selectfont] (att) at (ATTRS.west) {%
+        \textbf{STR}\\
+        \textbf{DEX}\\
+        \textbf{CON}\\
+        \textbf{INT}\\
+        \textbf{WIS}\\
+        \textbf{CHA}
+        };
+        \node[anchor=west, align=right, minimum width=4mm, font=\sffamily\fontsize{5}{6}\selectfont] (att2) at (att.east) {%
+        \str\\
+        \dex\\
+        \con\\
+        \int\\
+        \wis\\
+        \cha
+        };
+        \node[anchor=west, align=center, font=\sffamily\fontsize{5}{6}\selectfont] (att3) at ([xshift=2.5mm] att.east) {%
+        (\strb)\\
+        (\dexb)\\
+        (\conb)\\
+        (\intb)\\
+        (\wisb)\\
+        (\chab)
+        };
+    
+
+        % SKILLS
+        \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(1.5, 10) (15.5, 2)}] (SKILLS) {};
+    
+        \node[tag, anchor=east] at ([xshift=-0.5mm] SKILLS.north east) {SKILLS};
+        
+        \node[anchor=west, align=left, text width=14mm, font=\sffamily\fontsize{4}{4.5}\selectfont] (sk) at (SKILLS.west) {%
+        #4
+        };
+
+        % ABILITIES
+        \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(17.5, 28) (39.5, 2)}] (ABS) {};
+    
+        \node[tag, anchor=east] at ([xshift=-0.5mm] ABS.north east) {ABILITIES AND ATTACKS};
+        
+        \node[anchor=west, align=left, text width=18mm, font=\sffamily\fontsize{4.5}{4.5}\selectfont] (ab) at (ABS.west) {%
+        #5
+        };
+        
+        % Borda
+        \draw[line width = 0.5mm, black] (0,0) rectangle (\cardwidth,\cardheight);
+    
+    \end{tikzpicture}\endgroup\allowbreak }
+% ============================    
+% CHARACTER SHEET
+% ============================    
+\tikzstyle{squarebox}=[
+    inner sep=1mm, 
+    fill=parchment, 
+    opacity=0.7, 
+    text opacity=1, 
+    draw opacity=1,
+    draw=black, 
+    %  width=6mm, 
+    inner sep=0mm,
+    minimum height=6mm, 
+    minimum width=8mm, 
+    rounded corners=0.5mm,
+    font=\sffamily\fontsize{7}{7.5}
+]
+
+\tikzstyle{attribute}=[
+    squarebox,
+    text width=5mm,
+    inner sep=2mm,
+    font=\sffamily
+]
+
+\tikzstyle{subattribute}=[
+    tag, 
+    fill=parchment,
+    inner sep=0.5mm,
+    font=\sffamily\fontsize{5}{5}\selectfont%\color{white}
+]
+
+\newcommand{\leftbox}[5]{%
+    \node[attribute, anchor=west] (#2) at (#1) {\textbf{#3}};
+    \node[tag, anchor=west, xshift=0.5mm] at (#2.north west) {\textbf{#2}};
+    \node[subattribute, anchor=north east, xshift=0.5mm, yshift=-0.5mm] at (#2.north east) {\textbf{#4}};
+    \node[subattribute, anchor=south east, xshift=0.5mm, yshift=0.5mm] at (#2.south east) {\textbf{#5}};
+}
+
+\newcommand{\rightbox}[5]{%
+    \node[attribute, anchor=east, align=right] (#2) at (#1) {\textbf{#3}};
+    \node[tag, anchor=east, xshift=-0.5mm] at (#2.north east) {\textbf{#2}};
+    \node[subattribute, anchor=north west, xshift=-0.5mm, yshift=-0.5mm] at (#2.north west) {\textbf{#4}};
+    \node[subattribute, anchor=south west, xshift=-0.5mm, yshift=0.5mm] at (#2.south west) {\textbf{#5}};
+}
+
+\newcommand{\centerbox}[4][]{%
+    \node[squarebox, anchor=center, #1] (#3) at (#2) {\textbf{#4}};
+    \node[tag, anchor=center] at (#3.north) {\textbf{#3}};
+}
+
+\newcommand{\centerboxsubs}[5][]{%
+    \node[squarebox, anchor=center, #1] (#3) at (#2) {\textbf{#4}};
+    \node[tag, anchor=center] at (#3.north) {\textbf{#3}};
+    % \node[subattribute, anchor=south west] at ([xshift=-0.5mm, yshift=-0.5mm]#3.south west) {\textbf{#5}};
+    \node[subattribute, anchor=south east] at ([xshift=0.5mm, yshift=-0.7mm] #3.south east) {\textbf{#5}};
+}
