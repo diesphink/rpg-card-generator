@@ -198,7 +198,7 @@ names = [
     'Persuasion',
 ]
 
-# Information for the 9 boxes beneath the character image.
+# Information for the 10 boxes beneath the character image.
 # You can have any information here, if you want to add two values
 # you can pass an array, the second value will be added as a callout
 # over the main value
