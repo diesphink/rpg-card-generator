@@ -16,7 +16,7 @@ Waterskin
 """
 
 "Wearing/At hand" = """
-Leather armor
+Studded leather armor
 Longsword moontouched
 An old divination card bearing your likeness
 Earring of message
@@ -25,4 +25,4 @@ Earring of message
 [inventory.consumables]
 "Potion of climbing\\\\(1h, climb speed 9m, adv on climb)" = 1
 "Ration" = 5
-GP = 336
+GP = 291

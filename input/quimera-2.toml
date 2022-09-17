@@ -180,7 +180,7 @@ names = [
 
 [quimera.boxes]
 INIT = "+4"
-AC = 14
+AC = 15
 HP = 30
 PROF = "+2"
 "H DICE" = "4d8"
