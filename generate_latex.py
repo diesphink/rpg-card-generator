@@ -239,7 +239,7 @@ def print_sheet(id, p, output):
     output.write('};\n')
 
     output.write(r'''
-\node[anchor=west, align=left, text width=25mm, inner sep=0, xshift=0.5mm, font=\sffamily\fontsize{4.5}{6}\selectfont] (atts2) at (atts.east) {%
+\node[anchor=west, align=left, text width=30mm, inner sep=0, xshift=0.5mm, font=\sffamily\fontsize{4.5}{6}\selectfont] (atts2) at (atts.east) {%
 ''')
     output.write(parse_text((r'\\' + '\n').join(values)))
     output.write('};\n')
