@@ -1,0 +1,251 @@
+["Tale of the Clever Animal"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-clever-animal"
+description = """
+For the next **10 minutes**, whenever the target makes an **Intelligence**, a **Wisdom**, or a **Charisma**
+check, the target can roll an **1d8** immediately after rolling the d20 and add the extra die's number
+to the check.
+"""
+
+["Tale of the Renowned Duelist"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-renowned-duelist"
+description = """
+You make a melee spell attack against the target. On a hit, the target takes force damage equal to **2d8+5**.
+"""
+
+["Tale of the Beloved Friends"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-beloved-friends"
+description = """
+The target and another creature of its choice it can see within 5 feet of it gains temporary
+hit points equal to **168+5**
+"""
+
+["Tale of the Runaway"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-runaway"
+description = """
+The target can immediately use its reaction to teleport up to 30 feet to an unoccupied space
+it can see. When the target teleports, it can choose up to **5** creatures it can see within
+30 feet to immediately use the same reaction.
+"""
+
+["Tale of the Avenger"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-avenger"
+description = """
+For 1 minute, any creature that hits the target with a melee attack takes force damage equal
+to **1d8**.
+"""
+
+["Tale of the Traveler"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-traveler"
+description = """
+The target gains **1d8+5** temporary hit points.
+
+While it has these temporary hit points, the target’s walking **speed increases by 10 feet** and it gains
+a **+1 bonus to its AC**.
+"""
+
+["Tale of the Beguiler"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-beguiler"
+description = """
+The target must succeed on a Wisdom saving throw or take **2d8** psychic damage, and the target is **incapacitated** until the end of its next turn.
+"""
+	
+["Tale of the Phantom"]
+token = true
+type = "Spiritual Ancestor"
+image = "images/tale-phantom"
+description = """
+The target becomes invisible until the end of its next turn or until it hits a creature with an attack.
+If it hits a creature with an attack during this invisibility, the creature it hits takes **1d8** necrotic damage
+and is **frightened** of the target until the end of the frightened creature's next turn.""" 
+
+["Mantra of Courage"]
+type = "Mantra"
+time = "1 min"
+image = "images/mantra-courage"
+components = "V"
+description = """
+Choose up to five creatures within range that can hear you. For the duration, each affected creature gains
+**5 temporary hit points** and has advantage on **Wisdom** saving throws.
+
+If an affected creature is hit by an attack, it has **advantage** on the next attack roll it makes.
+
+Once an affected creature loses the temporary hit points granted by this mantra, the mantra ends for that creature."""
+footer = """
+60 feet
+1 hour
+"""
+
+["Headband of Intellect"]
+type = "Wondrous item"
+cost = "Attunement"
+image = "images/headband-of-intellect"
+description = """
+Your Intelligence score is 19 while you wear this headband. It has no Effect on you if your Intelligence is already 19 or higher without it.
+"""
+footer = """Uncommon"""
+
+
+["Gloves of Swim and Climb"]
+type = "Wondrous item"
+cost = "Attunement"
+image = "images/gloves-climbing"
+description = """
+While wearing these gloves, climbing and swimming don't cost you extra movement, and you gain a +5 bonus to Strength (Athletics) checks made to climb or swim.
+"""
+footer = """Uncommon"""
+
+
+["Sharn Hover"]
+type = "Wondrous item"
+image = "images/sharn-hover"
+description = """
+While on top of the hover, you can use an action to mentally activate it, causing it to hover beneath you.
+
+Once per turn, you can mentally command the hover to move up to 6m (20ft) in any direction. The hover can
+carry up to 400 pounds and stops hovering when you step off it.
+
+While within Sharn or another Syranian manifest zone, you can move up to 18m (60ft) in any direction, but
+it requires a DC 18 Dexterity (Acrobatics) check. For every 2 hours spent training on the sharn hover,
+you lower this test by 2 points, for a minimum of **TBD**.
+"""
+footer = """Uncommon"""
+
+
+[token-improved-guidance]
+title = "Improved Guidance"
+count = 5
+token = true
+image = "images/token-improved-guidance"
+description = """
+Once within the next 10 minutes, you can add **1d8** to one ability check, attack roll,
+or saving throw you make.
+
+You can wait until after you roll the d20 before deciding to roll the bonus die,
+but must decide before the DM says whether the roll succeeds or fails.
+"""
+
+[token-mantra-of-courage]
+title = "Mantra of Courage"
+count = 5
+token = true
+image = "images/token-mantra-courage"
+description = """
+For **1 hour**, you gain **5 temporary hit points** and advantage on **Wisdom saving throws**. If you are hit by an attack, you have **advantage** on the next attack roll you make.
+
+Once you lose the temporary hit points granted by this mantra, the effects end for you.
+"""
+
+["Token"]
+back = true
+color = "black"
+count = 2
+
+
+[quimera]
+sheet = true
+image = "images/big-quimera-calma.xcf2.png"
+title = '**\faIcon{jedi}Quimera Calma**, Shaozun monk 6, lawful neutral'
+
+[quimera.attributes]
+STR = [8, -1, -1]
+DEX = [16, +3, +6]
+CON = [14, +2, +2]
+INT = [19, +4, +4]
+WIS = [12, +1, +1]
+CHA = [20, +5, +8]
+
+[quimera.skills]
+skills = [0, 6, 4, 4, 5, 5, 5, 5, 7, 2, 4, 2, 7, 2, 8, 8, 5, 11]
+profic = [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1]
+names = [
+    'Athletics',
+    'Acrobatics',
+    'Sleight of hand',
+    'Stealth (\faIcon{hotjar}adv)',
+    'Arcana',
+    'History',
+    'Investigation',
+    'Nature',
+    'Religion',
+    'Animal Handling',
+    'Insight',
+    'Medicine',
+    'Perception',
+    'Survival',
+    'Deception',
+    'Intimidation',
+    'Performance',
+    'Persuasion',
+]
+
+[quimera.boxes]
+INIT = "+4"
+AC = 15
+HP = 44
+PROF = "+3"
+"H DICE" = "6d8"
+SPEED = ["9m", "30ft"]
+"SP ATT" = "+8"
+"SP SAVE" = 16
+KI = "5/3"
+"SP KI" = 5
+
+[quimera.proficiencies]
+'\faIcon{comment}Languages' = "Common, elvish, primordial, shaozun."
+'\faIcon{gavel}Armor and weapons' = "Light and medium armor, shields, simple and martial weapons."
+'\faTools{}Tools' = "Thieves' tools (traps or locks)"
+
+[quimera.attacks]
+"Sword (1)" = "+8, 1d8+5 slashing"
+"Sword (2)" = "+8, 1d10+5 slashing"
+"Energy S (1)" = "+8, 1d8+5+1d8 fire, 1d8+5 fire (oth)"
+"Energy S (2)" = "+8, 1d10+5+1d8 fire, 1d8+5 fire (oth)"
+"Energy bow" = "+8 (x2), 1d0 force"
+"Disturbing M" = "wis, 2d4 psychic, disadv. att"
+"Explosive M" = "con, AOE 5ft, 2d6 thunder"
+
+
+[inventory]
+inventory = true
+title = "Inventory of **Quimera Calma**"
+image = "images/big-quimera-calma.xcf2.png"
+
+"Backpack" = """
+Bedroll
+2 costumes (noble and scholar)
+5 candles
+Disguise kit
+Battle horn
+Dagger
+Waterskin
+"""
+
+"Wearing/At hand" = """
+Studded leather armor
+Longsword Moontouched
+An old divination card bearing your likeness
+Boots of Elvenkind
+Earring of Message
+Headband of Intelect
+Gloves of Swimming and Climbing
+"""
+
+[inventory.consumables]
+"Heal potion" = 10
+"Ration" = 10
+"Potion of climbing\\\\(1h, climb speed 9m, adv on climb)" = 1
+GP = 1483
