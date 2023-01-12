@@ -349,23 +349,25 @@ for config_file in glob.glob("input/*.toml"):
 """)
 
             count = int(p.get('count', 1))
+            if p.get('print', True):
+                for i in range(0, count):
 
-            for i in range(0, count):
-
-                if p.get('token', False):
-                    print_token(title, p, output)
-                elif p.get('back', False):
-                    print_back_card(title, p, output)
-                elif p.get('sheet', False):
-                    print_sheet(title, p, output)
-                elif p.get('inventory', False):
-                    print_inventory(title, p, output)
-                elif p.get('include', None) is not None:
-                    include(p.get('include'), output)
-                elif p.get('description', None) is None:
-                    print_image(p, output)
-                else:
-                    print_card(title, p, output)
+                    if p.get('token', False):
+                        print_token(title, p, output)
+                    elif p.get('back', False):
+                        print_back_card(title, p, output)
+                    elif p.get('sheet', False):
+                        print_sheet(title, p, output)
+                    elif p.get('inventory', False):
+                        print_inventory(title, p, output)
+                    elif p.get('include', None) is not None:
+                        include(p.get('include'), output)
+                    elif p.get('description', None) is None:
+                        print_image(p, output)
+                    else:
+                        print_card(title, p, output)
+            else:
+                output.write('% Not printed\n')
 
         output.write(r"\end{center}\end{document}")
 
