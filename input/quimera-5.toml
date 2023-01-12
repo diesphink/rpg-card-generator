@@ -855,16 +855,16 @@ color = "green"
 count = 5
 
 ["Mantra"]
-print = false
+print = true
 back = true
 color = "teal"
-count = 7
+count = 3
 
 ["Wondrous Item"]
-print = false
+print = true
 back = true
 color = "purple"
-count = 6
+count = 3
 
 ["Token"]
 print = false
