@@ -105,7 +105,7 @@ def print_back_card(title, p, output):
 def print_sheet(id, p, output):
 
     # início da carta, imagem de fundo e título acima
-    output.write(r"""
+    output.write(r"""%
 \begin{tikzpicture}[x=1mm, y=1mm]
 
 \tikzmath{\fs = \textsize + 0.5;}
