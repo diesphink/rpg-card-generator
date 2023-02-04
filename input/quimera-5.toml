@@ -100,6 +100,7 @@ Elf Monk, chaotic neutral, master of the order of Shaozun
 # ================
 
 ["Improved Guidance"]
+print = false
 type = "Class ability"
 time = "bonus"
 cost = "spiritual ki"
@@ -189,6 +190,7 @@ footer = """
 
 
 ["Countercharm"]
+print = false
 type = "Class ability"
 time = "action"
 image = "images/countercharm"
@@ -208,6 +210,7 @@ footer = """
 
 
 ["Spirit Session"]
+print = false
 type = "Class ability"
 time = "1 hour"
 image = "images/spirit-session"
@@ -265,7 +268,8 @@ You make a melee spell attack against the target. On a hit, the target takes for
 """
 
 ["Tale of the Beloved Friends"]
-token = true
+print = false
+token = false
 type = "Spiritual Ancestor"
 image = "images/tale-beloved-friends"
 description = """
@@ -295,6 +299,7 @@ to **1d8**.
 """
 
 ["Tale of the Traveler"]
+print = false
 token = true
 type = "Spiritual Ancestor"
 image = "images/tale-traveler"
@@ -329,6 +334,7 @@ and is **frightened** of the target until the end of the frightened creature's n
 # ================
 
 ["Explosive Mantra"]
+print = false
 type = "Mantra"
 cost = "at-will"
 time = "action"
@@ -344,6 +350,7 @@ Self (5 foot readius)
 Instantaneous"""
 
 ["Disturbing Mantra"]
+print = false
 type = "Mantra,cost=at-will"
 time = "action"
 components = "V"
@@ -359,6 +366,7 @@ footer = """
 Instantaneous"""
 
 ["Energy Bow"]
+print = false
 type = "Mantra"
 cost = "at-will"
 time = "action"
@@ -373,6 +381,7 @@ footer = """
 Instantaneous"""
 
 ["Energy Sword"]
+print = false
 type = "Mantra"
 cost = "at-will"
 time = "action"
@@ -433,6 +442,7 @@ footer = """Concentration, up to 1m"""
 # ================
 
 ["Mantra of Healing"]
+print = false
 type = "Mantra"
 cost = "ki - 1"
 time = "bonus"
@@ -507,6 +517,7 @@ footer = """
 Instantaneous"""
 
 ["Mantra of Pain"]
+print = false
 type = "Mantra"
 cost = "ki - 1"
 time = "action"
@@ -567,6 +578,7 @@ Self
 1 round"""
 
 ["Mantra of Wrath"]
+print = false
 type = "Mantra"
 cost = "ki - 1"
 time = "bonus"
@@ -641,6 +653,7 @@ footer = """
 # ================
 
 ["Mantra of Courage"]
+print = false
 type = "Mantra"
 time = "1 min"
 cost = "ki - 3"
@@ -671,8 +684,9 @@ Once you lose the temporary hit points granted by this mantra, the effects end f
 """
 
 ["Mantra of Anathema"]
+print = true
 type = "Mantra"
-time = "1 action"
+time = "action"
 cost = "ki - 3"
 image = "images/mantra-of-anathema"
 components = "V"
@@ -699,6 +713,33 @@ Touch
 Concentration, up to 1 minute
 """
 
+# ================
+# Mantras 4
+# ================
+["Mantra of Phantom Step"]
+print = true
+type = "Mantra"
+time = "action"
+cost = "ki - 4"
+image = "images/mantra-of-phantom-step"
+components = "V"
+fontsize = 5
+description = """
+You teleport yourself from your current location to any other spot within range. You arrive at exactly the spot desired.
+It can be a place you can see, one you can visualize, or one you can describe by stating distance and direction, such as
+"200 feet straight downward" or "upward to the northwest at a 45-degree angle, 300 feet".
+
+You can bring along objects as long as their weight doesn’t exceed what you can carry. You can also bring one willing
+creature of your size or smaller who is carrying gear up to its carrying capacity. The creature must be within 5 feet
+of you when you call this mantra.
+
+If you would arrive in a place already occupied by an object or a creature, you and any creature traveling with you each
+take 4d6 force damage, and the mantra fails to teleport you.
+"""
+footer = """
+500 feet
+Instantaneous
+"""
 
 
 # ================
@@ -810,7 +851,7 @@ you lower this test by 2 points, for a minimum of **TBD**.
 footer = """Uncommon"""
 
 ["Serpent Scale Armor"]
-print = true
+print = false
 type = "Wondrous item"
 image = "images/serpent-scale-armor"
 description = """
@@ -823,7 +864,7 @@ Armor Class: 14 + Dex modifier
 footer = """Uncommon"""
 
 ["Stone of Good Luck (Luckstone)"]
-print = true
+print = false
 cost = "Attunement"
 type = "Wondrous item"
 image = "images/luckstone"
@@ -832,12 +873,71 @@ While this polished agate is on your person, you gain a + 1 bonus to ability che
 """
 footer = """Uncommon"""
 
+
+["Amulet of Proof vs Detection"]
+print = true
+cost = "Attunement"
+type = "Wondrous item"
+image = "images/amulet-of-proof"
+description = """
+While wearing this amulet, you are hidden from divination magic. You can't be targeted by such magic or perceived through magical scrying sensors.
+"""
+footer = """Uncommon"""
+
+# ================
+# Spells
+# ================
+
+["Divination"]
+print = true
+type = "4th Divination Spell"
+time = "action"
+cost = "25 GP"
+image = "images/divination"
+components = "VSM"
+fontsize = 5
+description = """
+Your magic and an offering put you in contact with a god or a god’s servants. You ask a single question concerning a specific goal, event,
+or activity to occur within 7 days. The DM offers a truthful reply. The reply might be a short phrase, a cryptic rhyme, or an omen.
+
+The spell doesn’t take into account any possible circumstances that might change the outcome, such as the casting of additional spells or
+the loss or gain of a companion.
+
+If you cast this spell two or more times before finishing your next long rest, there is a cumulative 25 percent chance for each casting
+after the first that you get a random reading. The DM makes this roll in secret."""
+footer = """
+Self
+Instantaneous
+"""
+
+["Locate Creature"]
+print = true
+type = "4th Divination Spell"
+time = "action"
+image = "images/locate-creature"
+components = "VSM"
+fontsize = 5
+description = """
+Describe or name a creature that is familiar to you. You sense the direction to the creature’s location, as long as that creature is within
+1,000 feet of you. If the creature is moving, you know the direction of its movement.
+
+The spell can locate a specific creature known to you, or the nearest creature of a specific kind (such as a human or a unicorn), so long
+as you have seen such a creature up close – within 30 feet – at least once. If the creature you described or named is in a different form,
+such as being under the effects of a polymorph spell, this spell doesn’t locate the creature.
+
+This spell can’t locate a creature if running water at least 10 feet wide blocks a direct path between you and the creature."""
+footer = """
+Self
+Concentration, up to 1 hour
+"""
+
+
 # ================
 # Backs
 # ================
 
 ["Class Ability"]
-print = true
+print = false
 back = true
 color = "orange"
 count = 2
@@ -858,13 +958,20 @@ count = 5
 print = true
 back = true
 color = "teal"
-count = 3
+count = 1
+
+["Spell"]
+print = true
+back = true
+color = "teal"
+count = 2
+
 
 ["Wondrous Item"]
 print = true
 back = true
 color = "purple"
-count = 3
+count = 1
 
 ["Token"]
 print = false
@@ -882,7 +989,7 @@ count = 7
 [quimera]
 sheet = true
 image = "images/big-quimera-calma.xcf2.png"
-title = '**\faIcon{jedi}Quimera Calma**, Shaozun monk 7, lawful neutral'
+title = '**\faIcon{jedi}Quimera Calma**, Shaozun monk 8, lawful neutral'
 
 [quimera.attributes]
 STR = [8, -1, 0]
@@ -919,13 +1026,13 @@ names = [
 [quimera.boxes]
 INIT = "+5"
 AC = 17
-HP = 54
+HP = 61
 PROF = "+3"
 "H DICE" = "7d8"
 SPEED = ["9m", "30ft"]
 "SP ATT" = "+8"
 "SP SAVE" = 16
-KI = "5/3/3"
+KI = "5/3/3/1"
 "SP KI" = 5
 
 [quimera.proficiencies]
@@ -964,8 +1071,15 @@ Longsword Moontouched
 An old divination card bearing your likeness
 Boots of Elvenkind
 Headband of Intelect
+Amulet of Proof Against Detection and Location
 Luckstone
 Sharn Hover
+"""
+
+"Gemas/Artes" = """
+Gemas 50 PO (x2)
+Gemas 300 PO (x1)
+Artes 25 PO (x3)
 """
 
 [inventory.consumables]
@@ -973,4 +1087,4 @@ Sharn Hover
 "Superior heal potion\\\\  8d4+8* (diferenciada do alquimista)" = 1
 "Ration" = 10
 "Potion of climbing\\\\  (1h, climb speed 9m, adv on climb)" = 1
-GP = 138
+GP = 198
