@@ -684,7 +684,7 @@ Once you lose the temporary hit points granted by this mantra, the effects end f
 """
 
 ["Mantra of Anathema"]
-print = true
+print = false
 type = "Mantra"
 time = "action"
 cost = "ki - 3"
@@ -717,7 +717,7 @@ Concentration, up to 1 minute
 # Mantras 4
 # ================
 ["Mantra of Phantom Step"]
-print = true
+print = false
 type = "Mantra"
 time = "action"
 cost = "ki - 4"
@@ -739,6 +739,27 @@ take 4d6 force damage, and the mantra fails to teleport you.
 footer = """
 500 feet
 Instantaneous
+"""
+
+["Mantra of Phantom Kill"]
+print = true
+type = "Mantra"
+time = "action"
+cost = "ki - 4"
+image = "images/mantra-of-phantom-kill"
+components = "VS"
+fontsize = 5
+description = """
+You tap into the nightmares of a creature you can see within range and create an illusory manifestation of its deepest
+fears, visible only to that creature.
+
+The target must make a Wisdom saving throw. On a failed save, the target becomes frightened for the duration. At the end
+of each of the target’s turns before the mantra ends, the target must succeed on a Wisdom saving throw or take 4d10 psychic
+damage. On a successful save, the mantra ends.
+"""
+footer = """
+120 feet
+Concentration, up to 1 min
 """
 
 
@@ -875,7 +896,7 @@ footer = """Uncommon"""
 
 
 ["Amulet of Proof vs Detection"]
-print = true
+print = false
 cost = "Attunement"
 type = "Wondrous item"
 image = "images/amulet-of-proof"
@@ -884,12 +905,32 @@ While wearing this amulet, you are hidden from divination magic. You can't be ta
 """
 footer = """Uncommon"""
 
+["Mac-Fuirmidh Cittern"]
+print = true
+cost = "Attunement"
+type = "Wondrous item"
+image = "images/mac-fuirmidh-cittern"
+fontsize = 4.9
+description = """
+An instrument of the bards is an exquisite example of its kind, superior to an ordinary instrument in every way. Seven
+types of these instruments exist, each named after a legendary bard college. A creature that attempts to play the
+instrument without being attuned to it must succeed on a DC 15 Wisdom saving throw or take 2d4 psychic damage.
+
+You can use an action to play the instrument and cast one of its spells. Once the instrument has been used to cast a
+spell, it can't be used to cast that spell again until the next dawn. The spells use your spellcasting ability and
+spell save DC.
+
+You can play the instrument while casting a spell that causes any of its targets to be charmed on a failed saving throw,
+thereby imposing disadvantage on the save. This effect applies only if the spell has a somatic or a material component.
+"""
+footer = """Uncommon"""
+
 # ================
 # Spells
 # ================
 
 ["Divination"]
-print = true
+print = false
 type = "4th Divination Spell"
 time = "action"
 cost = "25 GP"
@@ -911,7 +952,7 @@ Instantaneous
 """
 
 ["Locate Creature"]
-print = true
+print = false
 type = "4th Divination Spell"
 time = "action"
 image = "images/locate-creature"
@@ -928,6 +969,124 @@ such as being under the effects of a polymorph spell, this spell doesn’t locat
 This spell can’t locate a creature if running water at least 10 feet wide blocks a direct path between you and the creature."""
 footer = """
 Self
+Concentration, up to 1 hour
+"""
+
+["Fly"]
+print = true
+type = "3rd Transmutation Spell"
+time = "action"
+image = "images/mac-fuirmidh-cittern"
+components = "VSM"
+description = """
+You touch a willing creature. The target gains a flying speed of 60 feet for the duration. When the spell ends, the target falls if it
+is still aloft, unless it can stop the fall.
+"""
+footer = """
+Touch
+Concentration, up to 10 minutes
+"""
+
+["Invisibility"]
+print = true
+type = "2nd Illusion Spell"
+time = "action"
+image = "images/mac-fuirmidh-cittern"
+components = "VSM"
+description = """
+A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on
+the target’s person. The spell ends for a target that attacks or casts a spell.
+"""
+footer = """
+Touch
+Concentration, up to 1 hour
+"""
+
+["Levitate"]
+print = true
+type = "2nd Transmutation Spell"
+time = "action"
+image = "images/mac-fuirmidh-cittern"
+components = "VSM"
+fontsize = 5
+description = """
+One creature or loose object of your choice that you can see within range rises vertically, up to 20 feet, and remains suspended there 
+for the duration. The spell can levitate a target that weighs up to 500 pounds. An unwilling creature that succeeds on a Constitution 
+saving throw is unaffected.
+
+The target can move only by pushing or pulling against a fixed object or surface within reach (such as a wall or a ceiling), which allows
+it to move as if it were climbing. You can change the target’s altitude by up to 20 feet in either direction on your turn. If you are the 
+target, you can move up or down as part of your move. Otherwise, you can use your action to move the target, which must remain within the 
+spell’s range.
+
+When the spell ends, the target floats gently to the ground if it is still aloft.
+"""
+footer = """
+60 feet
+Concentration, up to 10 minutes
+"""
+
+["Protection from Evil and Good"]
+print = true
+type = "1st Abjuration Spell"
+time = "action"
+image = "images/mac-fuirmidh-cittern"
+components = "VSM"
+description = """
+Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, 
+elementals, fey, fiends, and undead.
+
+The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target 
+also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, 
+the target has advantage on any new saving throw against the relevant effect.
+"""
+footer = """
+Touch
+Concentration, up to 10 minutes
+"""
+
+["Barskin"]
+print = true
+type = "2nd Transmutation Spell"
+time = "action"
+image = "images/mac-fuirmidh-cittern"
+components = "VSM"
+description = """
+You touch a willing creature. Until the spell ends, the target’s skin has a rough, bark-like appearance, and the target’s AC can’t be 
+less than 16, regardless of what kind of armor it is wearing.
+"""
+footer = """
+Touch
+Concentration, up to 1 hour
+"""
+
+["Cure Wounds"]
+print = true
+type = "1st Evocation Spell"
+time = "action"
+image = "images/mac-fuirmidh-cittern"
+components = "VS"
+description = """
+A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on 
+undead or constructs.
+"""
+footer = """
+Touch
+Instantaneous
+"""
+
+["Fog Cloud"]
+print = true
+type = "1st Conjuration Spell"
+time = "action"
+image = "images/mac-fuirmidh-cittern"
+components = "VS"
+description = """
+You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily 
+obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.
+"""
+footer = """
+120 feet
 Concentration, up to 1 hour
 """
 
@@ -955,7 +1114,7 @@ color = "green"
 count = 5
 
 ["Mantra"]
-print = true
+print = false
 back = true
 color = "teal"
 count = 1
@@ -964,14 +1123,14 @@ count = 1
 print = true
 back = true
 color = "teal"
-count = 2
+count = 7
 
 
 ["Wondrous Item"]
 print = true
 back = true
 color = "purple"
-count = 1
+count = 2
 
 ["Token"]
 print = false
@@ -989,18 +1148,18 @@ count = 7
 [quimera]
 sheet = true
 image = "images/big-quimera-calma.xcf2.png"
-title = '**\faIcon{jedi}Quimera Calma**, Shaozun monk 8, lawful neutral'
+title = '**\faIcon{jedi}Quimera Calma**, Shaozun monk 9, lawful neutral'
 
 [quimera.attributes]
 STR = [8, -1, 0]
-DEX = [16, +3, +7]
+DEX = [18, +4, +9]
 CON = [14, +2, +3]
 INT = [19, +4, +5]
 WIS = [12, +1, +2]
-CHA = [20, +5, +9]
+CHA = [20, +5, +10]
 
 [quimera.skills]
-skills = [1, 7, 5, 5, 6, 6, 6, 6, 8, 3, 5, 3, 8, 3, 9, 9, 6, 12]
+skills = [2, 9, 7, 7, 7, 7, 7, 7, 9, 4, 6, 4, 10, 4, 10, 10, 7, 14]
 profic = [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1]
 names = [
     'Athletics',
@@ -1024,15 +1183,15 @@ names = [
 ]
 
 [quimera.boxes]
-INIT = "+5"
-AC = 17
-HP = 61
-PROF = "+3"
-"H DICE" = "7d8"
+INIT = "+7"
+AC = 18
+HP = 69
+PROF = "+4"
+"H DICE" = "9d8"
 SPEED = ["9m", "30ft"]
-"SP ATT" = "+8"
-"SP SAVE" = 16
-KI = "5/3/3/1"
+"SP ATT" = "+9"
+"SP SAVE" = 17
+KI = "5/3/3/2"
 "SP KI" = 5
 
 [quimera.proficiencies]
@@ -1041,11 +1200,11 @@ KI = "5/3/3/1"
 '\faTools{}Tools' = "Thieves' tools (traps or locks)"
 
 [quimera.attacks]
-"Sword (1)" = "+8, 1d8+5 slashing"
-"Sword (2)" = "+8, 1d10+5 slashing"
-"Energy S (1)" = "+8, 1d8+1d6+5+1d8 fire, 1d8+5 fire (oth)"
-"Energy S (2)" = "+8, 1d10+5+1d8 fire, 1d8+5 fire (oth)"
-"Energy bow" = "+8 (x2), 1d0 force, +1d6 once"
+"Sword (1)" = "+9, 1d8+5 slashing"
+"Sword (2)" = "+9, 1d10+5 slashing"
+"Energy S (1)" = "+9, 1d8+1d6+5+1d8 fire, 1d8+5 fire (oth)"
+"Energy S (2)" = "+9, 1d10+1d6+5+1d8 fire, 1d8+5 fire (oth)"
+"Energy bow" = "+9 (x2), 1d0 force, +1d6 once"
 "Disturbing M" = "wis, 2d4+1d6 psychic, disadv. att"
 "Explosive M" = "con, AOE 5ft, 1d6 + 2d6 thunder"
 
@@ -1067,19 +1226,21 @@ Waterskin
 
 "Wearing/At hand" = """
 Serpent Scale Armor
-Longsword Moontouched
-An old divination card bearing your likeness
+Shiftweave
 Boots of Elvenkind
 Headband of Intelect
-Amulet of Proof Against Detection and Location
 Luckstone
+Longsword Moontouched
+An old divination card bearing your likeness
 Sharn Hover
+Mac-Fuirmidh cittern
 """
 
 "Gemas/Artes" = """
-Gemas 50 PO (x2)
-Gemas 300 PO (x1)
-Artes 25 PO (x3)
+
+
+
+
 """
 
 [inventory.consumables]
@@ -1087,4 +1248,4 @@ Artes 25 PO (x3)
 "Superior heal potion\\\\  8d4+8* (diferenciada do alquimista)" = 1
 "Ration" = 10
 "Potion of climbing\\\\  (1h, climb speed 9m, adv on climb)" = 1
-GP = 198
+GP = 275
