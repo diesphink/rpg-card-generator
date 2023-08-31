@@ -742,7 +742,7 @@ Instantaneous
 """
 
 ["Mantra of Phantom Kill"]
-print = true
+print = false
 type = "Mantra"
 time = "action"
 cost = "ki - 4"
@@ -760,6 +760,33 @@ damage. On a successful save, the mantra ends.
 footer = """
 120 feet
 Concentration, up to 1 min
+"""
+
+# ================
+# Mantras 5
+# ================
+["Mantra of Lightning"]
+print = true
+type = "Mantra"
+time = "action"
+cost = "ki - 5"
+image = "images/mantra-lightning"
+components = "VS"
+fontsize = 5
+description = """
+You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere
+centered on that point must make an **Intelligence saving throw**. A creature with an Intelligence score of 2 or lower
+can’t be affected by this spell. A target takes **8d6 psychic** damage on a failed save, or **half** as much damage on a
+successful one.
+
+After a failed save, a target has muddled thoughts for **1 minute**. During that time, it rolls a **d6** and subtracts the
+number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain
+concentration. The target can make an Intelligence saving throw at the **end of each of its turns**, ending the effect on
+itself on a success.
+"""
+footer = """
+120 feet
+Instantaneous
 """
 
 
@@ -906,7 +933,7 @@ While wearing this amulet, you are hidden from divination magic. You can't be ta
 footer = """Uncommon"""
 
 ["Mac-Fuirmidh Cittern"]
-print = true
+print = false
 cost = "Attunement"
 type = "Wondrous item"
 image = "images/mac-fuirmidh-cittern"
@@ -973,7 +1000,7 @@ Concentration, up to 1 hour
 """
 
 ["Fly"]
-print = true
+print = false
 type = "3rd Transmutation Spell"
 time = "action"
 image = "images/mac-fuirmidh-cittern"
@@ -988,7 +1015,7 @@ Concentration, up to 10 minutes
 """
 
 ["Invisibility"]
-print = true
+print = false
 type = "2nd Illusion Spell"
 time = "action"
 image = "images/mac-fuirmidh-cittern"
@@ -1003,7 +1030,7 @@ Concentration, up to 1 hour
 """
 
 ["Levitate"]
-print = true
+print = false
 type = "2nd Transmutation Spell"
 time = "action"
 image = "images/mac-fuirmidh-cittern"
@@ -1027,7 +1054,7 @@ Concentration, up to 10 minutes
 """
 
 ["Protection from Evil and Good"]
-print = true
+print = false
 type = "1st Abjuration Spell"
 time = "action"
 image = "images/mac-fuirmidh-cittern"
@@ -1046,7 +1073,7 @@ Concentration, up to 10 minutes
 """
 
 ["Barskin"]
-print = true
+print = false
 type = "2nd Transmutation Spell"
 time = "action"
 image = "images/mac-fuirmidh-cittern"
@@ -1061,7 +1088,7 @@ Concentration, up to 1 hour
 """
 
 ["Cure Wounds"]
-print = true
+print = false
 type = "1st Evocation Spell"
 time = "action"
 image = "images/mac-fuirmidh-cittern"
@@ -1076,7 +1103,7 @@ Instantaneous
 """
 
 ["Fog Cloud"]
-print = true
+print = false
 type = "1st Conjuration Spell"
 time = "action"
 image = "images/mac-fuirmidh-cittern"
@@ -1120,14 +1147,14 @@ color = "teal"
 count = 1
 
 ["Spell"]
-print = true
+print = false
 back = true
 color = "teal"
 count = 7
 
 
 ["Wondrous Item"]
-print = true
+print = false
 back = true
 color = "purple"
 count = 2
@@ -1185,7 +1212,7 @@ names = [
 [quimera.boxes]
 INIT = "+7"
 AC = 18
-HP = 69
+HP = 77
 PROF = "+4"
 "H DICE" = "9d8"
 SPEED = ["9m", "30ft"]
