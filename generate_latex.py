@@ -9,6 +9,7 @@ import glob
 
 def parse_text(text, break_lines=False):
     text = re.sub(r'\*\*(.+?)\*\*', r'\\textbf{\1}', text)
+    text = re.sub(r'\[g\](.+?)\[g\]', r'\\textcolor{green}{\1}', text)
     text = re.sub(r'^ - ', r'\\\\ \\faAngleRight ', text, flags=re.M)
     text = re.sub(r'\n\n', r'%\n\\\\[1mm]%\n', text)
     text = re.sub(r'\n$', '', text)
@@ -189,7 +190,7 @@ def print_sheet(id, p, output):
                                  'Perception', 'Survival', 'Deception', 'Intimidation', 'Performance', 'Persuasion'])
 
     for i in range(18):
-        value = '+' + str(values[i])
+        value = ('+' if values[i] >= 0 else '−') + str(abs(values[i]))
         if profs[i]:
             value = '**' + value + '**'
         output.write(parse_text(value) + r'\\% ' + names[i] + '\n')
