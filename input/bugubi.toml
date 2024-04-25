@@ -1,0 +1,206 @@
+["Attack"]
+print = true
+back = true
+color = "red"
+count = 4
+
+
+["Pike"]
+print = true
+type = "Attack"
+time = "action"
+image = "images/pike"
+description = """
+**Attack roll**: +5
+
+**Damage**: [g]1d10[g]+3 +2d6 (if surprise), reroll 1 or 2
+
+**Properties**: reach (15ft), push, heavy, two hands, piercing
+
+**Push**: If you hit a creature with this weapon, you can push the creature up to 10
+feet straight away from yourself if it is large or smaller.
+"""
+
+["Halberd"]
+print = true
+type = "Attack"
+time = "action"
+image = "images/halberd"
+fontsize = "5.4"
+description = """
+**Attack roll**: +5
+
+**Damage**: [g]1d10[g]+3 +2d6 (if surprise), reroll 1 or 2
+
+**Damage on cleave**: 1d10 +2d6 (if surprise), reroll 1 or 2
+
+**Properties**: reach (15ft), cleave, heavy, two hands, slashing
+
+**Cleave**: If you hit a creature with a melee attack using this weapon, you can make an
+attack roll with the weapon against a second creature within 5ft of the first creature 
+that is also within your reach. On a hit, the second creature takes the weapon's damage, 
+but don't add your ability modifier to damage, unless that modifier is negative. 
+You can make this extra attack only once per turn.
+"""
+
+["Handaxes"]
+print = true
+type = "Attack"
+time = "action and bonus action"
+image = "images/handaxe2"
+fontsize = "5"
+description = """
+**Attack roll**: +5
+
+**Damage**: [g]1d6[g] (savage only once) +3 (only on first attack) +2d6 (if surprise)
+
+**Properties**: Range (6/18m), light, thrown, slashing
+
+**Vex**: If you hit a creature with this weapon and deal damage to the creature, you have
+advantage on your next attack roll against that creature before the end of your next turn.
+
+**Light**: When you take the attack action on your turn and attack with a light weapon,
+you can make one extra attack as a bonus action later on the same turn. That extra attack
+must be made with a different light weapon, and you don't add your ability modifier to the
+extra attack's damage, unless that modifier is negative.
+"""
+
+["Net"]
+print = true
+type = "Attack"
+time = "action"
+image = "images/net2"
+description = """
+Dexterity saving throw versus 12 or become restrained.
+
+When you take the attack action on your turn, you can replace one of your attacks with a throw 
+of the net at a creature within 15 feet of you. The target must succeed on a dexterity saving throw 
+agasint a dc equal to 8 + your proficiency bonus + your dexterity modifier. The target succeeds 
+automatically if it's huge or larger.
+
+On a failed save, the target has the restrained condition until it escapes the net.
+"""
+footer="""
+15 feet
+"""
+
+[Restrained]
+print = true
+token = true
+title = "Restrained (Net)"
+type = "Condition"
+image = "images/restrained2"
+fontsize = "5"
+description = """
+You are restrained by a net!
+
+ - A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed.
+ - Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage.
+ - The creture has disadvantage on dexterity saving throws.
+
+**To escape**, the target must use its action to make a **DC 10 strength (athletics) check**, escaping on a success.
+A creature within 5ft of the target can use its action to attempt the same thing.
+
+Destroying the net (ac 10; 5 hp; immunity to bludgeoning, poison and psychic damage) also frees the target, ending the effect.
+"""
+
+
+
+[Bugubi]
+sheet = true
+image = "images/bugubi.png"
+title = '**Bugubi**, bugbear fighter 1, chaotic neutral'
+
+[Bugubi.attributes]
+STR = [17, +3, +4]
+DEX = [14, +2, +2]
+CON = [16, +3, +4]
+INT = [8, -1, -1]
+WIS = [10, 0, 0]
+CHA = [8, -1, -1]
+
+[Bugubi.skills]
+skills = [5, 4, 2, 4, -1, -1, -1, -1, -1, 0, 0, 0, 2, 0, -1, 1, -1, -1]
+profic = [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0]
+names = [
+    'Athletics',
+    'Acrobatics',
+    'Sleight of hand',
+    'Stealth (\faIcon{arrow-down})',
+    'Arcana',
+    'History',
+    'Investigation',
+    'Nature',
+    'Religion',
+    'Animal Handling',
+    'Insight',
+    'Medicine',
+    'Perception',
+    'Survival',
+    'Deception',
+    'Intimidation',
+    'Performance',
+    'Persuasion',
+]
+
+[Bugubi.boxes]
+INIT = "+2"
+AC = 16
+HP = 13
+PROF = "+2"
+"2nd Wind" = "2"
+SPEED = ["9m", "30ft"]
+
+[Bugubi.proficiencies]
+'\faIcon{comment}Languages' = "Common, goblin, aquan"
+'\faIcon{gavel}Armor and weapons' = "Simple and martial weapons, all armor, shields"
+
+
+[Bugubi.attacks]
+"Sneaky" = "+2d6 damage if not acted yet in combat"
+"Great w" = "Reroll 1/2 on damage with 2h weapons"
+"Savage" = "Roll weapon die 2x, pick one, 1x/turn"
+"Halbard" = "+5, 1d10+3 sls (reach, cleave)"
+"Pike" = "+5, 1d10+3 prc (reach, push)"
+"Handaxe" = "+5, 1d6+3/1d6 sls (light, thrown 6/18m)"
+"Net" = "Dex save vs. 12, restrained, dc 10 str"
+
+
+[inventory]
+inventory = true
+title = "Inventory of **Bugubi**"
+image = "images/bugubi.png"
+
+"Wearing/At hand" = """
+Traveler's clothes
+Halberd
+Pike
+Scale Mail
+Net
+4 Handaxes
+Healer's kit
+"""
+
+"Backpack" = """
+Crowbar
+Hammer
+10 Pitons
+Tinderbox
+Waterskin
+50 feet of rope
+4 extra nets
+4 extra handaxes
+Shortbow
+20 arrows
+Quiver
+Playing cards
+"""
+
+
+
+[inventory.consumables]
+"Torches" = 10
+"Rations" = 10
+"Healer's kit usages" = 10
+"Healing potion (2d4+2)" = 1
+GP = 7

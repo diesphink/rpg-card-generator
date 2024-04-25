@@ -1235,9 +1235,9 @@ KI = "5/3/3/2"
 "Disturbing M" = "wis, 2d4+1d6 psychic, disadv. att"
 "Explosive M" = "con, AOE 5ft, 1d6 + 2d6 thunder"
 
-
 [inventory]
 inventory = true
+print = false
 title = "Inventory of **Quimera Calma**"
 image = "images/big-quimera-calma.xcf2.png"
 
@@ -1276,3 +1276,69 @@ Mac-Fuirmidh cittern
 "Ration" = 10
 "Potion of climbing\\\\  (1h, climb speed 9m, adv on climb)" = 1
 GP = 275
+
+
+[Qui]
+sheet = true
+image = "images/Qui.png"
+title = '**Qui**, changeling bard 9, warlock 1, lawful neutral'
+
+[Qui.attributes]
+STR = [8, -1, 0]
+DEX = [18, +4, +9]
+CON = [14, +2, +3]
+INT = [19, +4, +5]
+WIS = [12, +1, +2]
+CHA = [20, +5, +10]
+
+[Qui.skills]
+skills = [2, 9, 7, 7, 7, 7, 7, 7, 9, 4, 6, 4, 10, 4, 10, 10, 7, 14]
+profic = [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1]
+names = [
+    'Athletics',
+    'Acrobatics',
+    'Sleight of hand',
+    'Stealth (\faIcon{hotjar}adv)',
+    'Arcana',
+    'History',
+    'Investigation',
+    'Nature',
+    'Religion',
+    'Animal Handling',
+    'Insight',
+    'Medicine',
+    'Perception',
+    'Survival',
+    'Deception',
+    'Intimidation',
+    'Performance',
+    'Persuasion',
+]
+
+[Qui.boxes]
+INIT = "+7"
+AC = 18
+HP = 77
+PROF = "+4"
+"H DICE" = "9d8"
+SPEED = ["9m", "30ft"]
+"SP ATT" = "+9"
+"SP SAVE" = 17
+KI = "5/3/3/2"
+"SP KI" = 5
+
+[Qui.proficiencies]
+'\faIcon{comment}Languages' = "Common, elvish, primordial, skin cant."
+'\faIcon{gavel}Armor and weapons' = "Light and medium armor, shields, simple and martial weapons."
+'\faTools{}Tools' = "Thieves' tools (traps or locks)"
+
+[Qui.attacks]
+"Sword (1)" = "+9, 1d8+5 slashing"
+"Sword (2)" = "+9, 1d10+5 slashing"
+"Energy S (1)" = "+9, 1d8+1d6+5+1d8 fire, 1d8+5 fire (oth)"
+"Energy S (2)" = "+9, 1d10+1d6+5+1d8 fire, 1d8+5 fire (oth)"
+"Energy bow" = "+9 (x2), 1d0 force, +1d6 once"
+"Disturbing M" = "wis, 2d4+1d6 psychic, disadv. att"
+"Explosive M" = "con, AOE 5ft, 1d6 + 2d6 thunder"
+
+
