@@ -313,7 +313,7 @@ def print_inventory(title, p, output):
 """)
 
 def include(include_file, output):
-    output.write(f"\n\n% {include_file}\n")
+    output.write(f"%\n%\n% {include_file}\n")
     with open(include_file, 'r') as lib1:
         for line in lib1:
             output.write(line)
@@ -370,7 +370,7 @@ for config_file in glob.glob("input/*.toml"):
             else:
                 output.write('% Not printed\n')
 
-        output.write(r"\end{center}\end{document}")
+        output.write("\n\end{center}\end{document}")
 
 
 
