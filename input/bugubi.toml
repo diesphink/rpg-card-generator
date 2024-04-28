@@ -137,7 +137,7 @@ Recover on short or long rest
 ["Tactical Mind"]
 print = true
 type = "Ability"
-image = "images/tactical-mind"
+image = "images/tactical-mind2"
 description = """
 You have a mind for tactics and getting the upper hand on and off the battlefield. When you fail an ability check, you can expend a use of your Second Wind to push yourself toward success.
 
