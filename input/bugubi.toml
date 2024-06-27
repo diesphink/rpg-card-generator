@@ -6,14 +6,14 @@ count = 4
 
 
 ["Pike"]
-print = false
+print = true
 type = "Attack"
 time = "action"
 image = "images/pike"
 description = """
-**Attack roll**: +5
+**Attack roll**: +6 (19/20 crit)
 
-**Damage**: [g]1d10[g]+3 +2d6 (if surprise), reroll 1 or 2
+**Damage**: [g]1d10[g]+4 +2d6 (if surprise), reroll 1 or 2
 
 **Properties**: reach (15ft), push, heavy, two hands, piercing
 
@@ -22,15 +22,15 @@ feet straight away from yourself if it is large or smaller.
 """
 
 ["Halberd"]
-print = false
+print = true
 type = "Attack"
 time = "action"
 image = "images/halberd"
 fontsize = "5.4"
 description = """
-**Attack roll**: +5
+**Attack roll**: +6 (19/20 crit)
 
-**Damage**: [g]1d10[g]+3 +2d6 (if surprise), reroll 1 or 2
+**Damage**: [g]1d10[g]+4 +2d6 (if surprise), reroll 1 or 2
 
 **Damage on cleave**: 1d10 +2d6 (if surprise), reroll 1 or 2
 
@@ -44,15 +44,15 @@ You can make this extra attack only once per turn.
 """
 
 ["Handaxes"]
-print = false
+print = true
 type = "Attack"
 time = "action and bonus action"
 image = "images/handaxe2"
 fontsize = "5"
 description = """
-**Attack roll**: +5
+**Attack roll**: +6 (19/20 crit)
 
-**Damage**: [g]1d6[g] (savage only once) +3 (only on first attack) +2d6 (if surprise)
+**Damage**: [g]1d6[g] (savage only once) +4 (only on first attack) +2d6 (if surprise)
 
 **Properties**: Range (6/18m), light, thrown, slashing
 
@@ -80,7 +80,7 @@ automatically if it's huge or larger.
 
 On a failed save, the target has the restrained condition until it escapes the net.
 """
-footer="""
+footer = """
 15 feet
 """
 
@@ -105,7 +105,7 @@ Destroying the net (ac 10; 5 hp; immunity to bludgeoning, poison and psychic dam
 """
 
 ["Second Wind"]
-print = true
+print = false
 type = "Ability"
 time = "bonus"
 image = "images/second-wind"
@@ -114,14 +114,14 @@ You have a limited well of physical and mental stamina that you can draw on. As 
  
 You can use this feature twice. You regain one expended use when you finish a short rest, and you regain all expended uses when you finish a long rest.
 """
-footer="""
+footer = """
 You can use twice
 Recover one on short rest
 Recover all on long rest
 """
 
 ["Action Surge"]
-print = true
+print = false
 type = "Ability"
 image = "images/action-surge"
 description = """
@@ -129,13 +129,13 @@ You can push yourself beyond your normal limits for a moment. On your turn, you 
 
 Once you use this feature, you must finish a Short Rest or Long Rest before you can use it again. Starting at level 17, you can use it twice before a rest but only once on a turn.
 """
-footer="""
+footer = """
 You can use once
 Recover on short or long rest
 """
 
 ["Tactical Mind"]
-print = true
+print = false
 type = "Ability"
 image = "images/tactical-mind2"
 description = """
@@ -153,17 +153,22 @@ time = "bonus"
 image = "images/pole-strike"
 description = """
 Immediately after you take the Attack Action and attack with a Weapon that has the Heavy and Reach properties, you can use a Bonus Action to make a Melee Attack with the opposite end of the Weapon. The weapon's damage die for this attack is a d4, and it deals Bludgeoning Damage.
+
+**Attack roll**: +6 (19/20 crit)
+
+**Damage**: [g]1d4[g]+4 (savage only if first hit) +2d6 (if surprise), reroll 1 or 2
+
+**Properties**: reach (15ft), heavy, two hands, bludgeoning
 """
 
 ["Reactive Strike"]
-print = true
+print = false
 type = "Ability"
 time = "reaction"
 image = "images/reactive-strike"
 description = """
 While you are holding a Weapon that has the Heavy and Reach properties, you can use your Reaction to make one Melee Attack against a creature that enters the Reach you have with that Weapon.
 """
-
 
 
 # [extra-abilities]
@@ -201,10 +206,10 @@ While you are holding a Weapon that has the Heavy and Reach properties, you can 
 [Bugubi]
 sheet = true
 image = "images/bugubi.png"
-title = '**Bugubi**, bugbear fighter 3, champion, chaotic neutral'
+title = '**Bugubi**, bugbear fighter 4, champion, chaotic neutral'
 
 [Bugubi.attributes]
-STR = [17, +3, +5]
+STR = [18, +4, +6]
 DEX = [14, +2, +2]
 CON = [16, +3, +5]
 INT = [8, -1, -1]
@@ -212,13 +217,13 @@ WIS = [10, 0, 0]
 CHA = [8, -1, -1]
 
 [Bugubi.skills]
-skills = [5, 4, 2, 4, -1, -1, -1, -1, -1, 0, 0, 0, 2, 0, -1, 1, -1, -1]
+skills = [6, 4, 2, 4, -1, -1, -1, -1, -1, 0, 0, 0, 2, 0, -1, 1, -1, -1]
 profic = [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0]
 names = [
     'Athletics (\faIcon{arrow-up})',
     'Acrobatics',
     'Sleight of hand',
-    'Stealth (\faIcon{arrow-down})',
+    'Stealth',
     'Arcana',
     'History',
     'Investigation',
@@ -238,9 +243,9 @@ names = [
 [Bugubi.boxes]
 INIT = '+2\tiny{\faIcon{arrow-up}}'
 AC = 16
-HP = 13
+HP = 45
 PROF = "+2"
-"2nd Wind" = "2"
+"2nd Wind" = "3"
 SPEED = ["9m", "30ft"]
 
 [Bugubi.proficiencies]
@@ -252,9 +257,10 @@ SPEED = ["9m", "30ft"]
 "Sneaky" = "+2d6 damage if not acted yet in combat"
 "Great w" = "Reroll 1/2 on damage with 2h weapons"
 "Savage" = "Roll weapon die 2x, pick one, 1x/turn"
-"Halbard" = "+5, 1d10+3 sls (reach, cleave)"
-"Pike" = "+5, 1d10+3 prc (reach, push)"
-"Handaxe" = "+5, 1d6+3/1d6 sls (light, thrown 6/18m)"
+"Champion" = "Critical on 19/20"
+"Halbard" = "+6, 1d10+4 sls (reach, cleave)"
+"Pike" = "+6, 1d10+4 prc (reach, push)"
+"Handaxe" = "+6, 1d6+4/1d6 sls (light, thrown 6/18m)"
 "Net" = "Dex save vs. 12, restrained, dc 10 str"
 
 
@@ -271,6 +277,7 @@ Scale Mail
 Net
 4 Handaxes
 Healer's kit
+Boots of elvenkind
 """
 
 "Backpack" = """
@@ -286,12 +293,15 @@ Shortbow
 20 arrows
 Quiver
 Playing cards
+Troféu de ouro completamente amassado
 """
 
 [extra1]
+print = false
 include = "tex/extra.tex"
 
 [extra2]
+print = true
 include = "tex/extra2.tex"
 
 [inventory.consumables]
@@ -299,5 +309,5 @@ include = "tex/extra2.tex"
 "Rations" = 10
 "Healer's kit usages" = 10
 "Healing potion (2d4+2)" = 1
-GP = 7
-
+GP = 620
+XP = 2845
