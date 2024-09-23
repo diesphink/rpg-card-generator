@@ -11,7 +11,7 @@ type = "Attack"
 time = "action"
 image = "images/pike"
 description = """
-**Attack roll**: +6 (19/20 crit)
+**Attack roll**: +7 (19/20 crit)
 
 **Damage**: [g]1d10[g]+4 +2d6 (if surprise), reroll 1 or 2
 
@@ -28,7 +28,7 @@ time = "action"
 image = "images/halberd"
 fontsize = "5.4"
 description = """
-**Attack roll**: +6 (19/20 crit)
+**Attack roll**: +7 (19/20 crit)
 
 **Damage**: [g]1d10[g]+4 +2d6 (if surprise), reroll 1 or 2
 
@@ -50,7 +50,7 @@ time = "action and bonus action"
 image = "images/handaxe2"
 fontsize = "5"
 description = """
-**Attack roll**: +6 (19/20 crit)
+**Attack roll**: +7 (19/20 crit)
 
 **Damage**: [g]1d6[g] (savage only once) +4 (only on first attack) +2d6 (if surprise)
 
@@ -154,7 +154,7 @@ image = "images/pole-strike"
 description = """
 Immediately after you take the Attack Action and attack with a Weapon that has the Heavy and Reach properties, you can use a Bonus Action to make a Melee Attack with the opposite end of the Weapon. The weapon's damage die for this attack is a d4, and it deals Bludgeoning Damage.
 
-**Attack roll**: +6 (19/20 crit)
+**Attack roll**: +7 (19/20 crit)
 
 **Damage**: [g]1d4[g]+4 (savage only if first hit) +2d6 (if surprise), reroll 1 or 2
 
@@ -169,7 +169,6 @@ image = "images/reactive-strike"
 description = """
 While you are holding a Weapon that has the Heavy and Reach properties, you can use your Reaction to make one Melee Attack against a creature that enters the Reach you have with that Weapon.
 """
-
 
 # [extra-abilities]
 # type = 'extra'
@@ -206,18 +205,18 @@ While you are holding a Weapon that has the Heavy and Reach properties, you can 
 [Bugubi]
 sheet = true
 image = "images/bugubi.png"
-title = '**Bugubi**, bugbear fighter 4, champion, chaotic neutral'
+title = '**Bugubi**, bugbear fighter 5, champion, chaotic neutral'
 
 [Bugubi.attributes]
-STR = [18, +4, +6]
+STR = [18, +4, +7]
 DEX = [14, +2, +2]
-CON = [16, +3, +5]
+CON = [16, +3, +6]
 INT = [8, -1, -1]
 WIS = [10, 0, 0]
 CHA = [8, -1, -1]
 
 [Bugubi.skills]
-skills = [6, 4, 2, 4, -1, -1, -1, -1, -1, 0, 0, 0, 2, 0, -1, 1, -1, -1]
+skills = [7, 5, 2, 5, -1, -1, -1, -1, -1, 0, 0, 0, 3, 0, -1, 2, -1, -1]
 profic = [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0]
 names = [
     'Athletics (\faIcon{arrow-up})',
@@ -243,8 +242,8 @@ names = [
 [Bugubi.boxes]
 INIT = '+2\tiny{\faIcon{arrow-up}}'
 AC = 16
-HP = 45
-PROF = "+2"
+HP = 53
+PROF = "+3"
 "2nd Wind" = "3"
 SPEED = ["9m", "30ft"]
 
@@ -258,9 +257,9 @@ SPEED = ["9m", "30ft"]
 "Great w" = "Reroll 1/2 on damage with 2h weapons"
 "Savage" = "Roll weapon die 2x, pick one, 1x/turn"
 "Champion" = "Critical on 19/20"
-"Halbard" = "+6, 1d10+4 sls (reach, cleave)"
-"Pike" = "+6, 1d10+4 prc (reach, push)"
-"Handaxe" = "+6, 1d6+4/1d6 sls (light, thrown 6/18m)"
+"Halbard" = "+7, 1d10+4 sls (reach, cleave)"
+"Pike" = "+7, 1d10+4 prc (reach, push)"
+"Handaxe" = "+7, 1d6+4/1d6 sls (light, thrown 6/18m)"
 "Net" = "Dex save vs. 12, restrained, dc 10 str"
 
 
@@ -277,23 +276,27 @@ Scale Mail
 Net
 4 Handaxes
 Healer's kit
-Boots of elvenkind
+Anel das Sombras
 """
 
 "Backpack" = """
-Crowbar
-Hammer
-10 Pitons
-Tinderbox
+Crowbar, Hammer, 10 Pitons, Tinderbox
 Waterskin
 50 feet of rope
 4 extra nets
 4 extra handaxes
-Shortbow
-20 arrows
-Quiver
+Shortbow, 20 arrows, Quiver
 Playing cards
 Troféu de ouro completamente amassado
+Bestaca
+Chicote Derruba Tonto
+"""
+
+"Wishlist" = """
+Breastplate (mesma CA, sem desvantagem)
+Half plate (CA 15 + dex)
+Splint (CA 17)
+Plate (CA 18)
 """
 
 [extra1]
@@ -308,6 +311,6 @@ include = "tex/extra2.tex"
 "Torches" = 10
 "Rations" = 10
 "Healer's kit usages" = 10
-"Healing potion (2d4+2)" = 1
-GP = 620
-XP = 2845
+"Healing potion (2d4+2)" = 3
+GP = 852
+XP = 7385
