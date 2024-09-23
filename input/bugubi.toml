@@ -6,7 +6,7 @@ count = 4
 
 
 ["Pike"]
-print = true
+print = false
 type = "Attack"
 time = "action"
 image = "images/pike"
@@ -22,7 +22,7 @@ feet straight away from yourself if it is large or smaller.
 """
 
 ["Halberd"]
-print = true
+print = false
 type = "Attack"
 time = "action"
 image = "images/halberd"
@@ -44,7 +44,7 @@ You can make this extra attack only once per turn.
 """
 
 ["Handaxes"]
-print = true
+print = false
 type = "Attack"
 time = "action and bonus action"
 image = "images/handaxe2"
@@ -147,7 +147,7 @@ If the check still fails, this use of Second Wind isn’t expended.
 """
 
 ["Pole strike"]
-print = true
+print = false
 type = "Ability"
 time = "bonus"
 image = "images/pole-strike"
@@ -169,6 +169,39 @@ image = "images/reactive-strike"
 description = """
 While you are holding a Weapon that has the Heavy and Reach properties, you can use your Reaction to make one Melee Attack against a creature that enters the Reach you have with that Weapon.
 """
+
+["Stone of Good Luck"]
+print = true
+type = "Wondrous Item"
+cost = "Attunement"
+image = "images/stone-of-good-luck"
+description = """
+While this polished agate is on your person, you gain a +1 bonus to ability checks and saving throws.
+"""
+footer = """
+Uncommon
+"""
+
+["Anel das sombras"]
+print = true
+type = "Wondrous Item"
+cost = "Attunement"
+time = "action"
+image = "images/anel-das-sombras"
+fontsize = "5.4"
+description = """
+O usuário tem vantagem em testes de furtividade para se esconder em áreas muito obscurecidas.
+
+Além disso, pode lançar a magia Passos sem Rastros uma vez por dia.
+
+For the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity (Stealth)
+checks and can’t be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage.
+"""
+footer = """
+Rare
+Concentration, up to 1 hour
+"""
+
 
 # [extra-abilities]
 # type = 'extra'
@@ -208,15 +241,15 @@ image = "images/bugubi.png"
 title = '**Bugubi**, bugbear fighter 5, champion, chaotic neutral'
 
 [Bugubi.attributes]
-STR = [18, +4, +7]
-DEX = [14, +2, +2]
-CON = [16, +3, +6]
-INT = [8, -1, -1]
-WIS = [10, 0, 0]
-CHA = [8, -1, -1]
+STR = [18, +4, +8]
+DEX = [14, +2, +3]
+CON = [16, +3, +7]
+INT = [8, -1, 0]
+WIS = [10, 0, +1]
+CHA = [8, -1, 0]
 
 [Bugubi.skills]
-skills = [7, 5, 2, 5, -1, -1, -1, -1, -1, 0, 0, 0, 3, 0, -1, 2, -1, -1]
+skills = [8, 6, 3, 6, 0, 0, 0, 0, 0, 1, 1, 1, 4, 1, 0, 3, 0, 0]
 profic = [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0]
 names = [
     'Athletics (\faIcon{arrow-up})',
@@ -240,8 +273,8 @@ names = [
 ]
 
 [Bugubi.boxes]
-INIT = '+2\tiny{\faIcon{arrow-up}}'
-AC = 16
+INIT = '+3\tiny{\faIcon{arrow-up}}'
+AC = 17
 HP = 53
 PROF = "+3"
 "2nd Wind" = "3"
@@ -272,11 +305,12 @@ image = "images/bugubi.png"
 Traveler's clothes
 Halberd
 Pike
-Scale Mail
+Splint Armor
 Net
 4 Handaxes
 Healer's kit
 Anel das Sombras
+Stone of Good Luck
 """
 
 "Backpack" = """
@@ -290,13 +324,12 @@ Playing cards
 Troféu de ouro completamente amassado
 Bestaca
 Chicote Derruba Tonto
+Scale Mail
 """
 
 "Wishlist" = """
-Breastplate (mesma CA, sem desvantagem)
-Half plate (CA 15 + dex)
-Splint (CA 17)
-Plate (CA 18)
+Half plate (CA 15 + dex, mesma CA, dis)
+Plate (CA 18, dis)
 """
 
 [extra1]
@@ -304,13 +337,13 @@ print = false
 include = "tex/extra.tex"
 
 [extra2]
-print = true
+print = false
 include = "tex/extra2.tex"
 
 [inventory.consumables]
 "Torches" = 10
 "Rations" = 10
 "Healer's kit usages" = 10
-"Healing potion (2d4+2)" = 3
+"Healing potion (2d4+2)" = 0
 GP = 852
 XP = 7385
