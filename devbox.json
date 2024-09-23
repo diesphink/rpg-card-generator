@@ -10,6 +10,11 @@
       "echo 'Welcome to devbox!' > /dev/null"
     ],
     "scripts": {
+      "build": [
+        "./generate_latex.py",
+        "xelatex -interaction=nonstopmode output/bugubi.tex bugubi.pdf",
+        "xdg-open bugubi.pdf &"
+      ],
       "test": [
         "echo \"Error: no test specified\" && exit 1"
       ]
