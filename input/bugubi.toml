@@ -21,18 +21,18 @@ description = """
 feet straight away from yourself if it is large or smaller.
 """
 
-["Halberd"]
-print = false
+["Halberd +1"]
+print = true
 type = "Attack"
 time = "action"
 image = "images/halberd"
 fontsize = "5.4"
 description = """
-**Attack roll**: +7 (19/20 crit)
+**Attack roll**: +8 (19/20 crit)
 
-**Damage**: [g]1d10[g]+4 +2d6 (if surprise), reroll 1 or 2
+**Damage**: [g]1d10[g]+4 +2d6 (if surprise)
 
-**Damage on cleave**: 1d10 +2d6 (if surprise), reroll 1 or 2
+**Damage on cleave**: 1d10+1 +2d6 (if surprise)
 
 **Properties**: reach (15ft), cleave, heavy, two hands, slashing
 
@@ -273,7 +273,7 @@ names = [
 ]
 
 [Bugubi.boxes]
-INIT = '+3\tiny{\faIcon{arrow-up}}'
+INIT = '+3/4\tiny{\faIcon{arrow-up}}'
 AC = 17
 HP = 53
 PROF = "+3"
@@ -325,6 +325,8 @@ Troféu de ouro completamente amassado
 Bestaca
 Chicote Derruba Tonto
 Scale Mail
+Fancy clothes
+Overall
 """
 
 "Wishlist" = """
@@ -337,7 +339,7 @@ print = false
 include = "tex/extra.tex"
 
 [extra2]
-print = false
+print = true
 include = "tex/extra2.tex"
 
 [inventory.consumables]
@@ -345,5 +347,5 @@ include = "tex/extra2.tex"
 "Rations" = 10
 "Healer's kit usages" = 10
 "Healing potion (2d4+2)" = 0
-GP = 852
-XP = 7385
+GP = 531
+XP = 10265
