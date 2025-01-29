@@ -301,38 +301,59 @@ inventory = true
 title = "Inventory of **Bugubi**"
 image = "images/bugubi.png"
 
-"Wearing/At hand" = """
-Traveler's clothes
-Halberd
-Pike
-Splint Armor
-Net
-4 Handaxes
-Healer's kit
-Anel das Sombras
-Stone of Good Luck
+"Wearing" = """
+Armor: Plate Armor +1
+Clothes: Glamerweave
+Eyes: Eyes of the eagle
+Ear: Earring of message
+Back: Quiver of Ehlonna
+Cloak: Cloak of protection
+Feet: Boots of elvenkind
+Neck: Diamond necklace (2x1k, 10x300)
 """
 
-"Backpack" = """
-Crowbar, Hammer, 10 Pitons, Tinderbox
-Waterskin
-50 feet of rope
-4 extra nets
-4 extra handaxes
-Shortbow, 20 arrows, Quiver
-Playing cards
-Troféu de ouro completamente amassado
-Bestaca
-Chicote Derruba Tonto
-Scale Mail
-Fancy clothes
-Overall
+"At hand" = """
+Pike +1
+Halberd +1
+Dragon Wrath Halberd
+18 javelins of lightning
+Stone of good luck
+Sensory Stone
+Horn of Silen Alarm
 """
 
-"Wishlist" = """
-Half plate (CA 15 + dex, mesma CA, dis)
-Plate (CA 18, dis)
+"Bag of Holding" = """
+Cap of water breathing
+Decantar of endless water
+Lanter of revealing
+Rope of climbing
+Wand of secrets
+Balance of Harmony
+House of cards
+Tankard of Plenty
+Cleansing Stone
+Thermal Cube
+Playing Cards
 """
+
+[inventory.consumables]
+"Dust of Disappearance" = 5
+"Dust of Corrosion" = 5
+"Pixie Dust" = 5
+"Keoghtom’s Ointment" = 6
+"Mystery Key" = 5
+"Feather Token" = 5
+"Healing Potion" = 2
+"Greater Healing Potion" = 13
+"Bead of Nourishment" = 40
+"Bead of Refreshment" = 10
+"Tattoo: Misty Step" = 3
+"Tattoo: Fly" = 3
+"Tattoo: Absorb Elements Step" = 10
+"Tattoo: Revivify" = 3
+GP = 531
+XP = 10265
+
 
 [extra1]
 print = false
@@ -342,10 +363,3 @@ include = "tex/extra.tex"
 print = true
 include = "tex/extra2.tex"
 
-[inventory.consumables]
-"Torches" = 10
-"Rations" = 10
-"Healer's kit usages" = 10
-"Healing potion (2d4+2)" = 0
-GP = 531
-XP = 10265
