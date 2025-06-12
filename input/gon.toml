@@ -1,0 +1,283 @@
+[Gon]
+sheet = true
+image = "images/gon.png"
+title = '**Gon**, human druid (magician) 1, lawful good'
+
+[Gon.attributes]
+STR = [8, -1, -1]
+DEX = [16, +3, +3]
+CON = [8, -1, -1]
+INT = [14, +2, +4]
+WIS = [17, +3, +5]
+CHA = [10, 0, 0]
+
+[Gon.skills]
+skills = [-1, 3, 3, 5, 7, 2, 2, 7, 2, 3, 3, 3, 5, 5, 0, 0, 0, 0]
+profic = [ 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+names = [
+    'Athletics',
+    'Acrobatics',
+    'Sleight of hand',
+    'Stealth',
+    'Arcana',
+    'History',
+    'Investigation',
+    'Nature',
+    'Religion',
+    'Animal Handling',
+    'Insight',
+    'Medicine',
+    'Perception',
+    'Survival',
+    'Deception',
+    'Intimidation',
+    'Performance',
+    'Persuasion',
+]
+
+[Gon.boxes]
+INITIATIVE = '+3'
+AC = 17
+HP = 7
+PROF = "+2"
+"PERCEPTION" = "15"
+SPEED = ["9m", "30ft"]
+"SPELL ATT" = "+5"
+"SAVE DC" = 13
+
+[Gon.proficiencies]
+'\faIcon{comment}' = "Common, druidic, dwarvish, elvish"
+'\faIcon{gavel}' = "Light armor, shields, simple weapons"
+'\faIcon{wrench}' = "Cartographer, Herbalism, Harp, Lyre, Flute"
+
+
+
+[Gon.attacks]
+"Quarterstaff" = "+1, 1d6-1"
+"Starry Wisp" = "+5, 1d8 radiant, 60ft"
+"Poison Spray" = "+5, 1d12 poison, 30ft"
+
+[inventory]
+inventory = true
+title = "Inventory of **Gon**"
+image = "images/gon.png"
+
+"Wearing" = """
+Armor: Studded leather armor
+Clothes: Traveler's clothes
+Back: Backpack
+"""
+
+"At hand" = """
+Druidic Focus (Quarterstaff)
+Shield
+"""
+
+"Backpack" = """
+Tent
+Harp
+Bedroll
+Rope
+Tinderbox
+Oil x2
+Waterskin
+"""
+
+[inventory.consumables]
+"Goodberries x1 \\faIcon[regular]{square}" = 10
+"Goodberries x2 \\faIcon[regular]{square}" = 10
+"Rations" = 10
+"Torch" = 10
+
+
+GP = 0
+XP = 0
+
+
+["Guidance"]
+print = true
+type = "Cantrip"
+time = "action"
+components = "VS"
+image = "images/card-guidance"
+description = """
+You touch a willing creature and choose a skill. Until the spell ends, the creature adds **1d4** to any ability check using the chosen skill.
+"""
+footer = """
+Touch
+Concentration, up to 1 min"""
+
+["Message"]
+print = true
+type = "Cantrip"
+time = "action"
+components = "SM"
+image = "images/card-message"
+description = """
+You point toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.
+
+You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier.
+Magical silence; 1 foot of stone, metal, or wood; or a thin sheet of lead blocks the spell.
+"""
+footer = """
+120ft
+1 round"""
+
+["Poison Spray"]
+print = true
+type = "Cantrip"
+time = "action"
+components = "VS"
+image = "images/poison-spray"
+description = """
+You spray toxic mist at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes **1d12 Poison** damage.
+"""
+# **Cantrip Upgrade**. The damage increases by 1d12 when you reach levels 5 (2d12), 11 (3d12), and 17 (4d12).
+footer = """
+30ft
+Instantaneous"""
+
+["Shillelagh"]
+print = true
+type = "Cantrip"
+time = "bonus"
+components = "VSM"
+image = "images/shillelagh"
+description = """
+A Club or Quarterstaff you are holding is imbued with nature’s power. For the duration, you can use your spellcasting ability instead of Strength
+for the attack and damage rolls of melee attacks using that weapon, and the weapon’s damage die becomes a **d8**. If the attack deals damage, it can be Force
+damage or the weapon’s normal damage type (your choice).
+
+The spell ends early if you cast it again or if you let go of the weapon.
+"""
+#Cantrip Upgrade. The damage die changes when you reach levels 5 (d10), 11 (d12), and 17 (2d6).
+footer = """
+Self
+1 minute"""
+
+["Starry Wisp"]
+print = true
+type = "Cantrip"
+time = "action"
+components = "VS"
+image = "images/starry-wisp"
+description = """
+You launch a mote of light at one creature or object within range. Make a ranged spell attack against the target.
+On a hit, the target takes **1d8 Radiant** damage, and until the end of your next turn, it emits Dim Light in a 10-foot radius and can’t benefit from the Invisible condition.
+"""
+# **Cantrip Upgrade**. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).
+footer = """
+60ft
+Instantaneous"""
+
+["Entangle"]
+type = "1st Level Spell"
+time = "action"
+components = "VS"
+image = "images/entangle"
+fontsize = 5.2
+description = """
+Grasping plants sprout from the ground in a 20-foot square within range. For the duration, these plants turn the ground in the area into **Difficult Terrain**.
+They disappear when the spell ends.
+
+Each creature (other than you) in the area when you cast the spell must succeed on a **Strength** saving throw or have the **Restrained** condition until the spell ends.
+
+Restrained: speed 0, attack against has adv, attack from has disav, disadv on dexterity saves
+
+A Restrained creature can take an **action** to make a **Strength (Athletics)** check against your spell save DC. On a success, it frees itself from the grasping plants
+and is no longer Restrained by them.
+"""
+footer = """
+90 feet/20 feet
+Concentration, up to 1 minute"""
+
+
+["Faerie Fire"]
+type = "1st Level Spell"
+time = "action"
+components = "V"
+image = "images/faerie-fire"
+description = """
+Objects in a 20-foot Cube within range are outlined in blue, green, or violet light (your choice). Each creature in the Cube is also outlined if it fails a
+**Dexterity** saving throw. For the duration, objects and affected creatures shed Dim Light in a 10-foot radius and can’t benefit from the Invisible condition.
+
+Attack rolls against an affected creature or object have **Advantage** if the attacker can see it.
+"""
+footer = """
+60 feet/20 feet
+Concentration, up to 1 minute"""
+
+["Goodberry"]
+type = "1st Level Spell"
+time = "action"
+components = "VSM"
+image = "images/goodberry"
+description = """
+Ten berries appear in your hand and are infused with magic for the duration.
+A creature can take a Bonus Action to eat one berry.
+
+Eating a berry restores **1 Hit Point**, and the berry provides enough nourishment to sustain a creature for one day.
+
+Uneaten berries disappear when the spell ends.
+"""
+footer = """
+Self
+24 hours"""
+
+["Healing Word"]
+type = "1st Level Spell"
+time = "bonus"
+components = "V"
+image = "images/card-mantra-of-healing"
+description = """
+A creature of your choice that you can see within range regains Hit Points equal to **2d4 plus your spellcasting ability modifier**.
+
+Using a Higher-Level Spell Slot. The healing increases by 2d4 for each spell slot level above 1.
+"""
+footer = """
+Self
+24 hours"""
+
+["Speak with Animals (Ritual)"]
+type = "1st Level Spell"
+time = "action"
+components = "VS"
+image = "images/speak-with-animals"
+description = """
+For the duration, you can comprehend and verbally communicate with Beasts, and you can use any of the Influence action’s skill options with them.
+
+Most Beasts have little to say about topics that don’t pertain to survival or companionship, but at minimum, a Beast can give you information
+about nearby locations and monsters, including whatever it has perceived within the past day.
+"""
+footer = """
+Self
+10 minutes"""
+
+["Absorb Elements"]
+type = "1st Level Spell"
+time = "reaction"
+components = "S"
+fontsize = 5.5
+image = "images/absorb-elements"
+description = """
+**Trigger**: take acid, cold, fire, lightning, or thunder damage
+
+The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack.
+You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on
+your next turn, the target takes an extra **1d6** damage of the triggering type, and the spell ends.
+
+At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.
+"""
+footer = """
+Self
+1 round"""
+
+["Encouraging Song"]
+type = "Ability"
+image = "images/encouraging-song"
+description = """
+As you finish a Short or Long Rest, you can play a song on a Musical Instrument with which you have proficiency and give Heroic Inspiration to allies who hear the song.
+
+The number of allies you can affect in this way equals your **Proficiency Bonus**.
+"""
+

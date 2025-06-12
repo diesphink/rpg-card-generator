@@ -22,7 +22,7 @@ feet straight away from yourself if it is large or smaller.
 """
 
 ["Halberd +1"]
-print = true
+print = false
 type = "Attack"
 time = "action"
 image = "images/halberd"
@@ -171,7 +171,7 @@ While you are holding a Weapon that has the Heavy and Reach properties, you can 
 """
 
 ["Stone of Good Luck"]
-print = true
+print = false
 type = "Wondrous Item"
 cost = "Attunement"
 image = "images/stone-of-good-luck"
@@ -183,7 +183,7 @@ Uncommon
 """
 
 ["Anel das sombras"]
-print = true
+print = false
 type = "Wondrous Item"
 cost = "Attunement"
 time = "action"
@@ -201,6 +201,319 @@ footer = """
 Rare
 Concentration, up to 1 hour
 """
+
+["Dragon Wrath Halberd +1"]
+print = true
+type = "Attack"
+time = "action"
+image = "images/halberd"
+fontsize = "4.9"
+description = """
+**Attack roll**: +9 (19/20 crit)
+
+**Damage**: [g]1d10[g]+6 +1d6 (fire) +2d6 (if surprise)
+
+**Damage on cleave**: 1d10+1 +1d6 (fire) +2d6 (if surprise)
+
+**Properties**: reach (15ft), cleave, heavy, two hands, slashing
+
+**Slumbering**: Whenever you roll a 20 on your attack roll with this weapon, each creature
+of your choice within 5 feet of the target takes 5 fire damage.
+
+**Cleave**: If you hit a creature with a melee attack, you can make an attack roll with the weapon
+against a 2nd creature within 5ft of the first creature that is also within your reach.
+Don't add your ability modifier to damage, unless that modifier is negative. 
+You can make this extra attack only once per turn.
+"""
+footer = "Rare"
+
+["Glamerweave"]
+print = true
+image = "images/card-shiftweave"
+fontsize = 5.4
+description = """
+Glamerweave is clothing imbued with harmless illusory magic. While wearing the common version of these clothes,
+you can use a bonus action to create a moving illusory pattern within the cloth.
+
+Uncommon glamerweave can have the pattern rise from the cloth. For example, a glamerweave gown might be wreathed
+in harmless, illusory flames, while a glamerweave hat might have illusory butterflies fluttering around it.
+
+When you make a Charisma (Performance) or Charisma (Persuasion) check while wearing the uncommon version of glamerweave,
+you can roll a d4 and add the number rolled to the check. Once you use this property, it can't be used again until the next dawn.
+"""
+footer = "Uncommon"
+
+["Eyes of the Eagle"]
+print = true
+image = "images/card-pearl-of-power"
+# fontsize = 5.4
+description = """
+These crystal lenses fit over the eyes. While wearing them, you have Advantage on Wisdom (Perception) checks that rely on sight.
+In conditions of clear visibility, you can make out details of even extremely distant creatures and objects as small as 2 feet across.
+"""
+footer = "Uncommon"
+
+["Earring of Message"]
+print = true
+image = "images/earrings-of-message"
+fontsize = 5
+description = """
+The blue crystal of this earring is wrapped with delicate copper wire. The earring has 5 charges.
+While wearing it, you can use an action to expend 1 charge and cast the Message spell. The earring regains 1d4 + 1 expended charges daily at dawn.
+
+**Message**: You point your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can
+reply in a whisper that only you can hear.
+
+You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier.
+Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks the spell.
+The spell doesn’t have to follow a straight line and can travel freely around corners or through openings.
+"""
+footer = "Common"
+
+["Quiver of Ehlonna"]
+print = true
+image = "images/card-pearl-of-power"
+description = """
+Each of the quiver’s three compartments connects to an extradimensional space that allows the quiver to hold numerous items
+while never weighing more than 2 pounds. The shortest compartment can hold up to 60 Arrows, Bolts, or similar objects.
+The midsize compartment holds up to 18 Javelins or similar objects. The longest compartment holds up to 6 long objects, such as
+bows, Quarterstaff's, or Spears.
+
+You can draw any item the quiver contains as if doing so from a regular quiver or scabbard.
+"""
+footer = "Uncommon"
+
+["Cloak of Protection"]
+print = true
+image = "images/card-pearl-of-power"
+description = """
+You gain a +1 bonus to Armor Class and saving throws while you wear this cloak.
+"""
+footer = "Uncommon"
+
+["Boots of Elvenkind"]
+print = true
+image = "images/card-boots-of-levitation"
+description = """
+While you wear these boots, your steps make no sound, regardless of the surface you are moving across. You also have Advantage on Dexterity (Stealth) checks.
+"""
+footer = "Uncommon"
+
+["Horn of Silent Alarm"]
+print = true
+image = "images/card-pearl-of-power"
+description = """
+This horn has 4 charges and regains 1d4 expended charges daily at dawn. As a Magic action, you can blow the horn while expending 1 charge.
+One creature of your choice hears the horn’s blare, provided that creature is within 600 feet of the horn. No other creature hears the horn.
+"""
+footer = "Common"
+
+["Dust of Disappearance"]
+print = true
+image = "images/card-invisibility"
+description = """
+This powder resembles fine sand. There is enough of it for one use. When you take a Utilize action to throw the dust into the air,
+you and each creature and object within a 10-foot Emanation originating from you have the Invisible condition for 2d4 minutes.
+The duration is the same for all subjects, and the dust is consumed when its magic takes effect. Immediately after an affected creature
+makes an attack roll, deals damage, or casts a spell, the Invisible condition ends for that creature.
+"""
+footer = "Uncommon"
+
+["Keoghtom's Ointment"]
+print = true
+image = "images/card-pearl-of-power"
+description = """
+This glass jar, 3 inches in diameter, contains 1d4 + 1 doses of a thick mixture that smells faintly of aloe. The jar and its contents weigh 1/2 pound.
+
+As a Utilize action, you can swallow one dose of the ointment or apply it to a creature within 5 feet of yourself.
+
+The creature that receives it regains 2d8 + 2 Hit Points and ceases to have the Poisoned condition.
+"""
+footer = "Uncommon"
+
+["Sensory Stone"]
+print = true
+image = "images/locate-creature"
+fontsize = 5
+description = """
+This small, smooth stone contains the essence of a single experience.
+As an action, you or a willing creature you designate can touch the stone and experience the sensation as if it happened to the designated creature.
+The illusory experience is fleeting and harmless, however real it might feel in the moment.
+
+**Record Sensation**: You can use your reaction to record a short sensation lasting no longer than 6 seconds experienced by a creature of your choice within
+30 feet of yourself, infusing the essence of the experience into the stone. This replaces any sensation already stored within the stone.
+
+**Siphon Sensation**: As a bonus action, you can draw on the stone's magic to end the charmed or frightened condition on yourself, destroying the stone in
+the process.
+"""
+footer = "Uncommon"
+
+["Dust of Corrosion"]
+print = true
+image = "images/card-darkness"
+fontsize = 5.9
+description = """
+As an action, you can throw this dust into the air, filling a 10-foot cube that extends out from you. Surfaces and objects made of nonmagical
+ferrous metal in the area instantly corrode and turn to dust, becoming useless and unsalvageable. Any creature in the area that is made wholly
+or partly out of ferrous metal must make a DC 13 Constitution saving throw, taking 4d8 necrotic damage on a failed save, or half as much damage
+on a successful one.
+
+Found in a small packet, this dust is made from finely ground rust monster antennae. There is enough dust in each packet for one use.
+"""
+footer = "Uncommon"
+
+["Pixie Dust"]
+print = true
+image = "images/card-polymorph"
+description = """
+As an action, you can sprinkle this dust on yourself or another creature you can see within 5 feet of you. The recipient gains a flying speed of
+30 feet and the ability to hover for 1 minute. If the creature is airborne when this effect ends, it falls safely to the ground, taking no damage
+and landing on its feet.
+
+A small packet holds enough pixie dust for one use.
+"""
+footer = "Uncommon"
+
+["Cap of water Breathing"]
+print = true
+image = "images/card-helm-of-comprehending-languages"
+description = """
+While wearing this cap underwater, you can take a Magic action to create a bubble of air around your head. This bubble allows you to breathe normally
+underwater. This bubble stays with you until the cap is removed or you are no longer underwater.
+"""
+footer = "Uncommon"
+
+["Decanter of Endless Water"]
+print = true
+image = "images/card-pearl-of-power"
+fontsize = 4.5
+description = """
+This stoppered flask sloshes when shaken, as if it contains water. The decanter weighs 2 pounds.
+You can take a Magic action to remove the stopper and issue one of three command words, whereupon an amount of fresh water or salt water (your choice)
+pours out of the flask. The water stops pouring out at the start of your next turn. Choose from the following command words:
+
+**Splash**: The decanter produces 1 gallon of water.
+
+**Fountain**: The decanter produces 5 gallons of water.
+
+**Geyser**: The decanter produces 30 gallons of water that gushes forth in a Line 30 feet long and 1 foot wide. If you’re holding the decanter, you can
+aim the geyser in one direction (no action required). One creature of your choice in the Line must succeed on a DC 13 Strength saving throw or take
+1d4 Bludgeoning damage and have the Prone condition. Instead of a creature, you can target one object in the Line that isn’t being worn or carried and
+that weighs no more than 200 pounds. The object is knocked over by the geyser.
+"""
+footer = "Uncommon"
+
+["Lantern of Revealing"]
+print = true
+image = "images/mantra-of-anathema"
+description = """
+While lit, this hooded lantern burns for 6 hours on 1 pint of oil, shedding Bright Light in a 30-foot radius and Dim Light for an additional 30 feet.
+Invisible creatures and objects are visible as long as they are in the lantern’s Bright Light. You can take a Utilize action to lower the hood, reducing
+the lantern’s light to Dim Light in a 5-foot radius.
+"""
+footer = "Uncommon"
+
+["Rope of Climbing"]
+print = true
+image = "images/card-pearl-of-power"
+fontsize = 4.5
+description = """
+This 60-foot length of rope can hold up to 3,000 pounds. While holding one end of the rope, you can take a Magic action to command the other end of the
+rope to animate and move toward a destination you choose, up to the rope’s length away from you. That end moves 10 feet on your turn when you first
+command it and 10 feet at the start of each of your subsequent turns until reaching its destination or until you tell it to stop. You can also tell
+the rope to fasten itself securely to an object or to unfasten itself, to knot or unknot itself, or to coil itself for carrying.
+
+If you tell the rope to knot, large knots appear at 1-foot intervals along the rope. While knotted, the rope shortens to a 50-foot length and grants
+Advantage on ability checks made to climb using the rope.
+
+The rope has AC 20, HP 20, and Immunity to Poison and Psychic damage. It regains 1 Hit Point every 5 minutes as long as it has at least 1 Hit Point.
+If the rope drops to 0 Hit Points, it is destroyed.
+"""
+footer = "Uncommon"
+
+
+["Wand of Secrets"]
+print = true
+image = "images/card-pearl-of-power"
+#fontsize = 4.5
+description = """
+This wand has 3 charges and regains 1d3 expended charges daily at dawn. While holding it, you can take a Magic action to expend 1 charge, and if
+a secret door or trap is within 60 feet of you, the wand pulses and points at the one nearest to you.
+"""
+footer = "Uncommon"
+
+["Balance of Harmony"]
+print = true
+image = "images/card-pearl-of-power"
+fontsize = 5.8
+description = """
+This scale bears celestial symbols on one pan and fiendish symbols on the other. You can use the scale to cast Detect Evil and Good as a ritual.
+Doing so requires you to place the scale on a solid surface, then sprinkle the pans with holy water or place a transparent gem worth 100 gp in each pan.
+
+The scale remains motionless if it detects nothing, tips to one side or the other for good (consecrated) or evil (desecrated), and fluctuates slightly
+if it detects a creature appropriate to the spell but neither good nor evil. By touching the scales after casting the ritual, you instantly learn any
+information the spell can normally convey, and then the effect ends.
+"""
+footer = "Uncommon"
+
+["House of Cards"]
+print = true
+image = "images/card-prestidigitation"
+fontsize = 4.9
+description = """
+This deck of cards is decorated with geometric shapes that have a protective motif. While you’re holding the deck, you can use an action to shuffle
+it and cause the cards to deal themselves out and transform into a shelter made of cards. The shelter can be shaped however you desire, but it must
+fit in a 40-foot cube centered on a point within 30 feet of you. The shelter has one door and up to four windows, and only you can open or close them.
+It has a floor and a roof, and it maintains a comfortable temperature inside.
+
+The shelter has AC 15, 50 hit points, and immunity to poison and psychic damage. The shelter lasts for 24 hours, until you dismiss it as an action,
+or until it is reduced to 0 hit points. When the shelter’s duration ends, it transforms back into a deck of cards and appears in your hand. Once the
+deck has transformed into a shelter, it can’t be used again until the next dawn.
+"""
+footer = "Uncommon"
+
+["Mystery Key"]
+print = true
+image = "images/card-pearl-of-power"
+#fontsize = 4.9
+description = """
+A question mark is worked into the head of this key. The key has a 5 percent chance of unlocking any lock into which it’s inserted. Once it unlocks
+something, the key disappears.
+"""
+footer = "Common"
+
+
+["Tankard of Plenty"]
+print = true
+image = "images/card-pearl-of-power"
+#fontsize = 4.9
+description = """
+This golden stein is decorated with dancing dwarves and grain patterns. If you speak the command word (“Illefarn”) while grasping the handle,
+the tankard fills with three pints of rich dwarven ale. The tankard has 3 charges. Using the tankard’s property expends 1 charge, and the tankard
+regains all expended charges daily at dawn.
+"""
+footer = "Common"
+
+["Cleansing Stone"]
+print = true
+image = "images/luckstone"
+#fontsize = 4.9
+description = """
+A cleansing stone is a sphere 1 foot in diameter, engraved with mystic sigils. When touching the stone, you can use an action to activate it and
+remove dirt and grime from your garments and your person.
+
+Such stones are often embedded in pedestals in public squares in Aundair or in high-end Ghallanda inns.
+"""
+footer = "Common"
+
+["Thermal Cube"]
+print = true
+image = "images/card-pearl-of-power"
+#fontsize = 4.9
+description = """
+This 3-inch cube of solid brimstone generates enough dry heat to keep the temperature within 15 feet of it at 95 degrees Fahrenheit (35 degrees Celsius).
+"""
+footer = "Common"
 
 
 # [extra-abilities]
@@ -238,21 +551,21 @@ Concentration, up to 1 hour
 [Bugubi]
 sheet = true
 image = "images/bugubi.png"
-title = '**Bugubi**, bugbear fighter 5, champion, chaotic neutral'
+title = '**Bugubi**, bugbear fighter 6, champion, chaotic neutral'
 
 [Bugubi.attributes]
-STR = [18, +4, +8]
-DEX = [14, +2, +3]
-CON = [16, +3, +7]
-INT = [8, -1, 0]
-WIS = [10, 0, +1]
-CHA = [8, -1, 0]
+STR = [20, +5, +10]
+DEX = [14, +2, +4]
+CON = [16, +3, +8]
+INT = [8, -1, +1]
+WIS = [10, 0, +2]
+CHA = [8, -1, +1]
 
 [Bugubi.skills]
-skills = [8, 6, 3, 6, 0, 0, 0, 0, 0, 1, 1, 1, 4, 1, 0, 3, 0, 0]
+skills = [9, 6, 3, 6, 0, 0, 0, 0, 0, 1, 1, 1, 4, 1, 0, 3, 0, 0]
 profic = [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0]
 names = [
-    'Athletics (\faIcon{arrow-up})',
+    'Athletics \faIcon{arrow-up}',
     'Acrobatics',
     'Sleight of hand',
     'Stealth',
@@ -264,7 +577,7 @@ names = [
     'Animal Handling',
     'Insight',
     'Medicine',
-    'Perception',
+    'Perception \tiny{\faIcon{arrow-up}}',
     'Survival',
     'Deception',
     'Intimidation',
@@ -273,9 +586,9 @@ names = [
 ]
 
 [Bugubi.boxes]
-INIT = '+3/4\tiny{\faIcon{arrow-up}}'
-AC = 17
-HP = 53
+INIT = '+3 \tiny{\faIcon{arrow-up}}'
+AC = 20
+HP = 66
 PROF = "+3"
 "2nd Wind" = "3"
 SPEED = ["9m", "30ft"]
@@ -287,16 +600,16 @@ SPEED = ["9m", "30ft"]
 
 [Bugubi.attacks]
 "Sneaky" = "+2d6 damage if not acted yet in combat"
-"Great w" = "Reroll 1/2 on damage with 2h weapons"
 "Savage" = "Roll weapon die 2x, pick one, 1x/turn"
 "Champion" = "Critical on 19/20"
-"Halbard" = "+7, 1d10+4 sls (reach, cleave)"
-"Pike" = "+7, 1d10+4 prc (reach, push)"
-"Handaxe" = "+7, 1d6+4/1d6 sls (light, thrown 6/18m)"
-"Net" = "Dex save vs. 12, restrained, dc 10 str"
+
+"Dragon W" = "+9, 1d10+6 sls +1d6 fire (cleave)"
+"Pike +1" = "+9, 1d10+6 prc (push)"
+"Javelin" = "+8 1d6+5 pierc/lightning (slow)"
+"Jav. Li" = "120ft line, DC 13 dex, 4d6 or half"
 
 
-[inventory]
+[inventory1]
 inventory = true
 title = "Inventory of **Bugubi**"
 image = "images/bugubi.png"
@@ -313,46 +626,56 @@ Neck: Diamond necklace (2x1k, 10x300)
 """
 
 "At hand" = """
-Pike +1
-Halberd +1
 Dragon Wrath Halberd
-18 javelins of lightning
 Stone of good luck
 Sensory Stone
 Horn of Silen Alarm
 """
 
+"Quiver of Ehlonna" = """
+10 javelins of lightning
+Halberd +1
+Pike +1
+"""
+
+
+[inventory1.consumables]
+"Dust of Disappearance" = 5
+"Dust of Corrosion" = 5
+"Pixie Dust" = 5
+"Keoghtom’s Ointment (1x, cargas)" = 5
+"Greater Healing Potion" = 5
+GP = 531
+XP = 14725
+
+[inventory2.consumables]
+"Bead of Nourishment" = 40
+"Bead of Refreshment" = 10
+"Healing Potion" = 2
+"Feather Token" = 5
+"Mystery Key" = 5
+"Keoghtom’s Ointment" = 4
+
+
+[inventory2]
+inventory = true
+title = "Inventory of **Bugubi**"
+image = "images/bugubi.png"
+
 "Bag of Holding" = """
 Cap of water breathing
 Decantar of endless water
-Lanter of revealing
+Lantern of revealing
 Rope of climbing
 Wand of secrets
 Balance of Harmony
 House of cards
 Tankard of Plenty
 Cleansing Stone
-Thermal Cube
 Playing Cards
+Thermal Cube
+Anel das Sombras
 """
-
-[inventory.consumables]
-"Dust of Disappearance" = 5
-"Dust of Corrosion" = 5
-"Pixie Dust" = 5
-"Keoghtom’s Ointment" = 6
-"Mystery Key" = 5
-"Feather Token" = 5
-"Healing Potion" = 2
-"Greater Healing Potion" = 13
-"Bead of Nourishment" = 40
-"Bead of Refreshment" = 10
-"Tattoo: Misty Step" = 3
-"Tattoo: Fly" = 3
-"Tattoo: Absorb Elements Step" = 10
-"Tattoo: Revivify" = 3
-GP = 531
-XP = 10265
 
 
 [extra1]
