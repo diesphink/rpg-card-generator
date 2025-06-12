@@ -375,7 +375,7 @@ def print_inventory(title, p, output):
             continue
         lines.append(
             name
-            + " "
+            + "\\hfill "
             + (
                 "".join(
                     [r"\faIcon[regular]{square}\hspace{-0.8mm}" for i in range(value)]
@@ -459,7 +459,7 @@ for config_file in glob.glob("input/*.toml"):
             else:
                 output.write("% Not printed\n")
 
-        output.write("\n\end{center}\end{document}")
+        output.write("\\end{center}\\end{document}")
 
     for image in images:
         if os.path.isfile(image):
