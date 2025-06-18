@@ -8,3 +8,6 @@ bugubi.pdf
 .vscode/data
 .vscode/extensions
 .venv
+gon.aux
+gon.log
+gon.pdf
