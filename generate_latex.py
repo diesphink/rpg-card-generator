@@ -406,6 +406,240 @@ def include(include_file, output):
             output.write(line)
 
 
+def print_creature(title, p, output):
+    # \pet[type=Tiny Beast, ac=11, hp=1, speed=60, speedm=180, prof=+2, perc=10, str=3, dex=13, con=8, int=2, wis=12, cha=7, strb=-4, dexb=+1,
+    # conb=-1, intb=-4, wisb=+1, chab=-2]{images/card-buma}{Buma}
+    # {Perception +3\\Stealth +3}
+    # {%
+    # \textbf{Senses}\\
+    # Darkvision 120ft
+    # \\[1mm]
+    # \textbf{Flyby}\\
+    # Buma doesn't provoke opportunity attacks when it flies out of an enemy's reach.
+    # \\[1mm]
+    # \textbf{Keen Hearing and Sight}\\
+    # Buma has advantage on Wisdom (Perception) checks that rely on hearing or sight.
+    # }%
+
+    # início da carta, imagem de fundo e título acima
+    output.write(r"\begin{tikzpicture}[x=1mm, y=1mm]")
+
+    fontsize = p.get("fontsize", 6)
+
+    output.write(
+        r"""
+% Parchment paper
+\draw[fill=parchment] (0,0) rectangle (\cardwidth,\cardheight);
+
+
+% Imagem
+\node[anchor=north west, inner sep=0,outer sep=0] (back) at (0, 63) {\includegraphics[width=41mm]{"""
+        + get_image(p)
+        + r"""}};
+
+% Parchment paper
+\draw[fill=parchment] (0, 0) rectangle (\cardwidth,20);
+
+% Título
+\node[title, anchor=north west](title) at (2,61) {\textbf{"""
+        + parse_text(title)
+        + "}};\n"
+    )
+
+    # Atributos
+    pos_x = [2, 39.5]
+    pos_y = [51.5, 43, 34.5]
+    attrs = ["STR", "DEX", "CON", "INT", "WIS", "CAR"]
+    for index, attr in enumerate(attrs):
+        if p.get(attr, None) is not None:
+            vl = p.get(attr)
+            if index < 3:
+                output.write(r"\leftbox{" + str(pos_x[0]) + ",")
+            else:
+                output.write(r"\rightbox{" + str(pos_x[1]) + ",")
+            output.write(str(pos_y[index % 3]))
+
+            bonus = ("+" if vl[1] >= 0 else "") + str(vl[1])
+            valor = str(vl[0])
+            saving = ("+" if vl[2] >= 0 else "") + str(vl[2])
+
+            output.write(
+                "}{" + attr + "}{" + bonus + "}{" + valor + "}{" + saving + "}"
+            )
+            output.write("\n")
+
+    output.write(
+        r"""
+
+    % Texto
+    \node[fill=parchment, inner sep=2mm, outer sep=0, font=\sffamily\fontsize{"""
+        + str(fontsize)
+        + """}{"""
+        + str(fontsize * 0.5)
+        + """}\selectfont, text width=37mm, anchor=north west, align=justify] (text) at (0, 29.5) {"""
+        + parse_text(p.get("description", ""))
+        + r"""};
+
+    % Separador
+    \draw [line width = 0.5mm] ([yshift=0.25mm] text.north west) -- ([yshift=0.25mm] text.north east);
+
+    \coordinate (tagpos) at (39,3);
+
+    % Type
+    \node[tag](type) at (39, 29.5) {WILD SHAPE};
+
+    % Borda
+    \draw[line width = 0.5mm, black] (0,0) rectangle (\cardwidth,\cardheight);
+
+    """
+    )
+
+    output.write("\end{tikzpicture}{}%\n")
+
+
+#     # ATTRIBUTES
+#     output.write(
+#         r"""
+
+# % Atributos
+# """
+#     )
+#     attr_atual = 0
+#     attributes = p.get("attributes")
+#     pos_x = [2, 61]
+#     pos_y = [76.5, 68, 59.5]
+
+#     for attr, vl in attributes.items():
+#         if attr_atual < 3:
+#             output.write(r"\leftbox{" + str(pos_x[0]) + ",")
+#         else:
+#             output.write(r"\rightbox{" + str(pos_x[1]) + ",")
+#         output.write(str(pos_y[attr_atual % 3]))
+#         bonus = ("+" if vl[1] >= 0 else "") + str(vl[1])
+#         valor = str(vl[0])
+#         saving = ("+" if vl[2] >= 0 else "") + str(vl[2])
+
+#         output.write("}{" + attr + "}{" + bonus + "}{" + valor + "}{" + saving + "}")
+#         output.write("\n")
+#         attr_atual += 1
+
+#     # BOXES
+#     output.write(
+#         r"""
+# % Boxes
+# """
+#     )
+#     box_atual = 0
+#     boxes = p.get("boxes")
+#     pos_x = [2, 12, 22, 33, 43, 53]
+#     pos_y = [52, 43]
+
+#     for name, vl in boxes.items():
+
+#         if box_atual < 6:
+#             x = pos_x[box_atual % 6]
+#             y = pos_y[0]
+#         else:
+#             x = pos_x[(box_atual % 6) + 2]
+#             y = pos_y[1]
+
+#         if isinstance(vl, list):
+#             output.write(
+#                 r"\centerboxsubs[anchor=north west]{"
+#                 + str(x)
+#                 + ","
+#                 + str(y)
+#                 + "}{"
+#                 + name
+#                 + "}{"
+#                 + str(vl[0])
+#                 + "}{"
+#                 + str(vl[1])
+#                 + "}"
+#             )
+#         else:
+#             output.write(
+#                 r"\centerbox[anchor=north west]{"
+#                 + str(x)
+#                 + ","
+#                 + str(y)
+#                 + "}{"
+#                 + name
+#                 + "}{"
+#                 + str(vl)
+#                 + "}"
+#             )
+
+#         output.write("\n")
+#         box_atual += 1
+
+#     # SKILLS
+#     skills = p.get("skills")
+#     output.write(
+#         r"""
+
+#     % Stats
+#     \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{1.5, 55}{AC}{\ac}
+#     \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{9.5, 55}{HP}{\hp}
+#     \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{17.5, 55}{SPEED}{\speed}
+#     \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{25.5, 55}{PROF}{\prof}
+#     \centerbox[anchor=north west, minimum height=6mm, minimum width=6mm]{33.5, 55}{PERC}{\perc}
+
+#     % Atributos
+#     \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(1.5,28) (15.5,12)}] (ATTRS) {};
+
+#     \node[tag, anchor=east] at ([xshift=-0.5mm] ATTRS.north east) {ATTRS};
+
+#     \node[anchor=west, align=left, text width=3mm, font=\sffamily\fontsize{5}{6}\selectfont] (att) at (ATTRS.west) {%
+#     \textbf{STR}\\
+#     \textbf{DEX}\\
+#     \textbf{CON}\\
+#     \textbf{INT}\\
+#     \textbf{WIS}\\
+#     \textbf{CHA}
+#     };
+#     \node[anchor=west, align=right, minimum width=4mm, font=\sffamily\fontsize{5}{6}\selectfont] (att2) at (att.east) {%
+#     \str\\
+#     \dex\\
+#     \con\\
+#     \int\\
+#     \wis\\
+#     \cha
+#     };
+#     \node[anchor=west, align=center, font=\sffamily\fontsize{5}{6}\selectfont] (att3) at ([xshift=2.5mm] att.east) {%
+#     (\strb)\\
+#     (\dexb)\\
+#     (\conb)\\
+#     (\intb)\\
+#     (\wisb)\\
+#     (\chab)
+#     };
+
+
+#     % SKILLS
+#     \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(1.5, 10) (15.5, 2)}] (SKILLS) {};
+
+#     \node[tag, anchor=east] at ([xshift=-0.5mm] SKILLS.north east) {SKILLS};
+
+#     \node[anchor=west, align=left, text width=14mm, font=\sffamily\fontsize{4}{4.5}\selectfont] (sk) at (SKILLS.west) {%
+#     #4
+#     };
+
+#     % ABILITIES
+#     \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(17.5, 28) (39.5, 2)}] (ABS) {};
+
+#     \node[tag, anchor=east] at ([xshift=-0.5mm] ABS.north east) {ABILITIES AND ATTACKS};
+
+#     \node[anchor=west, align=left, text width=18mm, font=\sffamily\fontsize{4.5}{4.5}\selectfont] (ab) at (ABS.west) {%
+#     #5
+#     };
+
+#     % Borda
+#     \draw[line width = 0.5mm, black] (0,0) rectangle (\cardwidth,\cardheight);
+
+# \end{tikzpicture}\endgroup\allowbreak }
+
+
 images = []
 
 shutil.rmtree("output", ignore_errors=True)
@@ -450,8 +684,12 @@ for config_file in glob.glob("input/*.toml"):
                         print_sheet(title, p, output)
                     elif p.get("inventory", False):
                         print_inventory(title, p, output)
+                    elif p.get("creature", False):
+                        print_creature(title, p, output)
                     elif p.get("include", None) is not None:
                         include(p.get("include"), output)
+                    elif p.get("latex", None) is not None:
+                        output.write(p.get("latex"))
                     elif p.get("description", None) is None:
                         print_image(p, output)
                     else:
