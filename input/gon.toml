@@ -1,7 +1,7 @@
 [Gon]
 sheet = true
 image = "images/gon.png"
-title = '**Gon**, human druid (magician) 1, lawful good'
+title = '**Gon**, human druid (magician) 2, lawful good'
 
 [Gon.attributes]
 STR = [8, -1, -1]
@@ -38,7 +38,7 @@ names = [
 [Gon.boxes]
 INITIATIVE = '+3'
 AC = 17
-HP = 7
+HP = 11
 PROF = "+2"
 "PERCEPTION" = "15"
 SPEED = ["9m", "30ft"]
@@ -92,6 +92,9 @@ Waterskin
 
 GP = 0
 XP = 0
+
+[breakline]
+latex = "\\newpage"
 
 
 ["Guidance"]
@@ -169,6 +172,41 @@ On a hit, the target takes **1d8 Radiant** damage, and until the end of your nex
 footer = """
 60ft
 Instantaneous"""
+
+["Absorb Elements"]
+type = "1st Level Spell"
+time = "reaction"
+components = "S"
+fontsize = 5.5
+image = "images/absorb-elements"
+description = """
+**Trigger**: take acid, cold, fire, lightning, or thunder damage
+
+The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack.
+You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on
+your next turn, the target takes an extra **1d6** damage of the triggering type, and the spell ends.
+
+At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.
+"""
+footer = """
+Self
+1 round"""
+
+["Detect Magic (Ritual)"]
+type = "1st Level Spell"
+time = "action"
+components = "VS"
+fontsize = 5.5
+image = "images/detect-magic"
+description = """
+For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to
+see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell’s school of magic.
+
+The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.
+"""
+footer = """
+Self/30ft
+Concentration, up to 10 minutes"""
 
 ["Entangle"]
 type = "1st Level Spell"
@@ -253,25 +291,6 @@ footer = """
 Self
 10 minutes"""
 
-["Absorb Elements"]
-type = "1st Level Spell"
-time = "reaction"
-components = "S"
-fontsize = 5.5
-image = "images/absorb-elements"
-description = """
-**Trigger**: take acid, cold, fire, lightning, or thunder damage
-
-The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack.
-You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on
-your next turn, the target takes an extra **1d6** damage of the triggering type, and the spell ends.
-
-At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.
-"""
-footer = """
-Self
-1 round"""
-
 ["Encouraging Song"]
 type = "Ability"
 image = "images/encouraging-song"
@@ -281,3 +300,88 @@ As you finish a Short or Long Rest, you can play a song on a Musical Instrument 
 The number of allies you can affect in this way equals your **Proficiency Bonus**.
 """
 
+["Wild Companion"]
+type = "Ability"
+image = "images/wild-companion"
+description = """
+You can summon a nature spirit that assumes an animal form to aid you. As a Magic action, you can expend a spell slot or a use of Wild Shape
+to cast the Find Familiar spell without Material components. When you cast the spell in this way, the familiar is Fey and disappears when you finish a Long Rest.
+"""
+
+
+["Panther"]
+creature = true
+image = "images/panther"
+STR = [14, 2, 2]
+DEX = [15, 2, 2]
+CON = [10, 0, 0]
+fontsize = 5.2
+
+description = """
+**AC**: 12, **Initiative**: +2, **Speed**: 50ft (15m), climb 40ft (12m), **Senses**: Darkvision 60ft
+
+**Skills**: Perception +4, Stealth +6
+
+**Multiattack**: The panther makes one Pounce attack and uses Prowl.
+
+**Pounce**: +4, 1d4+2 slash, or 2d4+2 if it had adv on attack.
+
+**Prowl**: The panther moves up to half its Speed without provoking Opportunity Attacks. At the end of this movement, the panther can take the Hide action.
+"""
+
+["Wolf"]
+creature = true
+image = "images/wolf"
+STR = [14, 2, 2]
+DEX = [15, 2, 2]
+CON = [12, 1, 1]
+fontsize = 5.2
+
+description = """
+**AC**: 12, **Initiative**: +2, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
+
+**Skills**: Perception +5, Stealth +4
+
+**Pack Tactics**: The wolf has Advantage on attack rolls against a creature if at least one of the wolf's allies is within 5 feet of the creature and the
+ally doesn't have the I ncapacitated condition.
+
+**Bite**: +4, 1d6+2 piercing, if medium or smaller apply prone
+"""
+
+["Spider"]
+creature = true
+image = "images/spider"
+STR = [2, -4, -4]
+DEX = [14, 2, 2]
+CON = [8, -1, -1]
+fontsize = 5.1
+
+description = """
+**AC**: 12, **Initiative**: +2, **Speed**: 20ft (6m), **Climb**: 20ft (6m), **Senses**: Darkvision 30ft
+
+**Skills**: Stealth +4
+
+**Spider Climb**: The spider can climb difficult surfaces, including along ceilings, without needing to make an ability check.
+
+**Web Walker**: The spider ignores movement restrictions caused by webs, and the spider knows the location of any other creature in contact with the same web.
+
+**Bite**: +4, 1 piercing + 1d4 poison
+"""
+
+["Cat"]
+creature = true
+image = "images/cat"
+STR = [3, -4, -4]
+DEX = [15, 2, 4]
+CON = [10, 0, 0]
+fontsize = 5.2
+
+description = """
+**AC**: 12, **Initiative**: +2, **Speed**: 40ft (12m), **Climb**: 40ft (12m), **Senses**: Darkvision 60ft
+
+**Skills**: Perception +3, Stealth +4
+
+**Jumper**: The cat's jump distance is determined using its Dexterity rather than its Strength. 
+
+**Scratch**: +4, 1 slash
+"""
