@@ -1,7 +1,7 @@
 [Gon]
 sheet = true
 image = "images/gon.png"
-title = '**Gon**, human druid (magician) 2, lawful good'
+title = '**Gon**, human druid (magician) 3, lawful good'
 
 [Gon.attributes]
 STR = [8, -1, -1]
@@ -13,7 +13,7 @@ CHA = [10, 0, 0]
 
 [Gon.skills]
 skills = [-1, 3, 3, 5, 7, 2, 2, 7, 2, 3, 3, 3, 5, 5, 0, 0, 0, 0]
-profic = [ 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+profic = [0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
 names = [
     'Athletics',
     'Acrobatics',
@@ -44,6 +44,8 @@ PROF = "+2"
 SPEED = ["9m", "30ft"]
 "SPELL ATT" = "+5"
 "SAVE DC" = 13
+SLOTS = "4+1/2"
+"WLD SHPS" = 2
 
 [Gon.proficiencies]
 '\faIcon{comment}' = "Common, druidic, dwarvish, elvish"
@@ -51,11 +53,12 @@ SPEED = ["9m", "30ft"]
 '\faIcon{wrench}' = "Cartographer, Herbalism, Harp, Lyre, Flute"
 
 
-
 [Gon.attacks]
 "Quarterstaff" = "+1, 1d6-1"
+"Shillelagh" = "+5, 1d8+3"
 "Starry Wisp" = "+5, 1d8 radiant, 60ft"
 "Poison Spray" = "+5, 1d12 poison, 30ft"
+"Thorn Whip" = "+5, 1d6 piercing, 30ft, pull 10ft"
 
 [inventory]
 inventory = true
@@ -88,17 +91,26 @@ Waterskin
 "Goodberries x2 \\faIcon[regular]{square}" = 10
 "Rations" = 10
 "Torch" = 10
+"Potion of Healing" = 1
 
 
 GP = 0
-XP = 0
+XP = 1050
+
+[extra]
+print = true
+include = "tex/gon-extra.tex"
+
+[extra2]
+print = true
+include = "tex/gon-extra2.tex"
 
 [breakline]
 latex = "\\newpage"
 
 
 ["Guidance"]
-print = true
+print = false
 type = "Cantrip"
 time = "action"
 components = "VS"
@@ -111,7 +123,7 @@ Touch
 Concentration, up to 1 min"""
 
 ["Message"]
-print = true
+print = false
 type = "Cantrip"
 time = "action"
 components = "SM"
@@ -127,7 +139,7 @@ footer = """
 1 round"""
 
 ["Poison Spray"]
-print = true
+print = false
 type = "Cantrip"
 time = "action"
 components = "VS"
@@ -141,15 +153,15 @@ footer = """
 Instantaneous"""
 
 ["Shillelagh"]
-print = true
+print = false
 type = "Cantrip"
 time = "bonus"
 components = "VSM"
 image = "images/shillelagh"
 description = """
-A Club or Quarterstaff you are holding is imbued with nature’s power. For the duration, you can use your spellcasting ability instead of Strength
-for the attack and damage rolls of melee attacks using that weapon, and the weapon’s damage die becomes a **d8**. If the attack deals damage, it can be Force
-damage or the weapon’s normal damage type (your choice).
+A Club or Quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength
+for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a **d8**. If the attack deals damage, it can be Force
+damage or the weapon's normal damage type (your choice).
 
 The spell ends early if you cast it again or if you let go of the weapon.
 """
@@ -162,18 +174,35 @@ Self
 print = true
 type = "Cantrip"
 time = "action"
+cost = "WLD SHP"
 components = "VS"
 image = "images/starry-wisp"
 description = """
 You launch a mote of light at one creature or object within range. Make a ranged spell attack against the target.
-On a hit, the target takes **1d8 Radiant** damage, and until the end of your next turn, it emits Dim Light in a 10-foot radius and can’t benefit from the Invisible condition.
+On a hit, the target takes **1d8 Radiant** damage, and until the end of your next turn, it emits Dim Light in a 10-foot radius and can't benefit from the Invisible condition.
 """
 # **Cantrip Upgrade**. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).
 footer = """
 60ft
 Instantaneous"""
 
+["Thorn Whip"]
+type = "Cantrip"
+time = "action"
+components = "VSM"
+image = "images/thorn-whip"
+description = """
+You create a vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. On a hit, the target
+takes 1d6 Piercing damage, and if it is Large or smaller, you can pull it up to 10 feet closer to you.
+"""
+# Cantrip Upgrade. The damage increases by 1d6 when you reach levels 5 (2d6), 11 (3d6), and 17 (4d6).
+footer = """
+30ft
+Instantaneous"""
+
+
 ["Absorb Elements"]
+print = false
 type = "1st Level Spell"
 time = "reaction"
 components = "S"
@@ -193,6 +222,7 @@ Self
 1 round"""
 
 ["Detect Magic (Ritual)"]
+print = false
 type = "1st Level Spell"
 time = "action"
 components = "VS"
@@ -200,7 +230,7 @@ fontsize = 5.5
 image = "images/detect-magic"
 description = """
 For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to
-see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell’s school of magic.
+see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's school of magic.
 
 The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.
 """
@@ -209,6 +239,7 @@ Self/30ft
 Concentration, up to 10 minutes"""
 
 ["Entangle"]
+print = false
 type = "1st Level Spell"
 time = "action"
 components = "VS"
@@ -231,13 +262,14 @@ Concentration, up to 1 minute"""
 
 
 ["Faerie Fire"]
+print = false
 type = "1st Level Spell"
 time = "action"
 components = "V"
 image = "images/faerie-fire"
 description = """
 Objects in a 20-foot Cube within range are outlined in blue, green, or violet light (your choice). Each creature in the Cube is also outlined if it fails a
-**Dexterity** saving throw. For the duration, objects and affected creatures shed Dim Light in a 10-foot radius and can’t benefit from the Invisible condition.
+**Dexterity** saving throw. For the duration, objects and affected creatures shed Dim Light in a 10-foot radius and can't benefit from the Invisible condition.
 
 Attack rolls against an affected creature or object have **Advantage** if the attacker can see it.
 """
@@ -246,6 +278,7 @@ footer = """
 Concentration, up to 1 minute"""
 
 ["Goodberry"]
+print = false
 type = "1st Level Spell"
 time = "action"
 components = "VSM"
@@ -263,6 +296,7 @@ Self
 24 hours"""
 
 ["Healing Word"]
+print = false
 type = "1st Level Spell"
 time = "bonus"
 components = "V"
@@ -277,21 +311,100 @@ Self
 24 hours"""
 
 ["Speak with Animals (Ritual)"]
+print = false
 type = "1st Level Spell"
 time = "action"
 components = "VS"
 image = "images/speak-with-animals"
 description = """
-For the duration, you can comprehend and verbally communicate with Beasts, and you can use any of the Influence action’s skill options with them.
+For the duration, you can comprehend and verbally communicate with Beasts, and you can use any of the Influence action's skill options with them.
 
-Most Beasts have little to say about topics that don’t pertain to survival or companionship, but at minimum, a Beast can give you information
+Most Beasts have little to say about topics that don't pertain to survival or companionship, but at minimum, a Beast can give you information
 about nearby locations and monsters, including whatever it has perceived within the past day.
 """
 footer = """
 Self
 10 minutes"""
 
+["Cure Wounds"]
+print = true
+type = "1st Level Spell"
+time = "action"
+cost = "WLD SHP"
+components = "VS"
+image = "images/cure-wounds"
+description = """
+A creature you touch regains a number of Hit Points equal to 2d8 plus your spellcasting ability modifier.
+
+Using a Higher-Level Spell Slot. The healing increases by 2d8 for each spell slot level above 1.
+"""
+footer = """
+Touch
+Instantaneous"""
+
+["Moonbeam"]
+print = true
+type = "2nd Level Spell"
+time = "action"
+cost = "WLD SHP"
+components = "VSM"
+image = "images/moonbeam"
+fontsize = 5
+description = """
+A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high Cylinder centered on a point within range. Until the spell ends, Dim Light fills the Cylinder,
+and you can take a Magic action on later turns to move the Cylinder up to 60 feet.
+
+When the Cylinder appears, each creature in it makes a Constitution saving throw. On a failed save, a creature takes 2d10 Radiant damage, and if the creature is
+shape-shifted (as a result of the Polymorph spell, for example), it reverts to its true form and can't shape-shift until it leaves the Cylinder.
+On a successful save, a creature takes half as much damage only. A creature also makes this save when the spell's area moves into its space and when it enters
+the spell's area or ends its turn there. A creature makes this save only once per turn.
+"""
+footer = """
+120ft
+Conc. up to 1 min"""
+
+
+["Heat Metal"]
+print = true
+type = "2nd Level Spell"
+time = "action"
+components = "VSM"
+image = "images/heat-metal"
+fontsize = 5.5
+description = """
+Choose a manufactured metal object, such as a metal weapon or a suit of Heavy or Medium metal armor, that you can see within range. You cause the object to glow
+red-hot. Any creature in physical contact with the object takes 2d8 Fire damage when you cast the spell. Until the spell ends, you can take a Bonus Action on each
+of your later turns to deal this damage again if the object is within range.
+
+If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can.
+If it doesn't drop the object, it has Disadvantage on attack rolls and ability checks until the start of your next turn.
+"""
+footer = """
+60ft
+Concentration, up to 1 minute"""
+
+["Summon Beast"]
+print = true
+type = "2nd Level Spell"
+time = "action"
+components = "VSM"
+image = "images/summon-beast"
+fontsize = 5.2
+description = """
+You call forth a bestial spirit. It manifests in an unoccupied space that you can see within range and uses the Bestial Spirit stat block. When you cast the spell,
+choose an environment: Air, Land, or Water. The creature resembles an animal of your choice that is native to the chosen environment, which determines certain details
+in its stat block. The creature disappears when it drops to 0 Hit Points or when the spell ends.
+
+The creature is an ally to you and your allies. In combat, the creature shares your Initiative count, but it takes its turn immediately after yours. It obeys your
+verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.
+"""
+footer = """
+90ft
+Concentration, up to 1 hour"""
+
+
 ["Encouraging Song"]
+print = false
 type = "Ability"
 image = "images/encouraging-song"
 description = """
@@ -301,6 +414,7 @@ The number of allies you can affect in this way equals your **Proficiency Bonus*
 """
 
 ["Wild Companion"]
+print = false
 type = "Ability"
 image = "images/wild-companion"
 description = """
@@ -310,6 +424,7 @@ to cast the Find Familiar spell without Material components. When you cast the s
 
 
 ["Panther"]
+print = false
 creature = true
 image = "images/panther"
 STR = [14, 2, 2]
@@ -318,7 +433,7 @@ CON = [10, 0, 0]
 fontsize = 5.2
 
 description = """
-**AC**: 12, **Initiative**: +2, **Speed**: 50ft (15m), climb 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 16, **Initiative**: +2, **Speed**: 50ft (15m), climb 40ft (12m), **Senses**: Darkvision 60ft
 
 **Skills**: Perception +4, Stealth +6
 
@@ -330,6 +445,7 @@ description = """
 """
 
 ["Wolf"]
+print = false
 creature = true
 image = "images/wolf"
 STR = [14, 2, 2]
@@ -338,7 +454,7 @@ CON = [12, 1, 1]
 fontsize = 5.2
 
 description = """
-**AC**: 12, **Initiative**: +2, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 16, **Initiative**: +2, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
 
 **Skills**: Perception +5, Stealth +4
 
@@ -349,6 +465,7 @@ ally doesn't have the I ncapacitated condition.
 """
 
 ["Spider"]
+print = false
 creature = true
 image = "images/spider"
 STR = [2, -4, -4]
@@ -357,7 +474,7 @@ CON = [8, -1, -1]
 fontsize = 5.1
 
 description = """
-**AC**: 12, **Initiative**: +2, **Speed**: 20ft (6m), **Climb**: 20ft (6m), **Senses**: Darkvision 30ft
+**AC**: 16, **Initiative**: +2, **Speed**: 20ft (6m), **Climb**: 20ft (6m), **Senses**: Darkvision 30ft
 
 **Skills**: Stealth +4
 
@@ -369,6 +486,7 @@ description = """
 """
 
 ["Cat"]
+print = false
 creature = true
 image = "images/cat"
 STR = [3, -4, -4]
@@ -377,11 +495,131 @@ CON = [10, 0, 0]
 fontsize = 5.2
 
 description = """
-**AC**: 12, **Initiative**: +2, **Speed**: 40ft (12m), **Climb**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 16, **Initiative**: +2, **Speed**: 40ft (12m), **Climb**: 40ft (12m), **Senses**: Darkvision 60ft
 
 **Skills**: Perception +3, Stealth +4
 
 **Jumper**: The cat's jump distance is determined using its Dexterity rather than its Strength. 
 
 **Scratch**: +4, 1 slash
+"""
+
+
+["Land Bestial Spirit"]
+print = true
+creature = true
+image = "images/land-bestial-spirit"
+STR = [18, +4, +4]
+DEX = [11, 0, 0]
+CON = [16, +3, +3]
+INT = [4, -3, -3]
+WIS = [14, +2, +2]
+CHA = [5, -3, -3]
+fontsize = 5.5
+
+description = """
+**AC**: 13, **HP**: 30, **Speed**: 30ft (9m), **Climb**: 30ft (9m), **Senses**: Darkvision 60ft
+
+**Pack Tactics**: The spirit has Advantage on an attack roll against a creature if at least one of the spirit's allies is within 5 feet of the creature
+and the ally doesn't have the Incapacitated condition.
+
+**Rend**: +5, 1d8+6 Piercing
+"""
+
+["Water Bestial Spirit"]
+print = true
+creature = true
+image = "images/water-bestial-spirit"
+STR = [18, +4, +4]
+DEX = [11, 0, 0]
+CON = [16, +3, +3]
+INT = [4, -3, -3]
+WIS = [14, +2, +2]
+CHA = [5, -3, -3]
+fontsize = 5.5
+
+description = """
+**AC**: 13, **HP**: 30, **Speed**: 30ft (9m), **Swim**: 30ft (9m), **Senses**: Darkvision 60ft
+
+**Pack Tactics**: The spirit has Advantage on an attack roll against a creature if at least one of the spirit's allies is within 5 feet of the creature
+and the ally doesn't have the Incapacitated condition.
+
+**Water Breathing**: The spirit can breathe only underwater.
+
+**Rend**: +5, 1d8+6 Piercing
+"""
+
+["Air Bestial Spirit"]
+print = true
+creature = true
+image = "images/air-bestial-spirit"
+STR = [18, +4, +4]
+DEX = [11, 0, 0]
+CON = [16, +3, +3]
+INT = [4, -3, -3]
+WIS = [14, +2, +2]
+CHA = [5, -3, -3]
+fontsize = 5.5
+
+description = """
+**AC**: 13, **HP**: 20, **Speed**: 30ft (9m), **Fly**: 60ft (18m), **Senses**: Darkvision 60ft
+
+**Flyby**: The spirit doesn't provoke Opportunity Attacks when it flies out of an enemy's reach.
+
+**Rend**: +5, 1d8+6 Piercing
+"""
+
+["Giant Spider"]
+print = true
+creature = true
+image = "images/giant-spider"
+STR = [14, +2, +2]
+DEX = [16, +3, +3]
+CON = [12, +1, +1]
+fontsize = 5.2
+
+description = """
+**AC**: 16, **Initiative**: +3, **Speed**: 30ft (9m), **Climb**: 30ft (9m), **Senses**: Darkvision 60ft
+
+**Spider Climb**, **Web Walker**
+
+**Bite**: +5, 1d8 + 3 Piercing + 2d6 poison
+
+**Web (Rechorge 5-6)**: Dexterity 13, one creature the spider can see within 60 feet. Failure: The target has the Restrained condition until the
+web is destroyed (AC 10; HP 5; Vulnerability to Fire damage; Immunity to Poison and Psychic damage).
+"""
+
+["Tiger"]
+print = true
+creature = true
+image = "images/tiger"
+STR = [17, +3, +3]
+DEX = [16, +3, +3]
+CON = [14, +2, +2]
+fontsize = 5.5
+
+description = """
+**AC**: 16, **Initiative**: +3, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
+
+**Rend**: +5, 2d6+3, knock prone if Large or smaller
+
+**Nimble Escape**: The tiger takes the Disengage or Hide action
+"""
+
+["Dire Wolf"]
+print = true
+creature = true
+image = "images/wolf"
+STR = [17, +3, +3]
+DEX = [15, +2, +2]
+CON = [15, +2, +2]
+fontsize = 5.5
+
+description = """
+**AC**: 16, **Initiative**: +2, **Speed**: 50ft (15m), **Senses**: Darkvision 60ft
+
+**Pack Tactics**: The wolf has Advantage on attack rolls against a creature if at least one of the wolf's allies is within 5 feet of the creature and the
+ally doesn't have the I ncapacitated condition.
+
+**Bite**: +5, 1d10+3 piercing, if Large or smaller apply prone
 """
