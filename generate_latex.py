@@ -449,7 +449,7 @@ def print_creature(title, p, output):
     # Atributos
     pos_x = [2, 39.5]
     pos_y = [51.5, 43, 34.5]
-    attrs = ["STR", "DEX", "CON", "INT", "WIS", "CAR"]
+    attrs = ["STR", "DEX", "CON", "INT", "WIS", "CHA"]
     for index, attr in enumerate(attrs):
         if p.get(attr, None) is not None:
             vl = p.get(attr)
