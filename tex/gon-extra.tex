@@ -52,19 +52,21 @@
     
     
     % DRUID
-    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(2,80) (61,52)}] (DRUID) {};
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(2,80) (30,33)}] (DRUID) {};
     \node[tag, anchor=west] at ([xshift=0.5mm] DRUID.north west) {DRUID};
-    \node[anchor=north west, align=justify, yshift=-1mm, text width=27mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (druid) at (DRUID.north west) {%
+    \node[anchor=north west, align=justify, yshift=-1mm, text width=25mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (druid) at (DRUID.north west) {%
     \textbf{Druidic:} You know Druidic, the secret language of Druids. While learning this ancient tongue, you also unlocked the magic of communicating with animals;
-    you always have the Speakwith Animals spell prepared. You can use Druidic to leave hidden messages. You and others who know Druidic automatically spot such a message.
+    you always have the Speak with Animals spell prepared. You can use Druidic to leave hidden messages. You and others who know Druidic automatically spot such a message.
     Others spot the message's presence with a successful DC 15 Intelligence (Investigation) check but can't decipher it without magic.\\[0.5em]
+    \textbf{Wild Companion:} You can summon a nature spirit that assumes an animal form to aid you. As a Magic action, you can expend a spell slot or a use of Wild Shape to cast the Find Familiar spell without
+    Material components. When you cast the spell in this way, the familiar is Fey and disappears when you finish a Long Rest.\\[0.5em]
     % \textbf{Fey Ancestry:} You have advantage on saving throws you make to avoid or end the charmed condition on yourself.\\[0.5em]
     % \textbf{Long-limbed:} When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.\\[0.5em]
     };
     
-    \node[anchor=north west, align=justify, yshift=-1mm, text width=28mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (druid) at ([xshift=28mm] DRUID.north west) {%
-    \textbf{Wild Companion:} You can summon a nature spirit that assumes an animal form to aid you. As a Magic action, you can expend a spell slot or a use of Wild Shape to cast the Find Familiar spell without
-    Material components. When you cast the spell in this way, the familiar is Fey and disappears when you finish a Long Rest.\\[0.5em]
+    % \node[anchor=north west, align=justify, yshift=-1mm, text width=28mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (druid) at ([xshift=28mm] DRUID.north west) {%
+    % \textbf{Wild Companion:} You can summon a nature spirit that assumes an animal form to aid you. As a Magic action, you can expend a spell slot or a use of Wild Shape to cast the Find Familiar spell without
+    % Material components. When you cast the spell in this way, the familiar is Fey and disappears when you finish a Long Rest.\\[0.5em]
     % \textbf{Wild Shape:} The power of nature allows you to assume the form of an animal. As a Bonus Action, you shape-shift into a Beast form that you have learned for this feature.
     % You stay in that form for a number of hours equal to half your Druid level or until you use Wild Shape again, have the Incapacitated condition, or die. You can also leave the form
     % early as a Bonus Action.\\[0.5em]
@@ -78,10 +80,10 @@
     % merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it's practical for the new form to wear a piece of equipment based
     % on the creature's size and shape. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground
     % or merge with the form. Equipment that merges with the form has no effect while you're in that form.
-    };
+    % };
     
     % HUMAN
-    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(2,50) (30,40)}] (HUMAN) {};
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(31,80) (61,70)}] (HUMAN) {};
     \node[tag, anchor=west] at ([xshift=0.5mm] HUMAN.north west) {HUMAN};
     \node[anchor=north west, align=justify, yshift=-1mm, text width=25mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (human) at (HUMAN.north west) {%
     \textbf{Resourceful:} You gain Heroic Inspiration whenever you finish a Long Rest.\\[0.5em]
@@ -99,15 +101,17 @@
     % };
 
     % FEATS
-    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(31,50) (61,2)}] (FEATS) {};
+    \node[fill=parchment, opacity=0.7, text opacity=1, draw opacity=1, inner sep=0mm, anchor=north west, font=\sffamily\fontsize{8}{8.5}, draw=black, rounded corners=0.4mm, fit={(31,68) (61,2)}] (FEATS) {};
     \node[tag, anchor=west] at ([xshift=0.5mm] FEATS.north west) {FEATS};
     
     \node[anchor=north west, align=justify, yshift=-1mm, text width=27mm, font=\sffamily\fontsize{4.5}{5}\selectfont] (feats) at (FEATS.north west) {%
     \textbf{Magic Initiate (Druid):} Cantrips: Message, Poison Spray\\[0.5em]
     Level 1 Spell: Healing Word. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have.\\[0.5em]
     \textbf{Musician:} Instrument Training. You gain proficiency with three Musical Instruments of your choice: Lyre, Flute and Harp.\\[0.5em]
-    Encouraging Song. As you finish a Short or Long Rest, you can play a song on a Musical Instrument with which you have proficiency and give Heroic Inspiration to allies who hear the song. The number of allies you can affect in this way equals your Proficiency Bonus.
-\\[0.5em]
+    Encouraging Song. As you finish a Short or Long Rest, you can play a song on a Musical Instrument with which you have proficiency and give Heroic Inspiration to allies who hear the song. The number of allies you can affect in this way equals your Proficiency Bonus.\\[0.5em]
+    \textbf{Inspiring Leader:} Bolstering Performance. When you finish a Short or Long Rest, you can give an inspiring performance: a speech, song, or dance.
+    When you do so, choose up to six allies (which can include yourself) within 30 feet of yourself who witness the performance. The chosen creatures each gain
+    Temporary Hit Points equal to your character level plus the modifier of the ability you increased with this feat.\\[0.5em]
     };
 
     % EMPTY

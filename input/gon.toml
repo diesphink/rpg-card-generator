@@ -1,18 +1,18 @@
 [Gon]
 sheet = true
 image = "images/gon.png"
-title = '**Gon**, human druid (magician) 3, lawful good'
+title = '**Gon**, human druid (magician) 4, lawful good'
 
 [Gon.attributes]
 STR = [8, -1, -1]
 DEX = [16, +3, +3]
 CON = [8, -1, -1]
 INT = [14, +2, +4]
-WIS = [17, +3, +5]
+WIS = [18, +4, +6]
 CHA = [10, 0, 0]
 
 [Gon.skills]
-skills = [-1, 3, 3, 5, 7, 2, 2, 7, 2, 3, 3, 3, 5, 5, 0, 0, 0, 0]
+skills = [-1, 3, 3, 5, 8, 2, 2, 8, 2, 4, 4, 4, 6, 6, 0, 0, 0, 0]
 profic = [0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
 names = [
     'Athletics',
@@ -38,13 +38,13 @@ names = [
 [Gon.boxes]
 INITIATIVE = '+3'
 AC = 17
-HP = 11
+HP = 19
 PROF = "+2"
-"PERCEPTION" = "15"
+"PERCEPTION" = "16"
 SPEED = ["9m", "30ft"]
-"SPELL ATT" = "+5"
-"SAVE DC" = 13
-SLOTS = "4+1/2"
+"SPELL ATT" = "+8"
+"SAVE DC" = 14
+SLOTS = "4+1/3"
 "WLD SHPS" = 2
 
 [Gon.proficiencies]
@@ -54,11 +54,11 @@ SLOTS = "4+1/2"
 
 
 [Gon.attacks]
-"Quarterstaff" = "+1, 1d6-1"
-"Shillelagh" = "+5, 1d8+3"
-"Starry Wisp" = "+5, 1d8 radiant, 60ft"
-"Poison Spray" = "+5, 1d12 poison, 30ft"
-"Thorn Whip" = "+5, 1d6 piercing, 30ft, pull 10ft"
+"Staff of Woodlands" = "+3, 1d6+1"
+"Shillelagh" = "+8, 1d8+4"
+"Starry Wisp" = "+8, 1d8 radiant, 60ft"
+"Poison Spray" = "+8, 1d12 poison, 30ft"
+"Thorn Whip" = "+8, 1d6 piercing, 30ft, pull 10ft"
 
 [inventory]
 inventory = true
@@ -72,7 +72,7 @@ Back: Backpack
 """
 
 "At hand" = """
-Druidic Focus (Quarterstaff)
+Druidic Focus (Staff of Woodlands)
 Shield
 """
 
@@ -89,24 +89,23 @@ Waterskin
 [inventory.consumables]
 "Goodberries x1 \\faIcon[regular]{square}" = 10
 "Goodberries x2 \\faIcon[regular]{square}" = 10
-"Rations" = 10
+"Rations" = 5
 "Torch" = 10
 "Potion of Healing" = 1
 
-
 GP = 0
-XP = 1050
+XP = 2757
 
 [extra]
 print = true
 include = "tex/gon-extra.tex"
 
 [extra2]
-print = true
+print = false
 include = "tex/gon-extra2.tex"
 
-[breakline]
-latex = "\\newpage"
+# [breakline]
+# latex = "\\newpage"
 
 
 ["Guidance"]
@@ -171,7 +170,7 @@ Self
 1 minute"""
 
 ["Starry Wisp"]
-print = true
+print = false
 type = "Cantrip"
 time = "action"
 cost = "WLD SHP"
@@ -187,6 +186,7 @@ footer = """
 Instantaneous"""
 
 ["Thorn Whip"]
+print = false
 type = "Cantrip"
 time = "action"
 components = "VSM"
@@ -327,7 +327,7 @@ Self
 10 minutes"""
 
 ["Cure Wounds"]
-print = true
+print = false
 type = "1st Level Spell"
 time = "action"
 cost = "WLD SHP"
@@ -343,7 +343,7 @@ Touch
 Instantaneous"""
 
 ["Moonbeam"]
-print = true
+print = false
 type = "2nd Level Spell"
 time = "action"
 cost = "WLD SHP"
@@ -365,7 +365,7 @@ Conc. up to 1 min"""
 
 
 ["Heat Metal"]
-print = true
+print = false
 type = "2nd Level Spell"
 time = "action"
 components = "VSM"
@@ -384,7 +384,7 @@ footer = """
 Concentration, up to 1 minute"""
 
 ["Summon Beast"]
-print = true
+print = false
 type = "2nd Level Spell"
 time = "action"
 components = "VSM"
@@ -401,6 +401,21 @@ verbal commands (no action required by you). If you don't issue any, it takes th
 footer = """
 90ft
 Concentration, up to 1 hour"""
+
+
+["Aid"]
+print = true
+type = "2nd Level Spell"
+time = "action"
+components = "VSM"
+image = "images/card-mantra-of-bravery"
+# fontsize = 5.2
+description = """
+Choose up to three creatures within range. Each target’s Hit Point maximum and current Hit Points increase by 5 for the duration.
+"""
+footer = """
+30ft
+8 hours"""
 
 
 ["Encouraging Song"]
@@ -506,7 +521,7 @@ description = """
 
 
 ["Land Bestial Spirit"]
-print = true
+print = false
 creature = true
 image = "images/land-bestial-spirit"
 STR = [18, +4, +4]
@@ -527,7 +542,7 @@ and the ally doesn't have the Incapacitated condition.
 """
 
 ["Water Bestial Spirit"]
-print = true
+print = false
 creature = true
 image = "images/water-bestial-spirit"
 STR = [18, +4, +4]
@@ -550,7 +565,7 @@ and the ally doesn't have the Incapacitated condition.
 """
 
 ["Air Bestial Spirit"]
-print = true
+print = false
 creature = true
 image = "images/air-bestial-spirit"
 STR = [18, +4, +4]
@@ -570,16 +585,18 @@ description = """
 """
 
 ["Giant Spider"]
-print = true
+print = false
 creature = true
 image = "images/giant-spider"
 STR = [14, +2, +2]
 DEX = [16, +3, +3]
 CON = [12, +1, +1]
-fontsize = 5.2
+fontsize = 5.1
 
 description = """
 **AC**: 16, **Initiative**: +3, **Speed**: 30ft (9m), **Climb**: 30ft (9m), **Senses**: Darkvision 60ft
+
+**Skills**: Stealth +7
 
 **Spider Climb**, **Web Walker**
 
@@ -590,7 +607,7 @@ web is destroyed (AC 10; HP 5; Vulnerability to Fire damage; Immunity to Poison 
 """
 
 ["Tiger"]
-print = true
+print = false
 creature = true
 image = "images/tiger"
 STR = [17, +3, +3]
@@ -601,13 +618,15 @@ fontsize = 5.5
 description = """
 **AC**: 16, **Initiative**: +3, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
 
+**Skills**: Stealth +7
+
 **Rend**: +5, 2d6+3, knock prone if Large or smaller
 
-**Nimble Escape**: The tiger takes the Disengage or Hide action
+**Nimble Escape (Bonus action)**: The tiger takes the Disengage or Hide action
 """
 
 ["Dire Wolf"]
-print = true
+print = false
 creature = true
 image = "images/wolf"
 STR = [17, +3, +3]
