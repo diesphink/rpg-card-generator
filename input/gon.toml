@@ -1,18 +1,18 @@
 [Gon]
 sheet = true
 image = "images/gon.png"
-title = '**Gon**, human druid (magician) 4, lawful good'
+title = '**Gon**, human druid (magician) 5, lawful good'
 
 [Gon.attributes]
 STR = [8, -1, -1]
 DEX = [16, +3, +3]
 CON = [8, -1, -1]
-INT = [14, +2, +4]
-WIS = [18, +4, +6]
+INT = [14, +2, +5]
+WIS = [18, +4, +7]
 CHA = [10, 0, 0]
 
 [Gon.skills]
-skills = [-1, 3, 3, 5, 8, 2, 2, 8, 2, 4, 4, 4, 6, 6, 0, 0, 0, 0]
+skills = [-1, 3, 3, 6, 9, 2, 2, 9, 2, 4, 4, 4, 7, 7, 0, 0, 0, 0]
 profic = [0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
 names = [
     'Athletics',
@@ -39,13 +39,13 @@ names = [
 INITIATIVE = '+3'
 AC = 17
 HP = 19
-PROF = "+2"
-"PERCEPTION" = "16"
+PROF = "+3"
+"PERCEPTION" = "17"
 SPEED = ["9m", "30ft"]
-"SPELL ATT" = "+8"
-"SAVE DC" = 14
-SLOTS = "4+1/3"
-"WLD SHPS" = 2
+"SPELL ATT" = "+9"
+"SAVE DC" = 15
+SLOTS = "5*/3/2"
+"WILD SHAPE" = 2
 
 [Gon.proficiencies]
 '\faIcon{comment}' = "Common, druidic, dwarvish, elvish"
@@ -54,11 +54,11 @@ SLOTS = "4+1/3"
 
 
 [Gon.attacks]
-"Staff of Woodlands" = "+3, 1d6+1"
-"Shillelagh" = "+8, 1d8+4"
-"Starry Wisp" = "+8, 1d8 radiant, 60ft"
-"Poison Spray" = "+8, 1d12 poison, 30ft"
-"Thorn Whip" = "+8, 1d6 piercing, 30ft, pull 10ft"
+"Staff of Woodlands" = "+4, 1d6+1"
+"Shillelagh" = "+9, 1d8+6"
+"Starry Wisp" = "+9, 1d8 radiant, 60ft"
+"Poison Spray" = "+9, 1d12 poison, 30ft"
+"Thorn Whip" = "+9, 1d6 piercing, 30ft, pull 10ft"
 
 [inventory]
 inventory = true
@@ -84,6 +84,17 @@ Rope
 Tinderbox
 Oil x2
 Waterskin
+Mithral Chain Shirt
+"""
+
+"Scrolls" = """
+Daylight
+Protection from Poison
+Protection from Evil and Good
+
+
+
+
 """
 
 [inventory.consumables]
@@ -94,18 +105,18 @@ Waterskin
 "Potion of Healing" = 1
 
 GP = 0
-XP = 2757
+XP = 5732
 
 [extra]
 print = true
 include = "tex/gon-extra.tex"
 
 [extra2]
-print = false
+print = true
 include = "tex/gon-extra2.tex"
 
-# [breakline]
-# latex = "\\newpage"
+[breakline]
+latex = "\\newpage"
 
 
 ["Guidance"]
@@ -417,6 +428,55 @@ footer = """
 30ft
 8 hours"""
 
+["Conjure Animals"]
+print = true
+type = "3rd Level Spell"
+time = "action"
+components = "VS"
+image = "images/conjure-animals"
+fontsize = 5
+description = """
+You conjure nature spirits that appear as a Large pack of spectral, intangible animals in an unoccupied space you can see within range.
+The pack lasts for the duration, and you choose the spirits' animal form, such as wolves, serpents, or birds. You have Advantage on Strength
+saving throws while you're within 5 feet of the pack, and when you move on your turn, you can also move the pack up to 50 feet to an unoccupied space you can see.
+
+Whenever the pack moves within 10 feet of a creature you can see and whenever a creature you can see enters a space within 10 feet of the pack or ends its turn there,
+you can force that creature to make a Dexterity saving throw. On a failed save, the creature takes 3d10 Slashing damage. A creature makes this save only once per turn.
+"""
+footer = """
+60ft
+Concentration, up to 10 minutes"""
+
+["Dispel Magic"]
+print = true
+type = "3rd Level Spell"
+time = "action"
+components = "VS"
+image = "images/card-dispel-magic"
+#fontsize = 5
+description = """
+Choose one creature, object, or magical effect within range. Any ongoing spell of level 3 or lower on the target ends. For each ongoing spell of level 4 or higher
+on the target, make an ability check using your spellcasting ability (DC 10 plus that spell's level). On a successful check, the spell ends.
+"""
+footer = """
+120ft
+Instantaneous"""
+
+["Aura of Vitality"]
+print = true
+type = "3rd Level Spell"
+time = "action"
+components = "V"
+image = "images/aura-of-vitality"
+#fontsize = 5
+description = """
+An aura radiates from you in a 30-foot Emanation for the duration. When you create the aura and at the start of each of your turns while it persists, you can restore
+2d6 Hit Points to one creature in it.
+"""
+footer = """
+Self
+Concentration, up to 1 minute"""
+
 
 ["Encouraging Song"]
 print = false
@@ -438,8 +498,8 @@ to cast the Find Familiar spell without Material components. When you cast the s
 """
 
 
-["Panther"]
-print = false
+["Panther (Medium)"]
+print = true
 creature = true
 image = "images/panther"
 STR = [14, 2, 2]
@@ -448,7 +508,7 @@ CON = [10, 0, 0]
 fontsize = 5.2
 
 description = """
-**AC**: 16, **Initiative**: +2, **Speed**: 50ft (15m), climb 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 17, **Initiative**: +2, **Speed**: 50ft (15m), climb 40ft (12m), **Senses**: Darkvision 60ft
 
 **Skills**: Perception +4, Stealth +6
 
@@ -459,8 +519,8 @@ description = """
 **Prowl**: The panther moves up to half its Speed without provoking Opportunity Attacks. At the end of this movement, the panther can take the Hide action.
 """
 
-["Wolf"]
-print = false
+["Wolf (Medium)"]
+print = true
 creature = true
 image = "images/wolf"
 STR = [14, 2, 2]
@@ -469,7 +529,7 @@ CON = [12, 1, 1]
 fontsize = 5.2
 
 description = """
-**AC**: 16, **Initiative**: +2, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 17, **Initiative**: +2, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
 
 **Skills**: Perception +5, Stealth +4
 
@@ -479,8 +539,11 @@ ally doesn't have the I ncapacitated condition.
 **Bite**: +4, 1d6+2 piercing, if medium or smaller apply prone
 """
 
-["Spider"]
-print = false
+[breakline2]
+latex = "\\\\"
+
+["Spider (Tiny)"]
+print = true
 creature = true
 image = "images/spider"
 STR = [2, -4, -4]
@@ -489,7 +552,7 @@ CON = [8, -1, -1]
 fontsize = 5.1
 
 description = """
-**AC**: 16, **Initiative**: +2, **Speed**: 20ft (6m), **Climb**: 20ft (6m), **Senses**: Darkvision 30ft
+**AC**: 17, **Initiative**: +2, **Speed**: 20ft (6m), **Climb**: 20ft (6m), **Senses**: Darkvision 30ft
 
 **Skills**: Stealth +4
 
@@ -500,8 +563,8 @@ description = """
 **Bite**: +4, 1 piercing + 1d4 poison
 """
 
-["Cat"]
-print = false
+["Cat (Tiny)"]
+print = true
 creature = true
 image = "images/cat"
 STR = [3, -4, -4]
@@ -510,7 +573,7 @@ CON = [10, 0, 0]
 fontsize = 5.2
 
 description = """
-**AC**: 16, **Initiative**: +2, **Speed**: 40ft (12m), **Climb**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 17, **Initiative**: +2, **Speed**: 40ft (12m), **Climb**: 40ft (12m), **Senses**: Darkvision 60ft
 
 **Skills**: Perception +3, Stealth +4
 
@@ -584,19 +647,19 @@ description = """
 **Rend**: +5, 1d8+6 Piercing
 """
 
-["Giant Spider"]
-print = false
+["Giant Spider (Large)"]
+print = true
 creature = true
 image = "images/giant-spider"
 STR = [14, +2, +2]
 DEX = [16, +3, +3]
 CON = [12, +1, +1]
-fontsize = 5.1
+fontsize = 5
 
 description = """
-**AC**: 16, **Initiative**: +3, **Speed**: 30ft (9m), **Climb**: 30ft (9m), **Senses**: Darkvision 60ft
+**AC**: 17, **Initiative**: +3, **Speed**: 30ft (9m), **Climb**: 30ft (9m), **Senses**: Darkvision 60ft
 
-**Skills**: Stealth +7
+**Skills**: Perception +4, Stealth +7
 
 **Spider Climb**, **Web Walker**
 
@@ -606,27 +669,29 @@ description = """
 web is destroyed (AC 10; HP 5; Vulnerability to Fire damage; Immunity to Poison and Psychic damage).
 """
 
-["Tiger"]
-print = false
+["Tiger (Large)"]
+print = true
 creature = true
 image = "images/tiger"
 STR = [17, +3, +3]
 DEX = [16, +3, +3]
 CON = [14, +2, +2]
-fontsize = 5.5
+fontsize = 4.9
 
 description = """
-**AC**: 16, **Initiative**: +3, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 17, **Initiative**: +3, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
 
-**Skills**: Stealth +7
+**Skills**: Perception +3, Stealth +7
 
-**Rend**: +5, 2d6+3, knock prone if Large or smaller
+**Multiattack**: The tiger makes one Pounce attack and uses Prowl.
 
-**Nimble Escape (Bonus action)**: The tiger takes the Disengage or Hide action
+**Pounce**: +5, 1d6 + 3 slash. If the tiger had Advantage on the attack, 1d6 extra and, if it is Huge or smaller, has the Prone condition.
+
+**Prowl**: The tiger moves up to half its Speed without provoking Opportunity Attacks. At the end of this movement, the tiger can take the Hide action.
 """
 
-["Dire Wolf"]
-print = false
+["Dire Wolf (Large)"]
+print = true
 creature = true
 image = "images/wolf"
 STR = [17, +3, +3]
@@ -635,7 +700,9 @@ CON = [15, +2, +2]
 fontsize = 5.5
 
 description = """
-**AC**: 16, **Initiative**: +2, **Speed**: 50ft (15m), **Senses**: Darkvision 60ft
+**AC**: 17, **Initiative**: +2, **Speed**: 50ft (15m), **Senses**: Darkvision 60ft
+
+**Skills**: Perception +5, Stealth +4
 
 **Pack Tactics**: The wolf has Advantage on attack rolls against a creature if at least one of the wolf's allies is within 5 feet of the creature and the
 ally doesn't have the I ncapacitated condition.
