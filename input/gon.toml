@@ -37,7 +37,7 @@ names = [
 
 [Gon.boxes]
 INITIATIVE = '+3'
-AC = 17
+AC = 18
 HP = 26
 PROF = "+3"
 "PERCEPTION" = "17"
@@ -102,7 +102,10 @@ Protection from Evil and Good
 "Goodberries x2 \\faIcon[regular]{square}" = 10
 "Rations" = 5
 "Torch" = 10
+"Pinga" = 14
+"Rot" = 4
 "Potion of Healing" = 1
+"Potion of Great Healing" = 2
 
 GP = 0
 XP = 14000
