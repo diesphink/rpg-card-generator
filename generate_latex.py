@@ -354,7 +354,7 @@ def print_inventory(title, p, output):
 %\centerbox[anchor=north east]{61, 16}{RATION}{}
 %\centerbox[anchor=north east]{61, 8}{HEAL PT}{} 
 
-\node[anchor=north west, align=left, text width=45mm, inner sep=2mm, font=\sffamily\fontsize{5}{6}\selectfont] (skvalues) at (ITEMS.north west) {
+\node[anchor=north west, align=left, text width=46mm, inner sep=2mm, font=\sffamily\fontsize{5}{6}\selectfont] (skvalues) at (ITEMS.north west) {
 """
     )
 
@@ -363,9 +363,29 @@ def print_inventory(title, p, output):
         if name in ["inventory", "title", "image", "consumables"]:
             continue
         lines = []
+        columns = 1
+        if name.startswith("2c."):
+            name = name[3:]
+            columns = 2
+        if name.startswith("3c."):
+            name = name[3:]
+            columns = 3
+        i = 0
         lines.append(parse_text("**" + name + "**"))
-        for line in value.splitlines():
-            lines.append(r"\faIcon[regular]{square}" + parse_text(line))
+
+        line = ""
+        for value_line in value.splitlines():
+            line += r"\faIcon[regular]{square}" + parse_text(value_line)
+            i += 1
+
+            if i == columns:
+                i = 0
+                lines.append(line)
+                line = ""
+            else:
+                line += r"\tabto{" + str(46 * i / columns) + "mm}\n"
+        if line != "":
+            lines.append(line)
         blocks.append((r"\\" + "\n").join(lines))
 
     lines = []
@@ -375,7 +395,7 @@ def print_inventory(title, p, output):
             continue
         lines.append(
             name
-            + "\\hfill "
+            + "\\tabto{2cm} "
             + (
                 "".join(
                     [r"\faIcon[regular]{square}\hspace{-0.8mm}" for i in range(value)]
