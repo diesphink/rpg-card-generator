@@ -127,10 +127,10 @@ print = false
 include = "tex/gon-extra.tex"
 
 [extra2]
-print = true
+print = false
 include = "tex/gon-extra2.tex"
 
-[breakline]
+[breakpage]
 latex = "\\newpage"
 
 
@@ -164,7 +164,7 @@ footer = """
 1 round"""
 
 ["Poison Spray"]
-print = true
+print = false
 type = "Cantrip"
 time = "action"
 components = "VS"
@@ -178,7 +178,7 @@ footer = """
 Instantaneous"""
 
 ["Shillelagh"]
-print = true
+print = false
 type = "Cantrip"
 time = "bonus"
 components = "VSM"
@@ -196,7 +196,7 @@ Self
 1 minute"""
 
 ["Starry Wisp"]
-print = true
+print = false
 type = "Cantrip"
 time = "action"
 cost = "WLD SHP"
@@ -212,7 +212,7 @@ footer = """
 Instantaneous"""
 
 ["Thorn Whip"]
-print = true
+print = false
 type = "Cantrip"
 time = "action"
 components = "VSM"
@@ -493,7 +493,7 @@ Self/30ft
 Concentration, up to 1 minute"""
 
 ["Plant Growth (Overgrowth)"]
-print = true
+print = false
 type = "3rd Level Spell"
 time = "action"
 components = "VS"
@@ -510,7 +510,7 @@ Instantaneous"""
 
 
 ["Plant Growth (Enrichment)"]
-print = true
+print = false
 type = "3rd Level Spell"
 time = "8 hours"
 components = "VS"
@@ -524,8 +524,45 @@ footer = """
 150ft
 Instantaneous"""
 
-["Wall of Thorns (Staff)"]
+["Fount of Moonlight"]
 print = true
+type = "4th Level Spell"
+time = "action"
+components = "VS"
+image = "images/fount-of-moonlight"
+fontsize = 5.8
+description = """
+A cool light wreathes your body for the duration, emitting Bright Light in a 20-foot radius and Dim Light for an additional 20 feet.
+
+Until the spell ends, you have Resistance to Radiant damage, and your melee attacks deal an extra 2d6 Radiant damage on a hit.
+
+In addition, immediately after you take damage from a creature you can see within 60 feet of yourself, you can take a Reaction to force
+the creature to make a Constitution saving throw. On a failed save, the creature has the Blinded condition until the end of your next turn."""
+footer = """
+Self
+Concentration, up to 10 minutes"""
+
+
+["Giant Insect"]
+print = true
+type = "4th Level Spell"
+time = "action"
+components = "VS"
+image = "images/giant-insect"
+fontsize = 5.5
+description = """
+You summon a giant centipede, spider, or wasp (chosen when you cast the spell). It manifests in an unoccupied space you can see within range and uses the 
+Giant Insect stat block. The form you choose determines certain details in its stat block. The creature disappears when it drops to 0 Hit Points or when the spell ends.
+
+The creature is an ally to you and your allies. In combat, the creature shares your Initiative count, but it takes its turn immediately after yours.
+It obeys your verbal commands (no action required by you). If you don’t issue any, it takes the Dodge action and uses its movement to avoid danger."""
+footer = """
+60ft
+Concentration, up to 10 minutes"""
+
+
+["Wall of Thorns (Staff)"]
+print = false
 type = "6th Level Spell"
 time = "action"
 cost = "6"
@@ -549,7 +586,7 @@ Concentration, up to 10 minutes"""
 
 
 ["Awaken (Staff)"]
-print = true
+print = false
 type = "5th Level Spell"
 time = "8 hours"
 cost = "5"
@@ -570,7 +607,7 @@ Touch
 Instantaneous"""
 
 ["Pass without Trace (Staff)"]
-print = true
+print = false
 type = "2nd Level Spell"
 time = "action"
 cost = "2"
@@ -584,6 +621,94 @@ checks and leave no tracks.
 footer = """
 Self/30ft
 Concentration, up to 1 hour"""
+
+["Animal Friendship (Staff)"]
+print = true
+type = "1st Level Spell"
+time = "action"
+cost = "1"
+components = "VSM"
+image = "images/staff-of-the-woodlands"
+# fontsize = 4.8
+description = """
+Target a Beast that you can see within range. The target must succeed on a Wisdom saving throw or have the Charmed condition for the duration.
+If you or one of your allies deals damage to the target, the spell ends.
+"""
+footer = """
+30ft
+24 hours"""
+
+["Speak With Animals (Staff)"]
+print = true
+type = "1st Level Spell"
+time = "action"
+cost = "1"
+components = "VS"
+image = "images/staff-of-the-woodlands"
+# fontsize = 4.8
+description = """
+For the duration, you can comprehend and verbally communicate with Beasts, and you can use any of the Influence action’s skill options with them.
+
+Most Beasts have little to say about topics that don’t pertain to survival or companionship, but at minimum, a Beast can give you information
+about nearby locations and monsters, including whatever it has perceived within the past day.
+"""
+footer = """
+Self
+10 minutes"""
+
+["Barkskin (Staff)"]
+print = true
+type = "2nd Level Spell"
+time = "bonus"
+cost = "2"
+components = "VSM"
+image = "images/staff-of-the-woodlands"
+# fontsize = 4.8
+description = """
+You touch a willing creature. Until the spell ends, the target’s skin assumes a bark-like appearance, and the target has an Armor Class of 17 if its AC is lower than that.
+"""
+footer = """
+Touch
+1 hour"""
+
+["Locate Animals or Plants (Staff)"]
+print = true
+type = "2nd Level Spell"
+time = "action"
+cost = "2"
+components = "VSM"
+footer = """
+Self
+Instantaneous"""
+image = "images/staff-of-the-woodlands"
+# fontsize = 4.8
+description = """
+Describe or name a specific kind of Beast, Plant creature, or nonmagical plant. You learn the direction and distance to the closest creature or plant of that kind within
+5 miles, if any are present.
+"""
+
+["Speak with Plants (Staff)"]
+print = true
+type = "2nd Level Spell"
+time = "action"
+cost = "2"
+components = "VS"
+footer = """
+Self
+10 minutes"""
+image = "images/staff-of-the-woodlands"
+fontsize = 4.8
+description = """
+You imbue plants in an immobile 30-foot Emanation with limited sentience and animation, giving them the ability to communicate with you and follow your simple commands.
+You can question plants about events in the spell’s area within the past day, gaining information about creatures that have passed, weather, and other circumstances.
+
+You can also turn Difficult Terrain caused by plant growth (such as thickets and undergrowth) into ordinary terrain that lasts for the duration.
+Or you can turn ordinary terrain where plants are present into Difficult Terrain that lasts for the duration.
+
+The spell doesn’t enable plants to uproot themselves and move about, but they can move their branches, tendrils, and stalks for you.
+
+If a Plant creature is in the area, you can communicate with it as if you shared a common language.
+"""
 
 
 ["Encouraging Song"]
@@ -607,7 +732,7 @@ to cast the Find Familiar spell without Material components. When you cast the s
 
 
 ["Panther (Medium)"]
-print = true
+print = false
 creature = true
 image = "images/panther"
 STR = [14, 2, 2]
@@ -628,7 +753,7 @@ description = """
 """
 
 ["Wolf (Medium)"]
-print = true
+print = false
 creature = true
 image = "images/wolf"
 STR = [14, 2, 2]
@@ -654,12 +779,10 @@ image = "images/spider"
 STR = [2, -4, -4]
 DEX = [14, 2, 2]
 CON = [8, -1, 3]
-fontsize = 5.1
+fontsize = 5.5
 
 description = """
-**AC**: 17, **Initiative**: +2, **Speed**: 20ft (6m), **Climb**: 20ft (6m), **Senses**: Darkvision 30ft
-
-**Skills**: Stealth +4
+**AC**: 18, **Speed**: 20ft (6m), **Climb**: 20ft (6m), **Senses**: Darkvision 30ft
 
 **Spider Climb**: The spider can climb difficult surfaces, including along ceilings, without needing to make an ability check.
 
@@ -667,10 +790,6 @@ description = """
 
 **Bite**: +4, 1 piercing + 1d4 poison (or radiant)
 """
-
-[breakline2]
-latex = "\\\\"
-
 
 ["Cat (Tiny)"]
 print = true
@@ -682,9 +801,7 @@ CON = [10, 0, 4]
 fontsize = 5.2
 
 description = """
-**AC**: 17, **Initiative**: +2, **Speed**: 40ft (12m), **Climb**: 40ft (12m), **Senses**: Darkvision 60ft
-
-**Skills**: Perception +3, Stealth +4
+**AC**: 18, **Speed**: 40ft (12m), **Climb**: 40ft (12m), **Senses**: Darkvision 60ft
 
 **Jumper**: The cat's jump distance is determined using its Dexterity rather than its Strength. 
 
@@ -766,9 +883,9 @@ CON = [12, +1, +5]
 fontsize = 5
 
 description = """
-**AC**: 17, **Initiative**: +3, **Speed**: 30ft (9m), **Climb**: 30ft (9m), **Senses**: Darkvision 60ft
+**AC**: 18, **Speed**: 30ft (9m), **Climb**: 30ft (9m), **Senses**: Darkvision 60ft
 
-**Skills**: Perception +4, Stealth +7
+**Skills**: Stealth +8
 
 **Spider Climb**, **Web Walker**
 
@@ -788,14 +905,15 @@ CON = [14, +2, +6]
 fontsize = 4.9
 
 description = """
-**AC**: 17, **Initiative**: +3, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 18, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
 
-**Skills**: Perception +3, Stealth +7
+**Skills**: Stealth +8
 
 **Rend:** +5, 2d6+3 slash or radiant. If the target is a Large or smaller creature, it has the Prone condition.
 
 **Nimble Escape (Bonus):** The tiger takes the Disengage or Hide actions
 """
+
 
 ["Dire Wolf (Large)"]
 print = true
@@ -807,9 +925,7 @@ CON = [15, +2, +6]
 fontsize = 5.5
 
 description = """
-**AC**: 17, **Initiative**: +2, **Speed**: 50ft (15m), **Senses**: Darkvision 60ft
-
-**Skills**: Perception +5, Stealth +4
+**AC**: 18, **Speed**: 50ft (15m), **Senses**: Darkvision 60ft
 
 **Pack Tactics**: The wolf has Advantage on attack rolls against a creature if at least one of the wolf's allies is within 5 feet of the creature and the
 ally doesn't have the Incapacitated condition.
@@ -817,6 +933,8 @@ ally doesn't have the Incapacitated condition.
 **Bite**: +5, 1d10+3 piercing or radiant, if Large or smaller apply prone
 """
 
+[breakline]
+latex = "\\\\"
 
 ["Saber-Toothed Tiger (Large)"]
 print = true
@@ -828,9 +946,9 @@ CON = [15, +2, +6]
 fontsize = 4.9
 
 description = """
-**AC**: 17, **Initiative**: +3, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 18, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
 
-**Skills**: Perception +5, Stealth +7
+**Skills**: Stealth +8
 
 **Running Leap:** With a 10-foot running start, the tiger can Long jump up to 25 feet.
 
@@ -839,4 +957,71 @@ description = """
 **Rend**: +6, 2d6+4 slash or radiant
 
 **Nimble Escape (Bonus):** The tiger takes the Disengage or Hide actions
+"""
+
+
+["Giant Centipede (Large)"]
+print = true
+creature = true
+image = "images/giant-centipede"
+STR = [17, +3, +3]
+DEX = [13, +1, +1]
+CON = [15, +2, +2]
+INT = [4, -3, -3]
+WIS = [14, +2, +2]
+CHA = [3, -4, -4]
+fontsize = 5.5
+
+description = """
+**AC**: 15, **HP**: 30, **Speed**: 40ft (9m), **Climb**: 40ft (9m), **Senses**: Darkvision 60ft
+
+**Spider Climb**, **Multi Attack**: Spell level/2 (round down) attacks.
+
+**Poison Jab**: +spell att, reach 10 ft. 1d6 + 7 piercing + 1d4 Poison.
+
+**Venomous Spew**: Con Save vs. spell save, one creature the insect can see within 10 feet. Failure:
+The target has the Poisoned condition until the start of the insect's next turn.
+"""
+
+
+["Giant Wasp (Large)"]
+print = true
+creature = true
+image = "images/giant-wasp"
+STR = [17, +3, +3]
+DEX = [13, +1, +1]
+CON = [15, +2, +2]
+INT = [4, -3, -3]
+WIS = [14, +2, +2]
+CHA = [3, -4, -4]
+fontsize = 5.5
+
+description = """
+**AC**: 15, **HP**: 30, **Speed**: 40ft (9m), **Climb**: 40ft (9m), **Fly**: 40ft (9m), **Senses**: Darkvision 60ft
+
+**Spider Climb**, **Multi Attack**: Spell level/2 (round down) attacks.
+
+**Poison Jab**: +spell att, reach 10 ft. 1d6 + 7 piercing + 1d4 Poison.
+"""
+
+["Giant Spider (Large, summon)"]
+print = true
+creature = true
+image = "images/giant-spider-summon"
+STR = [17, +3, +3]
+DEX = [13, +1, +1]
+CON = [15, +2, +2]
+INT = [4, -3, -3]
+WIS = [14, +2, +2]
+CHA = [3, -4, -4]
+fontsize = 5.5
+
+description = """
+**AC**: 15, **HP**: 30, **Speed**: 40ft (9m), **Climb**: 40ft (9m), **Fly**: 40ft (9m), **Senses**: Darkvision 60ft
+
+**Spider Climb**, **Multi Attack**: Spell level/2 (round down) attacks.
+
+**Poison Jab**: +spell att, reach 10 ft. 1d6 + 7 piercing + 1d4 Poison.
+
+**Web Bolt**: +spell att, range 60 ft. 1d10 + 7 bludg and the target's Speed is reduced to 0 until the start of the insect's next turn.
 """
