@@ -445,6 +445,7 @@ def print_creature(title, p, output):
     output.write(r"\begin{tikzpicture}[x=1mm, y=1mm]")
 
     fontsize = p.get("fontsize", 6)
+    type = p.get("type", "Wild Shape").upper()
 
     output.write(
         r"""
@@ -506,7 +507,9 @@ def print_creature(title, p, output):
     \coordinate (tagpos) at (39,3);
 
     % Type
-    \node[tag](type) at (39, 29.5) {WILD SHAPE};
+    \node[tag](type) at (39, 29.5) {"""
+        + type
+        + """};
 
     % Borda
     \draw[line width = 0.5mm, black] (0,0) rectangle (\cardwidth,\cardheight);
