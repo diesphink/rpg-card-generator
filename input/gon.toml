@@ -1,18 +1,18 @@
 [Gon]
 sheet = true
 image = "images/gon.png"
-title = '**Gon**, human druid (magician) 7, lawful good'
+title = '**Gon**, human druid (magician) 8, lawful good'
 
 [Gon.attributes]
 STR = [8, -1, +1]
 DEX = [16, +3, +5]
 CON = [8, -1, +1]
 INT = [14, +2, +7]
-WIS = [18, +4, +9]
+WIS = [20, +5, +10]
 CHA = [10, 0, +2]
 
 [Gon.skills]
-skills = [0, 4, 4, 7, 10, 3, 3, 10, 3, 5, 5, 5, 8, 8, 1, 1, 1, 1]
+skills = [0, 4, 4, 7, 11, 3, 3, 11, 3, 6, 6, 6, 9, 9, 1, 1, 1, 1]
 profic = [0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
 names = [
     'Athletics',
@@ -38,13 +38,13 @@ names = [
 [Gon.boxes]
 INITIATIVE = '+4'
 AC = 19
-HP = 30
+HP = 34
 PROF = "+3"
-"PERCEPTION" = "18"
+"PERCEPTION" = "19"
 SPEED = ["9m", "30ft"]
 "SPELL ATT" = "+9"
-"SAVE DC" = 15
-SLOTS = "4/3/3/1"
+"SAVE DC" = 16
+SLOTS = "4/3/3/2"
 "WILD SHAPE" = 3
 
 [Gon.proficiencies]
@@ -55,10 +55,10 @@ SLOTS = "4/3/3/1"
 
 [Gon.attacks]
 "Staff of Woodlands" = "+4, 1d6+1"
-"Shillelagh" = "+9, 1d10+8"
-"Starry Wisp" = "+9, 2d8+4 radiant, 60ft"
-"Poison Spray" = "+9, 2d12+4 poison, 30ft"
-"Thorn Whip" = "+9, 2d6+4 piercing, 30ft, pull 10ft"
+"Shillelagh" = "+10, 1d10+10"
+"Starry Wisp" = "+10, 2d8+5 radiant, 60ft"
+"Poison Spray" = "+10, 2d12+5 poison, 30ft"
+"Thorn Whip" = "+10, 2d6+5 piercing, 30ft, pull 10ft"
 
 [inventory]
 inventory = true
@@ -120,7 +120,7 @@ Waterskin
 "Potion of Greater Healing" = 2
 
 GP = 0
-XP = 26400
+XP = 40520
 
 [extra]
 print = false
@@ -170,7 +170,7 @@ time = "action"
 components = "VS"
 image = "images/poison-spray"
 description = """
-You spray toxic mist at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes **2d12 Poison** damage.
+You spray toxic mist at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes **2d12+5 Poison** damage.
 """
 # **Cantrip Upgrade**. The damage increases by 1d12 when you reach levels 5 (2d12), 11 (3d12), and 17 (4d12).
 footer = """
@@ -196,7 +196,7 @@ Self
 1 minute"""
 
 ["Starry Wisp"]
-print = false
+print = true
 type = "Cantrip"
 time = "action"
 cost = "WLD SHP"
@@ -204,7 +204,7 @@ components = "VS"
 image = "images/starry-wisp"
 description = """
 You launch a mote of light at one creature or object within range. Make a ranged spell attack against the target.
-On a hit, the target takes **2d8 Radiant** damage, and until the end of your next turn, it emits Dim Light in a 10-foot radius and can't benefit from the Invisible condition.
+On a hit, the target takes **2d8+5 Radiant** damage, and until the end of your next turn, it emits Dim Light in a 10-foot radius and can't benefit from the Invisible condition.
 """
 # **Cantrip Upgrade**. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).
 footer = """
@@ -219,7 +219,7 @@ components = "VSM"
 image = "images/thorn-whip"
 description = """
 You create a vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. On a hit, the target
-takes **2d6 Piercing** damage, and if it is Large or smaller, you can pull it up to 10 feet closer to you.
+takes **2d6+5 Piercing** damage, and if it is Large or smaller, you can pull it up to 10 feet closer to you.
 """
 # Cantrip Upgrade. The damage increases by 1d6 when you reach levels 5 (2d6), 11 (3d6), and 17 (4d6).
 footer = """
@@ -369,13 +369,13 @@ Touch
 Instantaneous"""
 
 ["Moonbeam"]
-print = false
+print = true
 type = "2nd Level Spell"
 time = "action"
 cost = "WLD SHP"
 components = "VSM"
 image = "images/moonbeam"
-fontsize = 5
+fontsize = 4.8
 description = """
 A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high Cylinder centered on a point within range. Until the spell ends, Dim Light fills the Cylinder,
 and you can take a Magic action on later turns to move the Cylinder up to 60 feet.
@@ -384,6 +384,8 @@ When the Cylinder appears, each creature in it makes a **Constitution** saving t
 shape-shifted (as a result of the Polymorph spell, for example), it reverts to its true form and can't shape-shift until it leaves the Cylinder.
 On a successful save, a creature takes half as much damage only. A creature also makes this save when the spell's area **moves into** its space and when it **enters
 the spell's area** or **ends its turn there**. A creature makes this save only once per turn.
+
+Higher level: +1d10
 """
 footer = """
 120ft
@@ -430,14 +432,16 @@ Concentration, up to 1 hour"""
 
 
 ["Aid"]
-print = false
+print = true
 type = "2nd Level Spell"
 time = "action"
 components = "VSM"
 image = "images/card-mantra-of-bravery"
 # fontsize = 5.2
 description = """
-Choose up to three creatures within range. Each target’s Hit Point maximum and current Hit Points increase by 5 for the duration.
+Choose up to three creatures within range. Each target's Hit Point maximum and current Hit Points increase by 5 for the duration.
+
+Higher Level: +5
 """
 footer = """
 30ft
@@ -525,7 +529,7 @@ footer = """
 Instantaneous"""
 
 ["Fount of Moonlight"]
-print = true
+print = false
 type = "4th Level Spell"
 time = "action"
 components = "VS"
@@ -544,7 +548,7 @@ Concentration, up to 10 minutes"""
 
 
 ["Giant Insect"]
-print = true
+print = false
 type = "4th Level Spell"
 time = "action"
 components = "VS"
@@ -555,11 +559,50 @@ You summon a giant centipede, spider, or wasp (chosen when you cast the spell). 
 Giant Insect stat block. The form you choose determines certain details in its stat block. The creature disappears when it drops to 0 Hit Points or when the spell ends.
 
 The creature is an ally to you and your allies. In combat, the creature shares your Initiative count, but it takes its turn immediately after yours.
-It obeys your verbal commands (no action required by you). If you don’t issue any, it takes the Dodge action and uses its movement to avoid danger."""
+It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger."""
 footer = """
 60ft
 Concentration, up to 10 minutes"""
 
+["Locate Creature"]
+print = true
+type = "4th Level Spell"
+time = "action"
+components = "VSM"
+image = "images/locate-creature"
+fontsize = 5.3
+description = """
+Describe or name a creature that is familiar to you. You sense the direction to the creature's location if that creature is within 1,000 feet of you. If the creature is moving, you know the direction of its movement.
+
+The spell can locate a specific creature known to you or the nearest creature of a specific kind (such as a human or a unicorn) if you have seen such a creature up close—within 30 feet—at least once. If the creature you described or named is in a different form, such as under the effects of a Flesh to Stone or Polymorph spell, this spell doesn't locate the creature.
+
+This spell can't locate a creature if any thickness of lead blocks a direct path between you and the creature."""
+footer = """
+Self
+Concentration, up to 1 hour"""
+
+["Polymorph"]
+print = true
+type = "4th Level Spell"
+time = "action"
+components = "VSM"
+image = "images/card-polymorph"
+fontsize = 4.3
+description = """
+You attempt to transform a creature that you can see within range into a Beast. The target must succeed on a Wisdom saving throw or
+shape-shift into Beast form for the duration. That form can be any Beast you choose that has a Challenge Rating equal to or less than the target's
+(or the target's level if it doesn't have a Challenge Rating). The target's game statistics are replaced by the stat block of the chosen Beast,
+but the target retains its alignment, personality, creature type, Hit Points, and Hit Point Dice.
+
+The target gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. These Temporary Hit Points vanish if any remain when
+the spell ends. The spell ends early on the target if it has no Temporary Hit Points left.
+
+The target is limited in the actions it can perform by the anatomy of its new form, and it can't speak or cast spells.
+
+The target's gear melds into the new form. The creature can't use or otherwise benefit from any of that equipment."""
+footer = """
+60ft
+Concentration, up to 1 hour"""
 
 ["Wall of Thorns (Staff)"]
 print = false
@@ -595,7 +638,7 @@ image = "images/staff-of-the-woodlands"
 fontsize = 4.8
 description = """
 You spend the casting time tracing magical pathways within a precious gemstone, and then touch the target. The target must be either a Beast or Plant creature with
-an Intelligence of 3 or less or a natural plant that isn’t a creature. The target gains an Intelligence of 10 and the ability to speak one language you know. If the
+an Intelligence of 3 or less or a natural plant that isn't a creature. The target gains an Intelligence of 10 and the ability to speak one language you know. If the
 target is a natural plant, it becomes a Plant creature and gains the ability to move its limbs, roots, vines, creepers, and so forth, and it gains senses similar to
 a human's. The DM chooses statistics appropriate for the awakened Plant, such as the statistics for the Awakened Shrub or Awakened Tree in the Monster Manual.
 
@@ -623,7 +666,7 @@ Self/30ft
 Concentration, up to 1 hour"""
 
 ["Animal Friendship (Staff)"]
-print = true
+print = false
 type = "1st Level Spell"
 time = "action"
 cost = "1"
@@ -639,7 +682,7 @@ footer = """
 24 hours"""
 
 ["Speak With Animals (Staff)"]
-print = true
+print = false
 type = "1st Level Spell"
 time = "action"
 cost = "1"
@@ -647,9 +690,9 @@ components = "VS"
 image = "images/staff-of-the-woodlands"
 # fontsize = 4.8
 description = """
-For the duration, you can comprehend and verbally communicate with Beasts, and you can use any of the Influence action’s skill options with them.
+For the duration, you can comprehend and verbally communicate with Beasts, and you can use any of the Influence action's skill options with them.
 
-Most Beasts have little to say about topics that don’t pertain to survival or companionship, but at minimum, a Beast can give you information
+Most Beasts have little to say about topics that don't pertain to survival or companionship, but at minimum, a Beast can give you information
 about nearby locations and monsters, including whatever it has perceived within the past day.
 """
 footer = """
@@ -657,7 +700,7 @@ Self
 10 minutes"""
 
 ["Barkskin (Staff)"]
-print = true
+print = false
 type = "2nd Level Spell"
 time = "bonus"
 cost = "2"
@@ -665,14 +708,14 @@ components = "VSM"
 image = "images/staff-of-the-woodlands"
 # fontsize = 4.8
 description = """
-You touch a willing creature. Until the spell ends, the target’s skin assumes a bark-like appearance, and the target has an Armor Class of 17 if its AC is lower than that.
+You touch a willing creature. Until the spell ends, the target's skin assumes a bark-like appearance, and the target has an Armor Class of 17 if its AC is lower than that.
 """
 footer = """
 Touch
 1 hour"""
 
 ["Locate Animals or Plants (Staff)"]
-print = true
+print = false
 type = "2nd Level Spell"
 time = "action"
 cost = "2"
@@ -688,7 +731,7 @@ Describe or name a specific kind of Beast, Plant creature, or nonmagical plant. 
 """
 
 ["Speak with Plants (Staff)"]
-print = true
+print = false
 type = "2nd Level Spell"
 time = "action"
 cost = "2"
@@ -700,12 +743,12 @@ image = "images/staff-of-the-woodlands"
 fontsize = 4.8
 description = """
 You imbue plants in an immobile 30-foot Emanation with limited sentience and animation, giving them the ability to communicate with you and follow your simple commands.
-You can question plants about events in the spell’s area within the past day, gaining information about creatures that have passed, weather, and other circumstances.
+You can question plants about events in the spell's area within the past day, gaining information about creatures that have passed, weather, and other circumstances.
 
 You can also turn Difficult Terrain caused by plant growth (such as thickets and undergrowth) into ordinary terrain that lasts for the duration.
 Or you can turn ordinary terrain where plants are present into Difficult Terrain that lasts for the duration.
 
-The spell doesn’t enable plants to uproot themselves and move about, but they can move their branches, tendrils, and stalks for you.
+The spell doesn't enable plants to uproot themselves and move about, but they can move their branches, tendrils, and stalks for you.
 
 If a Plant creature is in the area, you can communicate with it as if you shared a common language.
 """
@@ -778,11 +821,11 @@ creature = true
 image = "images/spider"
 STR = [2, -4, -4]
 DEX = [14, 2, 2]
-CON = [8, -1, 3]
+CON = [8, -1, 4]
 fontsize = 5.5
 
 description = """
-**AC**: 18, **Speed**: 20ft (6m), **Climb**: 20ft (6m), **Senses**: Darkvision 30ft
+**AC**: 19, **Speed**: 20ft (6m), **Climb**: 20ft (6m), **Senses**: Darkvision 30ft
 
 **Spider Climb**: The spider can climb difficult surfaces, including along ceilings, without needing to make an ability check.
 
@@ -791,17 +834,22 @@ description = """
 **Bite**: +4, 1 piercing + 1d4 poison (or radiant)
 """
 
+
+[breakline]
+latex = "\\\\"
+
+
 ["Cat (Tiny)"]
 print = true
 creature = true
 image = "images/cat"
 STR = [3, -4, -4]
 DEX = [15, 2, 4]
-CON = [10, 0, 4]
+CON = [10, 0, 5]
 fontsize = 5.2
 
 description = """
-**AC**: 18, **Speed**: 40ft (12m), **Climb**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 19, **Speed**: 40ft (12m), **Climb**: 40ft (12m), **Senses**: Darkvision 60ft
 
 **Jumper**: The cat's jump distance is determined using its Dexterity rather than its Strength. 
 
@@ -879,11 +927,11 @@ creature = true
 image = "images/giant-spider"
 STR = [14, +2, +2]
 DEX = [16, +3, +3]
-CON = [12, +1, +5]
+CON = [12, +1, +6]
 fontsize = 5
 
 description = """
-**AC**: 18, **Speed**: 30ft (9m), **Climb**: 30ft (9m), **Senses**: Darkvision 60ft
+**AC**: 19, **Speed**: 30ft (9m), **Climb**: 30ft (9m), **Senses**: Darkvision 60ft
 
 **Skills**: Stealth +8
 
@@ -901,11 +949,11 @@ creature = true
 image = "images/tiger"
 STR = [17, +3, +3]
 DEX = [16, +3, +3]
-CON = [14, +2, +6]
+CON = [14, +2, +7]
 fontsize = 4.9
 
 description = """
-**AC**: 18, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 19, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
 
 **Skills**: Stealth +8
 
@@ -921,11 +969,11 @@ creature = true
 image = "images/wolf"
 STR = [17, +3, +3]
 DEX = [15, +2, +2]
-CON = [15, +2, +6]
+CON = [15, +2, +7]
 fontsize = 5.5
 
 description = """
-**AC**: 18, **Speed**: 50ft (15m), **Senses**: Darkvision 60ft
+**AC**: 19, **Speed**: 50ft (15m), **Senses**: Darkvision 60ft
 
 **Pack Tactics**: The wolf has Advantage on attack rolls against a creature if at least one of the wolf's allies is within 5 feet of the creature and the
 ally doesn't have the Incapacitated condition.
@@ -933,20 +981,17 @@ ally doesn't have the Incapacitated condition.
 **Bite**: +5, 1d10+3 piercing or radiant, if Large or smaller apply prone
 """
 
-[breakline]
-latex = "\\\\"
-
 ["Saber-Toothed Tiger (Large)"]
 print = true
 creature = true
 image = "images/saber-toothed-tiger"
 STR = [18, +4, +6]
 DEX = [17, +3, +5]
-CON = [15, +2, +6]
+CON = [15, +2, +7]
 fontsize = 4.9
 
 description = """
-**AC**: 18, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
+**AC**: 19, **Speed**: 40ft (12m), **Senses**: Darkvision 60ft
 
 **Skills**: Stealth +8
 
@@ -960,8 +1005,46 @@ description = """
 """
 
 
-["Giant Centipede (Large)"]
+["Giant Bat (Large)"]
 print = true
+creature = true
+image = "images/giant-bat"
+STR = [15, +2, +2]
+DEX = [16, +3, +3]
+CON = [11, +0, +5]
+#fontsize = 4.9
+
+description = """
+**AC**: 19, **Speed**: 10ft (3m), **Fly**: 60ft (18m), **Senses**: Blindsight 120ft
+
+**Bite:** +5, 1d6+3 piercing
+"""
+
+
+[breakline2]
+latex = "\\\\"
+
+
+["Owl (Tiny)"]
+print = true
+creature = true
+image = "images/owl"
+STR = [3, -4, -4]
+DEX = [13, +1, +1]
+CON = [8, -1, +4]
+#fontsize = 4.9
+
+description = """
+**AC**: 19, **Speed**: 5ft (1.5m), **Fly**: 60ft (18m), **Senses**: Darkvision 120ft
+
+**Flyby:** The owl doesn't provoke an Opportunity Attack when it flies out of an enemy's reach.
+
+**Talons:** +3, 1 slash
+"""
+
+
+["Giant Centipede (Large)"]
+print = false
 creature = true
 image = "images/giant-centipede"
 STR = [17, +3, +3]
@@ -985,7 +1068,7 @@ The target has the Poisoned condition until the start of the insect's next turn.
 
 
 ["Giant Wasp (Large)"]
-print = true
+print = false
 creature = true
 image = "images/giant-wasp"
 STR = [17, +3, +3]
@@ -1005,7 +1088,7 @@ description = """
 """
 
 ["Giant Spider (Large, summon)"]
-print = true
+print = false
 creature = true
 image = "images/giant-spider-summon"
 STR = [17, +3, +3]
@@ -1024,4 +1107,50 @@ description = """
 **Poison Jab**: +spell att, reach 10 ft. 1d6 + 7 piercing + 1d4 Poison.
 
 **Web Bolt**: +spell att, range 60 ft. 1d10 + 7 bludg and the target's Speed is reduced to 0 until the start of the insect's next turn.
+"""
+
+
+["Tyrannosaurus Rex (Huge)"]
+print = true
+creature = true
+image = "images/tyrannosaurus-rex"
+type = "Polymorph"
+STR = [25, +7, +10]
+DEX = [10, +0, +0]
+CON = [19, +4, +4]
+INT = [2, -4, -4]
+WIS = [12, +1, +4]
+CHA = [9, -1, -1]
+fontsize = 4.9
+
+description = """
+**AC**: 13, **HP**: 136, **Speed**: 50ft (15m)
+
+**Multiattack:** The tyrannosaurus makes one Bite attack and one Tail attack.
+
+**Bite:** Melee Attack Roll: +10, reach 10 ft. Hit: 4d12 + 7 Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 17).
+While Grappled, the target has the Restrained condition and can't be targeted by the tyrannosaurus's Tail.
+
+**Tail:** Melee Attack Roll: +10, reach 15 ft. Hit: 4d8 + 7 Bludgeoning damage. If the target is a Huge or smaller creature, it has the Prone condition.
+"""
+
+["Killer Whale (Huge)"]
+print = true
+creature = true
+image = "images/killer-whale"
+type = "Polymorph"
+STR = [19, +4, +4]
+DEX = [14, +2, +2]
+CON = [13, +1, +1]
+INT = [3, -4, -4]
+WIS = [12, +1, +1]
+CHA = [7, -2, -2]
+# fontsize = 4.9
+
+description = """
+**AC**: 12, **HP**: 90, **Speed**: 5ft (1.5m), **Swim:** 60ft (18m), **Senses**: Blindsight 120ft
+
+**Hold breath:** The whale can hold its breath for 30 minutes
+
+**Bite:** Melee Attack Roll: +6, reach 5 ft. Hit: 21 (5d6+4) piercing
 """
