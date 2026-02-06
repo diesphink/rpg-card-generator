@@ -1,0 +1,6 @@
+[env]
+VSCODE_PROFILES = "common python"
+_.python.venv = { path = ".venv", create = true }
+
+[tools]
+python = "3.12"
