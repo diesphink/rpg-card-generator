@@ -1,18 +1,18 @@
 [Gon]
 sheet = true
 image = "images/gon.png"
-title = '**Gon**, human druid (magician) 8, lawful good'
+title = '**Gon**, human druid (magician) 9, lawful good'
 
 [Gon.attributes]
 STR = [8, -1, +1]
 DEX = [16, +3, +5]
 CON = [8, -1, +1]
-INT = [14, +2, +7]
-WIS = [20, +5, +10]
+INT = [14, +2, +8]
+WIS = [20, +5, +11]
 CHA = [10, 0, +2]
 
 [Gon.skills]
-skills = [0, 4, 4, 7, 11, 3, 3, 11, 3, 6, 6, 6, 9, 9, 1, 1, 1, 1]
+skills = [0, 4, 4, 8, 12, 3, 3, 12, 3, 6, 6, 6, 10, 10, 1, 1, 1, 1]
 profic = [0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
 names = [
     'Athletics',
@@ -38,13 +38,13 @@ names = [
 [Gon.boxes]
 INITIATIVE = '+4'
 AC = 19
-HP = 34
-PROF = "+3"
-"PERCEPTION" = "19"
+HP = 38
+PROF = "+4"
+"PERCEPTION" = "20"
 SPEED = ["9m", "30ft"]
-"SPELL ATT" = "+9"
-"SAVE DC" = 16
-SLOTS = "4/3/3/2"
+"SPELL ATT" = "+11"
+"SAVE DC" = 17
+SLOTS = "4/3/3/3/1"
 "WILD SHAPE" = 3
 
 [Gon.proficiencies]
@@ -54,11 +54,11 @@ SLOTS = "4/3/3/2"
 
 
 [Gon.attacks]
-"Staff of Woodlands" = "+4, 1d6+1"
-"Shillelagh" = "+10, 1d10+10"
-"Starry Wisp" = "+10, 2d8+5 radiant, 60ft"
-"Poison Spray" = "+10, 2d12+5 poison, 30ft"
-"Thorn Whip" = "+10, 2d6+5 piercing, 30ft, pull 10ft"
+"Staff of Woodlands" = "+5, 1d6+1"
+"Shillelagh" = "+11, 1d10+10"
+"Starry Wisp" = "+11, 2d8+5 radiant, 60ft"
+"Poison Spray" = "+11, 2d12+5 poison, 30ft"
+"Thorn Whip" = "+11, 2d6+5 piercing, 30ft, pull 10ft"
 
 [inventory]
 inventory = true
@@ -120,7 +120,7 @@ Waterskin
 "Potion of Greater Healing" = 2
 
 GP = 0
-XP = 40520
+XP = 47120
 
 [extra]
 print = false
