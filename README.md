@@ -14,19 +14,28 @@ git clone https://github.com/diesphink/rpg-card-generator.git
 
 2. Create virtualenv and install dependencies
 
-This is a python script, perhaps you have all the dependencies, but maybe not. I recommend you install this on a virtualenv, with the following code:
+This is a python script, perhaps you have all the dependencies, but maybe not. I recommend you install this on a virtualenv, with the following code (3 different versions):
 
 ```bash
+# Using venv + pip
 cd rpg-card-generator
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip install tomli
+
+# Using uv
+cd rpg-card-generator
+uv sync
+
+# Using mise
+cd rpg-card-generator
+mise prepare
 ```
 
-If you don't care about virtual environments, just install everyting on requirements.txt:
+If you don't care about virtual environments, just install dependencies:
 
 ```bash
-pip3 install -r requirements.txt
+pip3 install tomli
 ```
 
 3. Create input files

@@ -1,0 +1,9 @@
+[project]
+dependencies = [
+    "tomli",
+]
+name = "rpg-card-generator"
+version = "0.1.0"
+description = "Gerador de cartas para RPG e jogos de tabuleiro"
+readme = "README.md"
+requires-python = ">=3.12"

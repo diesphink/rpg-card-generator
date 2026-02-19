@@ -1,7 +1,10 @@
 [env]
 VSCODE_PROFILES = "common python"
-_.python.venv = { path = ".venv", create = true }
+_.python.venv = { path = ".venv" }
 
 [tools]
 python = "3.12"
 uv = "latest"
+
+[prepare.uv]
+auto = true
