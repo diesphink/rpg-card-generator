@@ -4,3 +4,4 @@ _.python.venv = { path = ".venv", create = true }
 
 [tools]
 python = "3.12"
+uv = "latest"
